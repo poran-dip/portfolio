@@ -1,0 +1,9 @@
+{
+  "name": "Poran Dip Portfolio",
+  "short_name": "PoranDip",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Poran Dip's personal portfolio – showcasing projects, music, and creativity."
+}

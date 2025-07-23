@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poran Dip Portfolio</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio of Poran Dip — CS student, web developer, music producer, and tech enthusiast." />
+    <meta name="keywords" content="Poran Dip, Portfolio, Developer, Web Developer, Music Producer" />
+    <meta name="author" content="Poran Dip" />
+
+    <!-- Social Sharing (placeholders) -->
+    <meta property="og:title" content="Poran Dip Portfolio" />
+    <meta property="og:description" content="Check out my projects, music, and more!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/" />
+    <meta property="og:image" content="/thumbnail.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Poran Dip Portfolio" />
+    <meta name="twitter:description" content="Check out my projects, music, and more!" />
+    <meta name="twitter:image" content="/thumbnail.png" />
+
+    <!-- Favicons (placeholders) -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+  <body>
+    <div id="root"></div>
+      <script>
+        document.documentElement.classList.toggle(
+          "dark",
+          localStorage.theme === "dark" || 
+          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        );
+      </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
