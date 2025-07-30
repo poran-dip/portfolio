@@ -1,9 +1,23 @@
 {
-  "name": "Poran Dip Portfolio",
-  "short_name": "PoranDip",
-  "start_url": ".",
+  "name": "Poran Dip",
+  "short_name": "Poran Dip",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "description": "Poran Dip's personal portfolio – showcasing projects, music, and creativity."
+  "background_color": "#ffffff",
+  "theme_color": "#fffffff",
+  "description": "Poran Dip's personal portfolio – showcasing projects, music, and creativity.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }
