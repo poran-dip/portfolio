@@ -1,15 +1,29 @@
+import { glassBase } from "../styles/glass"
+import { GlassHeading } from "./ui/GlassHeading"
+import { GlassLink } from "./ui/GlassLink"
+import { GlassParagraph } from "./ui/GlassParagraph"
+
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center w-full p-4 text-black dark:text-white space-y-2">
-      <p className="text-sm">© {new Date().getFullYear()} Poran Dip</p>
-      <div className="flex space-x-6 text-sm">
-        <a href="https://github.com/poran-dip" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
-        <a href="https://www.linkedin.com/in/poran-dip/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+    <footer 
+      className={`
+        ${glassBase}
+        mt-16 p-8 rounded-t-3xl w-full space-y-4
+        bg-gradient-to-t from-zinc-200/80 to-zinc-100/60
+        dark:from-zinc-900/80 dark:to-zinc-800/60
+        text-gray-800 dark:text-white
+        flex flex-col items-center justify-center
+      `}
+    >
+      <GlassHeading level={5}>© {new Date().getFullYear()} Poran Dip</GlassHeading>
+      <div className="flex flex-col items-center">
+        <GlassParagraph className="text-sm opacity-75 font-bold">
+          Built with <GlassLink href="https://vite.dev/">Vite</GlassLink>
+          {" + "}<GlassLink href="https://react.dev/">React</GlassLink>
+          {" + "}<GlassLink href="https://tailwindcss.com/">TailwindCSS</GlassLink>
+        </GlassParagraph>
+        <GlassParagraph className="text-base">And lots of 💚</GlassParagraph>
       </div>
-      <p className="text-xs opacity-75 font-bold">
-        Built with <a href="https://vite.dev/" target="_blank" rel="noopener noreferrer" className="hover:underline">Vite</a>
-        {" + "}<a href="https://react.dev/" target="_blank" rel="noopener noreferrer" className="hover:underline">React</a>
-        {" + "}<a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">TailwindCSS</a></p>
     </footer>
   )
 }

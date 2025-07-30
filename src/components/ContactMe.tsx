@@ -1,5 +1,14 @@
 import { useForm, ValidationError } from "@formspree/react"
 import { useState } from "react"
+import { GlassCard } from "./ui/GlassCard"
+import { GlassHeading } from "./ui/GlassHeading"
+import { GlassInput } from "./ui/GlassInput"
+import { GlassSelect } from "./ui/GlassSelect"
+import { GlassTextarea } from "./ui/GlassTextarea"
+import { GlassLabel } from "./ui/GlassLabel"
+import { GlassParagraph } from "./ui/GlassParagraph"
+import { GlassButton } from "./ui/GlassButton"
+import { GlassFilePicker } from "./ui/GlassFilePicker"
 
 const categories = {
   tech: [
@@ -20,117 +29,118 @@ const ContactMe = () => {
   const subCategories = categories[category]
   
   return (
-    <section id="contact" className="w-full p-6 rounded-2xl shadow-xl bg-zinc-100 
-                                    text-gray-800 dark:bg-zinc-900 dark:text-white 
-                                    transition-all duration-300 hover:shadow-2xl 
-                                    dark:shadow-white/20 dark:hover:shadow-white/30">
-      <h1 className="text-3xl font-bold mb-4">CONTACT ME</h1>
+    <GlassCard id="contact" className="scroll-mt-20">
+      <GlassHeading>CONTACT ME</GlassHeading>
 
       {!state.succeeded ? (
-        <div className="space-y-4">
-          <p className="opacity-80">
-            Need a tech solution? Want to collaborate on a song? Need your song mixed or mastered? 
-            Need a game developed? Get in touch today!
-          </p>
+        <div className="mt-6 space-y-4">
+          <GlassParagraph className="!text-lg !mb-0">
+            Need a tech solution? Want to collab on a track? Got a song that needs mixing or mastering? Dreaming of your own game? Just wanna say hi?
+          </GlassParagraph>
+          <GlassParagraph className="!text-lg !mt-0">
+            <strong>Let’s make it happen</strong>—get in touch today!
+          </GlassParagraph>
 
           <form
             onSubmit={handleSubmit}
             encType="multipart/form-data"
-            className="space-y-4 space-x-4 grid grid-cols-1 md:grid-cols-2"
+            className="gap-6 grid grid-cols-1 md:grid-cols-2"
           >
-            <input type="text" name="_gotcha" className="hidden" />
+            <GlassInput type="text" name="_gotcha" className="hidden" autoComplete="off" />
             <div>
-              <label className="block mb-1 text-sm font-semibold">Name</label>
-              <input
+              <GlassLabel htmlFor="name">Name *</GlassLabel>
+              <GlassInput
                 type="text"
                 name="name"
-                className="w-full p-2 rounded border dark:border-zinc-700 dark:bg-zinc-800"
+                id="name"
                 required
+                autoComplete="name"
               />
               <ValidationError prefix="Name" field="name" errors={state.errors} />
             </div>
 
             <div>
-              <label className="block mb-1 text-sm font-semibold">Email</label>
-              <input
+              <GlassLabel htmlFor="email">Email *</GlassLabel>
+              <GlassInput
                 type="email"
                 name="email"
-                className="w-full p-2 rounded border dark:border-zinc-700 dark:bg-zinc-800"
+                id="email"
                 required
+                autoComplete="email"
               />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
 
             <div>
-              <label className="block mb-1 text-sm font-semibold">Category</label>
-              <select 
+              <GlassLabel htmlFor="category">Category *</GlassLabel>
+              <GlassSelect 
                 name="category"
+                id="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value as CategoryKey)}
-                className="w-full p-2 rounded border dark:border-zinc-700 dark:bg-zinc-800"
               >
                 <option value="tech">Tech</option>
                 <option value="music">Music</option>
-              </select>
+              </GlassSelect>
               <ValidationError prefix="Category" field="category" errors={state.errors} />
             </div>
 
             <div>
-              <label className="block mb-1 text-sm font-semibold">Sub Category</label>
-              <select name="subcategory" className="w-full p-2 rounded border dark:border-zinc-700 dark:bg-zinc-800">
+              <GlassLabel htmlFor="service">Service *</GlassLabel>
+              <GlassSelect id="service" name="service">
                 {subCategories.map((item) => (
                   <option key={item.value} value={item.value}>
                     {item.label}
                   </option>
                 ))}
-              </select>
-              <ValidationError prefix="Sub Category" field="subcategory" errors={state.errors} />
+              </GlassSelect>
+              <ValidationError prefix="Service" field="service" errors={state.errors} />
             </div>
 
-            <div className="col-span-2">
-              <label className="block mb-1 text-sm font-semibold">Title</label>
-              <input
+            <div className="md:col-span-2">
+              <GlassLabel htmlFor="title">Title *</GlassLabel>
+              <GlassInput
                 type="text"
                 name="title"
-                className="w-full p-2 rounded border dark:border-zinc-700 dark:bg-zinc-800"
+                id="title"
                 required
+                autoComplete="off"
               />
               <ValidationError prefix="Title" field="title" errors={state.errors} />
             </div>
 
-            <div className="col-span-2">
-              <label className="block mb-1 text-sm font-semibold">Message</label>
-              <textarea
+            <div className="md:col-span-2">
+              <GlassLabel htmlFor="message">Message *</GlassLabel>
+              <GlassTextarea
                 name="message"
-                className="w-full p-2 rounded border dark:border-zinc-700 dark:bg-zinc-800"
+                id="message"
                 rows={4}
                 required
+                autoComplete="off"
               />
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
 
-            <label className="h-full flex items-center justify-center px-4 py-2 rounded bg-green-500 text-white font-semibold hover:bg-green-600 transition cursor-pointer">
-              Add attachment
-              <input type="file" name="attachment" className="hidden" />
-            </label>
+            <GlassFilePicker name="attachment" variant="success" className="!from-lime-400/80 !to-lime-500/80 text-white">
+              Add attachment (optional)
+            </GlassFilePicker>
 
-            <button
+            <GlassButton
               type="submit"
-              className="px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600 transition"
+              className="px-4 py-2 cursor-pointer rounded bg-blue-500/80 text-white font-semibold hover:bg-blue-600/80 transition"
             >
               Submit
-            </button>
+            </GlassButton>
           </form>
         </div>
       ) : (
-        <p className="opacity-80">
-          Thanks for submitting! I typically respond within 48 hours. Looking forward to working
-          together!
-        </p>
+        <div className="grid md:grid-cols-4">
+          <GlassParagraph className="!text-lg mt-4 md:col-span-4">
+            Thanks for submitting! I will get back to you within 48 hours. Looking forward to working together!
+          </GlassParagraph>
+        </div>
       )}
-
-      <p className="text-sm mt-4 opacity-60 italic">Sign up for my newsletter (coming soon)!</p>
-    </section>
+    </GlassCard>
   )
 }
 

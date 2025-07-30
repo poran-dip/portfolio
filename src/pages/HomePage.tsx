@@ -4,19 +4,26 @@ import Projects from "../components/Projects"
 import ContactMe from "../components/ContactMe"
 import Footer from "../components/Footer"
 import HeroCard from "../components/Hero"
+import { GlassLayout } from "../components/GlassLayout"
+import ScrollToTopButton from "../components/ScrollToTop"
+import Newsletter from "../components/Newsletter"
+import Testimonials from "../components/Testimonials"
 
 const HomePage = () => {
   return (
-    <div className="w-full md:max-w-6xl mx-auto flex flex-col justify-start items-center space-y-6">
+    <GlassLayout className="mx-auto flex flex-col justify-start items-center">
       <Navbar />
       <HeroCard />
-      <main className="items-center w-full space-y-6">
+      <main className="mt-12 px-6 w-full md:max-w-7xl space-y-12 items-center">
         <AboutMe />
         <Projects />
         <ContactMe />
-      </main>
+        <Testimonials />
+        <Newsletter />
+      </main>     
       <Footer />
-    </div>
+      <ScrollToTopButton />
+    </GlassLayout>
   )
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
+import { GlassButton } from './ui/GlassButton';
 
 const ThemeToggleButton = ({ className = '' }) => {
   const [isDark, setIsDark] = useState(false);
@@ -27,17 +28,17 @@ const ThemeToggleButton = ({ className = '' }) => {
   };
 
   return (
-    <button
+    <GlassButton
       onClick={toggleDarkMode}
-      className={`p-2 rounded-lg transition-colors hover:bg-gray-200 dark:hover:bg-gray-800 ${className}`}
+      className={`!p-0 !px-0 !py-0 h-12 w-12 flex items-center justify-center ${className}`}
       aria-label="Toggle dark mode"
     >
       {isDark ? (
-        <Sun className="h-8 w-8 text-white" />
+        <Sun className="h-6 w-6 text-white" />
       ) : (
-        <Moon className="h-8 w-8 text-black" />
+        <Moon className="h-6 w-6 text-black" />
       )}
-    </button>
+    </GlassButton>
   );
 };
 

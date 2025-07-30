@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router"
 import HomePage from "./pages/HomePage"
 import NotFound from "./pages/NotFound"
+import BlogPage from "./pages/BlogPage"
 
 const App = () => {
   return (
-    <div className="bg-white dark:bg-black min-h-screen">
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>  
   )
 }
 
