@@ -30,11 +30,11 @@ const ThemeToggleButton = ({ className = '' }) => {
   return (
     <GlassButton
       onClick={toggleDarkMode}
-      className={`!p-0 !px-0 !py-0 h-12 w-12 flex items-center justify-center ${className}`}
+      className={`p-0! px-0! py-0! h-10 md:h-12 w-10 md:w-12 flex items-center justify-center ${className}`}
       aria-label="Toggle dark mode"
     >
       {isDark ? (
-        <Sun className="h-6 w-6 text-white" />
+        <Sun className="h-4 md:h-6 w-4 md:w-6 text-white" />
       ) : (
         <Moon className="h-6 w-6 text-black" />
       )}

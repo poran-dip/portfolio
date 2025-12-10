@@ -58,7 +58,7 @@ interface GradientTextProps {
 
 // Gradient Text Component
 const GradientText = ({ children, className = "" }: GradientTextProps) => (
-  <span className={`bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent ${className}`}>
+  <span className={`bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent ${className}`}>
     {children}
   </span>
 );
@@ -118,7 +118,7 @@ const Navbar = ({ activeSection }: NavbarProps) => {
                     : 'text-gray-700 dark:text-gray-300 hover:text-blue-400'
                   }
                   after:content-[''] after:absolute after:w-0 after:h-0.5 
-                  after:bg-gradient-to-r after:from-blue-400 after:to-purple-500
+                  after:bg-linear-to-r after:from-blue-400 after:to-purple-500
                   after:left-0 after:-bottom-1 after:transition-all after:duration-300
                   hover:after:w-full
                 `}
@@ -212,14 +212,14 @@ const HeroSection = () => {
             {/* Profile Image */}
             <FloatingElement>
               <div className="relative">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1">
+                <div className="w-64 h-64 rounded-full bg-linear-to-br from-blue-400 via-purple-500 to-pink-500 p-1">
                   <img 
                     src="/profile.png" 
                     alt="Poran Dip" 
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full opacity-20 blur-xl animate-pulse" />
+                <div className="absolute -inset-4 bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full opacity-20 blur-xl animate-pulse" />
               </div>
             </FloatingElement>
 
@@ -256,7 +256,7 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#projects"
-                  className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                  className="group px-8 py-4 bg-linear-to-r from-blue-500 to-purple-600 
                            text-white rounded-full font-semibold shadow-lg hover:shadow-xl 
                            transform hover:-translate-y-1 transition-all duration-300
                            flex items-center gap-2 justify-center"
@@ -359,7 +359,7 @@ const AboutSection = () => {
                 { icon: Gamepad2, text: "Genshin Impact enthusiast (AR 60+)" }
               ].map(({ icon: Icon, text, link }, i) => (
                 <div key={i} className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <Icon className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                  <Icon className="w-5 h-5 text-blue-400 shrink-0" />
                   {link ? (
                     <a href={link} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 hover:underline transition-colors">
                       {text}
@@ -378,7 +378,7 @@ const AboutSection = () => {
           {skills.map((skillGroup, i) => (
             <FloatingElement key={skillGroup.category} delay={i * 0.2}>
               <GlassCard className="p-6 h-full">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${skillGroup.color} flex items-center justify-center mb-4`}>
+                <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${skillGroup.color} flex items-center justify-center mb-4`}>
                   <Palette className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-xl font-bold mb-4">{skillGroup.category}</h4>
@@ -444,7 +444,7 @@ const ProjectsSection = () => {
           {projects.map((project, i) => (
             <FloatingElement key={project.title} delay={i * 0.1}>
               <GlassCard className="p-8 group cursor-pointer">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center mb-6 
+                <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${project.color} flex items-center justify-center mb-6 
                                group-hover:scale-110 transition-transform duration-300`}>
                   <Code className="w-8 h-8 text-white" />
                 </div>
@@ -657,7 +657,7 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 
+                  className="px-8 py-4 bg-linear-to-r from-blue-500 to-purple-600 
                            text-white rounded-xl font-semibold shadow-lg hover:shadow-xl 
                            transform hover:-translate-y-1 transition-all duration-300
                            flex items-center gap-2 justify-center"
@@ -669,7 +669,7 @@ const ContactSection = () => {
             </form>
           ) : (
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-500 rounded-full 
+              <div className="w-20 h-20 bg-linear-to-r from-green-400 to-blue-500 rounded-full 
                             flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-10 h-10 text-white" />
               </div>
@@ -701,15 +701,15 @@ const ContactSection = () => {
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden pt-24 pb-12 bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-950">
+    <footer className="relative overflow-hidden pt-24 pb-12 bg-linear-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-950">
       {/* --- Background Effects --- */}
       <div className="absolute inset-0 overflow-hidden">
         {/* big animated gradient blob */}
-        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 opacity-30 blur-3xl animate-pulse" />
+        <div className="absolute -top-40 -left-40 w-160 h-160 rounded-full bg-linear-to-br from-blue-400 via-purple-500 to-pink-500 opacity-30 blur-3xl animate-pulse" />
         {/* smaller accent blob */}
-        <div className="absolute bottom-0 right-0 w-[20rem] h-[20rem] rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-blue-400 opacity-20 blur-2xl animate-[ping_8s_linear_infinite]" />
+        <div className="absolute bottom-0 right-0 w-[20rem] h-80 rounded-full bg-linear-to-tr from-purple-500 via-pink-500 to-blue-400 opacity-20 blur-2xl animate-[ping_8s_linear_infinite]" />
         {/* moving grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px] animate-[moveGrid_30s_linear_infinite]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size-[40px_40px] animate-[moveGrid_30s_linear_infinite]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col items-center text-center space-y-12">
@@ -729,7 +729,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 rounded-2xl bg-white/20 dark:bg-black/30 border border-white/10 backdrop-blur-md
-                           transition-all duration-500 hover:scale-125 hover:bg-gradient-to-r 
+                           transition-all duration-500 hover:scale-125 hover:bg-linear-to-r 
                            hover:from-blue-400 hover:to-purple-500 hover:text-white"
               >
                 <Icon className="w-6 h-6" />
@@ -755,7 +755,7 @@ const Footer = () => {
         </FloatingElement>
 
         {/* --- Divider --- */}
-        <div className="h-px w-2/3 bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
+        <div className="h-px w-2/3 bg-linear-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
 
         {/* --- Bottom Line --- */}
         <FloatingElement delay={0.7}>
@@ -766,7 +766,7 @@ const Footer = () => {
       </div>
 
       {/* --- Bottom Gradient Accent --- */}
-      <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 blur-sm opacity-70" />
+      <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 blur-sm opacity-70" />
     </footer>
   );
 };

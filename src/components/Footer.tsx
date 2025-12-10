@@ -9,7 +9,7 @@ const Footer = () => {
       className={`
         ${glassBase}
         mt-16 p-8 rounded-t-3xl w-full space-y-4
-        bg-gradient-to-t from-zinc-200/80 to-zinc-100/60
+        bg-linear-to-t from-zinc-200/80 to-zinc-100/60
         dark:from-zinc-900/80 dark:to-zinc-800/60
         text-gray-800 dark:text-white
         flex flex-col items-center justify-center

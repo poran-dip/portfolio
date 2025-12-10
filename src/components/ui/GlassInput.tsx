@@ -12,7 +12,7 @@ export const GlassInput: React.FC<GlassInputProps> = ({ className = "", error = 
     className={`
       ${glassBase}
       w-full px-4 py-3 rounded-xl
-      bg-gradient-to-r from-zinc-100/50 to-zinc-200/30
+      bg-linear-to-r from-zinc-100/50 to-zinc-200/30
       dark:from-zinc-800/50 dark:to-zinc-700/30
       text-gray-800 dark:text-white
       placeholder-gray-500 dark:placeholder-gray-400

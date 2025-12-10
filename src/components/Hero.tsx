@@ -49,7 +49,7 @@ const HeroCard = () => {
 
       <GlassCard hoverable={false} className={`relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8 pt-24 md:pt-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Animated background gradients */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20 animate-pulse"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20 animate-pulse"></div>
       
         {/* Mouse follower glow */}
         <div
@@ -67,8 +67,8 @@ const HeroCard = () => {
             <div className="w-full flex justify-center lg:col-span-1 lg:justify-end">
               <div className="relative group">
                 {/* Glowing rings around avatar */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 animate-spin opacity-75 scale-110 blur-sm"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 animate-spin opacity-50 scale-125 blur-md" style={{ animationDirection: 'reverse', animationDuration: '3s' }}></div>
+                <div className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 via-purple-500 to-cyan-500 animate-spin opacity-75 scale-110 blur-sm"></div>
+                <div className="absolute inset-0 rounded-full bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 animate-spin opacity-50 scale-125 blur-md" style={{ animationDirection: 'reverse', animationDuration: '3s' }}></div>
                 
                 <GlassAvatar 
                   src="profile.png" 
@@ -87,7 +87,7 @@ const HeroCard = () => {
               
               {/* Name */}
               <div className="space-y-3 lg:space-y-4">
-                <GlassHeading className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+                <GlassHeading className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold bg-linear-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
                   Poran Dip
                 </GlassHeading>
                 
@@ -130,21 +130,21 @@ const HeroCard = () => {
                 <GlassLink href="#projects" variant="internal">
                   <GlassButton className="w-full sm:w-48 lg:w-64 h-12 lg:h-14 text-base lg:text-lg font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group">
                     <span className="relative z-10">View Projects</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 to-purple-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                   </GlassButton>
                 </GlassLink>
                 
                 <GlassLink href="#contact" variant="internal">
                   <GlassButton variant="success" className="w-full sm:w-48 lg:w-64 h-12 lg:h-14 text-base lg:text-lg font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group">
                     <span className="relative z-10">Let's Connect</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-cyan-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-green-500/20 to-cyan-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                   </GlassButton>
                 </GlassLink>
 
                 <GlassLink href="/blog" variant="internal" target="_blank">
                   <GlassButton variant="danger" className="w-full sm:w-48 lg:w-64 h-12 lg:h-14 text-base lg:text-lg font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group">
                     <span className="relative z-10">Read Blog</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-orange-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-red-500/20 to-orange-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                   </GlassButton>
                 </GlassLink>
               </div>

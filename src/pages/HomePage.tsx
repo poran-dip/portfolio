@@ -15,8 +15,8 @@ const HomePage = () => {
       <Navbar />
       <HeroCard />
       <main className="mt-12 px-6 w-full md:max-w-7xl space-y-12 items-center">
-        <AboutMe />
         <Projects />
+        <AboutMe />
         <ContactMe />
         <Testimonials />
         <Newsletter />

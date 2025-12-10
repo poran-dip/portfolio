@@ -23,13 +23,13 @@ const NotFound404 = () => {
   }, [])
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-black via-gray-900 to-black text-gray-300 p-6 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center bg-linear-to-b from-black via-gray-900 to-black text-gray-300 p-6 relative overflow-hidden">
       
       {/* Grid background */}
       <div className="absolute inset-0 
         bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),
             linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)]
-        bg-[size:40px_40px] opacity-40" />
+        bg-size-[40px_40px] opacity-40" />
 
       {/* Mouse follower glow */}
       <div
@@ -108,7 +108,7 @@ const NotFound404 = () => {
         </div>
 
         {/* Glowing 404 with enhanced effects */}
-        <h1 className="text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent relative">
+        <h1 className="text-5xl font-extrabold bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent relative">
           4
           <span className="inline-block animate-bounce mx-2 relative">
             0
@@ -146,7 +146,7 @@ const NotFound404 = () => {
       <button 
         onClick={() => window.location.href = '/'}
         className="relative z-10 mt-8 px-8 py-4 rounded-full 
-                   bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold 
+                   bg-linear-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold 
                    shadow-lg hover:shadow-2xl hover:shadow-purple-500/25
                    transform hover:-translate-y-2 hover:scale-105
                    transition-all duration-300 group overflow-hidden"
@@ -157,10 +157,10 @@ const NotFound404 = () => {
         </span>
         
         {/* Button glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
         
         {/* Shooting star effect on hover */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+        <div className="absolute -inset-1 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
       </button>
 
       {/* Fun space facts footer */}

@@ -1,5 +1,5 @@
 // Base glass styles for consistency
-export const glassBase: string = "backdrop-blur-md border border-white/20 dark:border-white/10 transition-all duration-300";
+export const glassBase: string = "backdrop-blur-md border border-white/20 dark:border-white/10 transition-all duration-200";
 export const glassHover: string = "hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-xl dark:hover:shadow-white/20";
 export const glassHoverLg: string = "hover:scale-[1.03] hover:-translate-y-1 hover:shadow-2xl dark:hover:shadow-white/30";
 

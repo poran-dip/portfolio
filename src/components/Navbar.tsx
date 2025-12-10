@@ -31,9 +31,9 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-20 text-xl">
-          <GlassLink href="/#about" variant="internal">ABOUT</GlassLink>
           <GlassLink href="/#projects" variant="internal">PROJECTS</GlassLink>
           <GlassLink href="https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM" variant="external">MUSIC</GlassLink>
+          <GlassLink href="/#about" variant="internal">ABOUT</GlassLink>
           <GlassLink href="/#contact" variant="internal">CONTACT</GlassLink>
         </div>
         
@@ -60,9 +60,9 @@ const Navbar = () => {
       <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
         <div className="px-6 py-4 space-y-4 backdrop-blur-md bg-white/30 dark:bg-black/30 border-t border-white/20 dark:border-white/10">
           <div className="flex flex-col space-y-4 text-lg">
-            <GlassLink href="#about" variant="internal" onClick={closeMenu}>ABOUT</GlassLink>
             <GlassLink href="#projects" variant="internal" onClick={closeMenu}>PROJECTS</GlassLink>
             <GlassLink href="https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM" variant="external" onClick={closeMenu}>MUSIC</GlassLink>
+            <GlassLink href="#about" variant="internal" onClick={closeMenu}>ABOUT</GlassLink>
             <GlassLink href="#contact" variant="internal" onClick={closeMenu}>CONTACT</GlassLink>
           </div>
           <div className="pt-4 border-t border-white/20 dark:border-white/10">

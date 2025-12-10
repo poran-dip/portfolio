@@ -43,21 +43,21 @@ const Testimonials = () => {
   }
 
   return (
-    <GlassCard id="testimonials" className="scroll-mt-20">
+    <GlassCard id="testimonials" hoverable={false} className="scroll-mt-20">
       <GlassHeading>TESTIMONIALS</GlassHeading>
-      <GlassParagraph className="mt-6 !text-lg !mb-8">
+      <GlassParagraph className="mt-6 text-lg! mb-8!">
         What people (and cats) are saying about my work...
       </GlassParagraph>
       
       <div className="grid md:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
-          <GlassCard key={index} className="flex flex-col h-full !from-blue-500/30 !to-cyan-300/30">
+          <GlassCard key={index} className="flex flex-col h-full from-blue-500/30! to-cyan-300/30!">
             {/* Header with avatar and rating */}
             <div className="flex items-center gap-4 mb-4">
               <GlassAvatar src={testimonial.avatar} alt={`${testimonial.name} avatar`} size="lg" className="mr-2" />
               <div className="flex-1">
-                <GlassHeading level={4} className="!mb-1">{testimonial.name}</GlassHeading>
-                <GlassParagraph className="!text-sm opacity-75 !mb-2">
+                <GlassHeading level={4} className="mb-1!">{testimonial.name}</GlassHeading>
+                <GlassParagraph className="text-sm! opacity-75 mb-2!">
                   {testimonial.role}
                 </GlassParagraph>
                 <div className="flex gap-1">
@@ -67,7 +67,7 @@ const Testimonials = () => {
             </div>
             
             {/* Review content */}
-            <GlassParagraph className="flex-1 !text-base leading-relaxed italic">
+            <GlassParagraph className="flex-1 text-base! leading-relaxed italic">
               "{testimonial.review}"
             </GlassParagraph>
           </GlassCard>
@@ -75,7 +75,7 @@ const Testimonials = () => {
       </div>
       
       <div className="mt-8 text-center">
-        <GlassParagraph className="!text-sm opacity-60 italic">
+        <GlassParagraph className="text-sm! opacity-60 italic">
           * Testimonials may be slightly fabricated for comedic effect. Memu's review was translated from Cat. Will be updated with real content later (or not).
         </GlassParagraph>
       </div>

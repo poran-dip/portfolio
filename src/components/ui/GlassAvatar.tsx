@@ -28,7 +28,7 @@ export const GlassAvatar: React.FC<GlassAvatarProps> = ({
       className={`
         ${glassBase} ${glassHover}
         ${sizes[size]} rounded-full overflow-hidden
-        bg-gradient-to-br from-zinc-200/50 to-zinc-300/50
+        bg-linear-to-br from-zinc-200/50 to-zinc-300/50
         dark:from-zinc-700/50 dark:to-zinc-600/50
         shadow-lg
         ${className}

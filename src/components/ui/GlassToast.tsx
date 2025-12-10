@@ -30,7 +30,7 @@ export const GlassToast: React.FC<GlassToastProps> = ({
       className={`
         ${glassBase} ${glassHover}
         fixed top-4 right-4 p-4 rounded-xl shadow-lg
-        bg-gradient-to-r ${variants[variant]}
+        bg-linear-to-r ${variants[variant]}
         transform transition-all duration-300
         ${isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
         z-50 max-w-sm

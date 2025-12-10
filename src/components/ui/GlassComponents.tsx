@@ -40,7 +40,7 @@ const GlassComponentsDemo: React.FC = () => {
     <GlassLayout>
       <GlassNavbar>
         <div className="flex items-center justify-between">
-          <GlassHeading level={3} className="!bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-200">
+          <GlassHeading level={3} className="bg-linear-to-r!rom-gray-800 to-gray-600 dark:from-white dark:to-gray-200">
             Glass UI
           </GlassHeading>
           <div className="flex items-center space-x-4">            

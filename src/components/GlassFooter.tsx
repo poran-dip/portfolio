@@ -11,7 +11,7 @@ export const GlassFooter: React.FC<GlassFooterProps> = ({ children, className = 
     className={`
       ${glassBase} ${glassAnimations.hoverSubtle}
       mt-16 p-8 rounded-t-3xl
-      bg-gradient-to-t from-zinc-200/80 to-zinc-100/60
+      bg-linear-to-t from-zinc-200/80 to-zinc-100/60
       dark:from-zinc-900/80 dark:to-zinc-800/60
       text-gray-800 dark:text-white
       shadow-2xl

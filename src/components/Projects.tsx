@@ -55,9 +55,9 @@ const Projects = () => {
 
   return (
     <>
-      <GlassCard id="projects" className="scroll-mt-20">
+      <GlassCard id="projects" hoverable={false} className="scroll-mt-20">
         <GlassHeading>PROJECTS</GlassHeading>
-        <GlassParagraph className="mt-6 !text-lg">Building not just projects, but experiences, innovations, and (insert trendy buzzword here)!</GlassParagraph>
+        <GlassParagraph className="mt-6 text-lg!">Building not just projects, but experiences, innovations, and (insert trendy buzzword here)!</GlassParagraph>
         
         <div className="my-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
@@ -76,7 +76,7 @@ const Projects = () => {
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/40" />
               
               {/* Glass Effect Background */}
               <div className={`absolute inset-0 ${glassBase}`} />
