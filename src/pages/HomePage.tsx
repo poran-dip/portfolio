@@ -8,6 +8,7 @@ import { GlassLayout } from "../components/GlassLayout"
 import ScrollToTopButton from "../components/ScrollToTop"
 import Newsletter from "../components/Newsletter"
 import Testimonials from "../components/Testimonials"
+import Timeline from "../components/Timeline"
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <HeroCard />
       <main className="mt-12 px-6 w-full md:max-w-7xl space-y-12 items-center">
         <Projects />
+        <Timeline />
         <AboutMe />
         <ContactMe />
         <Testimonials />
