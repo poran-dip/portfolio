@@ -13,7 +13,17 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "EazyMed",
+      title: "ODStream",
+      description: "Plug-and-play GUI for real-time object detection with YOLO models. Includes remote deployment support on SBC drones like Raspberry Pi and seamless custom model integration.",
+      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop&auto=format",
+      technologies: ["Vite", "Flask", "OpenCV", "SocketIO", "MJPEG"],
+      githubUrl: "https://github.com/poran-dip/uwod-rc",
+      liveUrl: "https://github.com/poran-dip/uwod-rc",
+      status: "Complete"
+    },
+    {
+      id: 2,
+      title: "Eazydoc",
       description: "AI-powered healthcare platform for effortless specialist matching, streamlined appointment management, and powerful hospital admin controls.",
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop&auto=format",
       technologies: ["React", "Next.js", "Prisma", "Supabase"],
@@ -22,18 +32,8 @@ const Projects = () => {
       status: "Live"
     },
     {
-      id: 2,
-      title: "ODStream",
-      description: "Plug-and-play GUI for real-time object detection with YOLO models. Includes remote deployment support on SBC drones like Raspberry Pi and seamless custom model integration.",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop&auto=format",
-      technologies: ["Vite", "Flask", "OpenCV", "SocketIO", "MJPEG"],
-      githubUrl: "https://github.com/poran-dip/uwod-rc",
-      liveUrl: null,
-      status: "Beta"
-    },
-    {
       id: 3,
-      title: "CryoKeep",
+      title: "EatWise",
       description: "Smart refrigeration app that dynamically adjusts fridge temperature based on stored items, extending shelf life and sending expiry notifications straight to your phone.",
       image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop&auto=format",
       technologies: ["HTML", "CSS", "JS", "React Native"],
@@ -68,10 +68,9 @@ const Projects = () => {
             >
               {/* Background Image with Low Opacity */}
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-110 opacity:80 dark:opacity-25"
                 style={{
-                  backgroundImage: `url(${project.image})`,
-                  opacity: '0.25'
+                  backgroundImage: `url(${project.image})`
                 }}
               />
               
@@ -84,7 +83,7 @@ const Projects = () => {
               {/* Status Badge */}
               <div className="absolute top-4 right-4 z-10">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-                  project.status === 'Live' ? 'bg-green-500/30 text-green-200 border border-green-500/50' :
+                  project.status === 'Live' || 'Complete' ? 'bg-green-500/30 text-green-200 border border-green-500/50' :
                   project.status === 'Beta' ? 'bg-blue-500/30 text-blue-200 border border-blue-500/50' :
                   'bg-yellow-500/30 text-yellow-200 border border-yellow-500/50'
                 }`}>

@@ -147,40 +147,40 @@ const AboutMe = () => {
             <GlassCard className="flex flex-col from-green-500/60! to-emerald-600/60!">
               <div className="flex items-center space-x-2">
                 <span className="text-2xl">🌱</span>
-                <GlassHeading level={5}>Radish Enjoyer</GlassHeading>
+                <GlassHeading level={5} className="text-lime-50!">Radish Enjoyer</GlassHeading>
               </div>
               <GlassParagraph className="mt-2 text-lime-50!">
-                Big Genshin fan! My little <a href="https://youtu.be/7zkCp_kVtj4" className="hover:text-green-400 hover:underline" target="_blank">radish God Nahida</a> and her explosive radishes make monsters go boom!
+                Big Genshin fan! My little <a href="https://youtu.be/7zkCp_kVtj4" className="underline decoration-dotted decoration-green-200 dark:decoration-green-400 hover:text-green-200 dark:hover:text-green-400 hover:decoration-solid" target="_blank">radish God Nahida</a> and her explosive radishes make monsters go boom!
               </GlassParagraph>
             </GlassCard>
             
             <GlassCard className="flex flex-col from-red-500/60! to-orange-600/60!">
               <div className="flex items-center space-x-2">
                 <span className="text-2xl">🥔</span>
-                <GlassHeading level={5}>Anime Enthusiast</GlassHeading>
+                <GlassHeading level={5} className="text-orange-50!">Anime Enthusiast</GlassHeading>
               </div>
               <GlassParagraph className="mt-2 text-red-50!">
-                Team Light Yagami for <a href="https://youtu.be/KC6T3_O2iWc" target="_blank" className="hover:text-orange-400 hover:underline">professional chip eating</a>. If I was an isekai MC, I'd wish to reincarnate as an axolotl.
+                Team Light Yagami for <a href="https://youtu.be/KC6T3_O2iWc" target="_blank" className="underline decoration-dotted decoration-orange-200 dark:decoration-orange-400 hover:text-orange-200 dark:hover:text-orange-400 hover:decoration-solid">professional chip eating</a>. If I was an isekai MC, I'd wish to reincarnate as an axolotl.
               </GlassParagraph>
             </GlassCard>
             
-            <GlassCard className="flex flex-col from-slate-500/60! to-gray-600/60!">
+            <GlassCard className="flex flex-col from-amber-500/60! to-yellow-600/60!">
               <div className="flex items-center space-x-2">
                 <span className="text-2xl">♘</span>
-                <GlassHeading level={5}>Brilliant Blunderer</GlassHeading>
+                <GlassHeading level={5} className="text-yellow-50!">Brilliant Blunderer</GlassHeading>
               </div>
               <GlassParagraph className="mt-2 text-slate-50!">
-                <a href="https://anarchychess.fandom.com/wiki/%22Google_en_passant%22_Comment_Chain" target="_blank" className="hover:text-yellow-500 hover:underline">Holy hell!</a> New chess menace casually sitting at 1950 Elo just dropped <a href="https://www.chess.com/member/porandip/stats/rapid?days=0" target="_blank" className="hover:text-yellow-500 hover:underline">(top 0.5% worldwide)</a>
+                <a href="https://anarchychess.fandom.com/wiki/%22Google_en_passant%22_Comment_Chain" target="_blank" className="underline decoration-dotted decoration-yellow-200 dark:decoration-yellow-400 hover:text-yellow-200 dark:hover:text-yellow-400 hover:decoration-solid">Holy hell!</a> New chess menace casually sitting at 1950 Elo just dropped <a href="https://www.chess.com/member/porandip/stats/rapid?days=0" target="_blank" className="underline decoration-dotted decoration-yellow-200 dark:decoration-yellow-400 hover:text-yellow-200 dark:hover:text-yellow-400 hover:decoration-solid">(top 0.5% worldwide)</a>
               </GlassParagraph>
             </GlassCard>
             
             <GlassCard className="flex flex-col from-purple-500/60! to-indigo-600/60!">
               <div className="flex items-center space-x-2">
                 <span className="text-2xl">🐀</span>
-                <GlassHeading level={5}>OG Story Weaver</GlassHeading>
+                <GlassHeading level={5} className="text-blue-50!">OG Story Weaver</GlassHeading>
               </div>
               <GlassParagraph className="mt-2 text-purple-50!">
-                Been crafting digital tales since age 10 with Twine. My "Rat Killers" flea market game was peak childhood entrepreneurship
+                Been crafting digital tales since age 10 with Twine. My <a href="/flea-market.html" target="_blank" className="underline decoration-dotted decoration-blue-200 dark:decoration-blue-400 hover:text-blue-200 dark:hover:text-blue-400 hover:decoration-solid">"Rat Killers" flea market</a> game was peak childhood entrepreneurship
               </GlassParagraph>
             </GlassCard>
           </div>
