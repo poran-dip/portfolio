@@ -53,10 +53,10 @@ const HeroCard = () => {
       
         {/* Mouse follower glow */}
         <div
-          className="absolute w-80 h-80 rounded-full pointer-events-none transition-all duration-200 ease-out"
+          className="absolute w-80 h-80 rounded-full pointer-events-none transition-all duration-50 ease-out"
           style={{
-            left: mousePosition.x - 160,
-            top: mousePosition.y - 160,
+            left: mousePosition.x + scrollX - 160,
+            top: mousePosition.y + scrollY - 160,
             background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, transparent 70%)'
           }}
         ></div>
