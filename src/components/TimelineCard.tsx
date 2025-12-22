@@ -1,5 +1,6 @@
 import { Dot, Star } from "lucide-react"
 import { GlassHeading } from "./ui/GlassHeading"
+import { GlassParagraph } from "./ui/GlassParagraph"
 
 export interface TimelineCardProps {
   title: string
@@ -17,19 +18,19 @@ const TimelineCard = ({ title, location, date, description, status = 'done' }: T
           <Dot size={60} /> :
           <Star size={20} className="m-5" />
         }
-        <div className={`grow w-0.5 border-l-2 border-white/30 ${status === 'ongoing' && 'border-dashed'}`} />
+        <div className={`grow w-0.5 border-l-2 border-gray-900/30 dark:border-gray-100/30 ${status === 'ongoing' && 'border-dashed'}`} />
       </div>
 
       <div className="flex-1 space-y-5 pt-2 pb-6">
         <div className="space-y-px">
           <GlassHeading level={5}>{title}</GlassHeading>
-          <p className="text-sm text-white/80">
+          <GlassParagraph className="text-sm">
             {location && `${location} • `}{date}
-          </p>
+          </GlassParagraph>
         </div>
-        <p className="text-white/80">
+        <GlassParagraph>
           {description}
-        </p>
+        </GlassParagraph>
       </div>
     </div>
   )

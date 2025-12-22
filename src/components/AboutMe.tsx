@@ -1,3 +1,4 @@
+import SocialLink, { type SocialLinkProps } from "./SocialLink"
 import { GlassButton } from "./ui/GlassButton"
 import { GlassCard } from "./ui/GlassCard"
 import { GlassHeading } from "./ui/GlassHeading"
@@ -6,6 +7,57 @@ import { GlassParagraph } from "./ui/GlassParagraph"
 import { Code2, Gamepad2, Github, Music2, Linkedin, Instagram, Youtube, Twitter, Star, Music, Gamepad2Icon, Ellipsis } from "lucide-react"
 
 const AboutMe = () => {
+  const socialLinks: SocialLinkProps[] = [
+    {
+      href: "https://github.com/poran-dip",
+      Icon: Github,
+      platform: "GitHub",
+      description: "code heaven",
+    },
+    {
+      href: "https://linkedin.com/in/poran-dip/",
+      Icon: Linkedin,
+      platform: "LinkedIn",
+      description: "professional me",
+    },
+    {
+      href: "https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM",
+      Icon: Music2,
+      platform: "Spotify",
+      description: "my beats",
+    },
+    {
+      href: "https://littleradishes.itch.io/",
+      Icon: Gamepad2,
+      platform: "Itch.io",
+      description: "game experiments",
+    },
+    {
+      href: "https://youtube.com/@poran_dip",
+      Icon: Youtube,
+      platform: "YouTube",
+      description: "coming soon",
+    },
+    {
+      href: "https://instagram.com/poran_dip",
+      Icon: Instagram,
+      platform: "Instagram",
+      description: "music vibes",
+    },
+    {
+      href: "https://hoyolab.com/accountCenter/postList?id=342955108",
+      Icon: Star,
+      platform: "HoYoLAB",
+      description: "gacha life",
+    },
+    {
+      href: "https://x.com/poran_dip",
+      Icon: Twitter,
+      platform: "X",
+      description: "digital graveyard",
+    },
+  ]
+
   return (
     <GlassCard hoverable={false} id="about" className="scroll-mt-20">
       <GlassHeading>ABOUT ME</GlassHeading>
@@ -74,69 +126,12 @@ const AboutMe = () => {
         <div>
           <GlassHeading level={3}>My Online Presence</GlassHeading>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-            <GlassLink href="https://github.com/poran-dip" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Github className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">GitHub</span>
-                <span className="text-xs opacity-60 text-center">code heaven</span>
-              </div>
-            </GlassLink>
-            
-            <GlassLink href="https://linkedin.com/in/poran-dip/" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Linkedin className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">LinkedIn</span>
-                <span className="text-xs opacity-60 text-center">professional me</span>
-              </div>
-            </GlassLink>
-
-            <GlassLink href="https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Music2 className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">Spotify</span>
-                <span className="text-xs opacity-60 text-center">my beats</span>
-              </div>
-            </GlassLink>
-
-            <GlassLink href="https://littleradishes.itch.io/" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Gamepad2 className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">Itch.io</span>
-                <span className="text-xs opacity-60 text-center">game experiments</span>
-              </div>
-            </GlassLink>
-            
-            <GlassLink href="https://youtube.com/@poran_dip" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Youtube className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">YouTube</span>
-                <span className="text-xs opacity-60 text-center">coming soon</span>
-              </div>
-            </GlassLink>
-
-            <GlassLink href="https://instagram.com/poran_dip" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Instagram className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">Instagram</span>
-                <span className="text-xs opacity-60 text-center">music vibes</span>
-              </div>
-            </GlassLink>
-            
-            <GlassLink href="https://hoyolab.com/accountCenter/postList?id=342955108" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Star className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">HoYoLAB</span>
-                <span className="text-xs opacity-60 text-center">gacha life</span>
-              </div>
-            </GlassLink>
-            
-            <GlassLink href="https://x.com/poran_dip" className="flex items-center gap-2 justify-center p-3 rounded-lg hover:bg-white/10 transition-all">
-              <Twitter className="w-6 h-6" />
-              <div className="flex flex-col ml-4 items-center">
-                <span className="text-sm">X</span>
-                <span className="text-xs opacity-60 text-center">digital graveyard</span>
-              </div>
-            </GlassLink>
+            {socialLinks.map((link) => (
+              <SocialLink
+                key={link.platform}
+                {...link}
+              />
+            ))}
           </div>
         </div>
 
