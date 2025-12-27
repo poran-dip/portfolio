@@ -181,7 +181,7 @@ const AboutMe = () => {
           </div>
         </div>
             <div className="mt-6 grid md:grid-cols-2 gap-6">
-            <GlassLink href="Poran_Dip_Resume.pdf" download variant="internal"><GlassButton className="w-full cursor-pointer" variant="success">Download My Resume</GlassButton></GlassLink>
+            <GlassLink href="Poran_Dip_Resume.pdf"><GlassButton className="w-full cursor-pointer" variant="success">Download My Resume</GlassButton></GlassLink>
             <GlassLink href="#testimonials" variant="internal"><GlassButton variant="secondary" className="w-full cursor-pointer">View Testimonials</GlassButton></GlassLink>
           </div>
       </div>
