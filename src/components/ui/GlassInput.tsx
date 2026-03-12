@@ -1,16 +1,20 @@
-import type { InputHTMLAttributes } from "react";
-import { glassBase } from "../../styles/glass";
+import { glass } from "@/styles/glass";
 
-interface GlassInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className'> {
-  className?: string;
-  error?: boolean;
+interface GlassInputProps
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "className"> {
+	className?: string;
+	error?: boolean;
 }
 
 // GlassInput Component
-export const GlassInput: React.FC<GlassInputProps> = ({ className = "", error = false, ...props }) => (
-  <input
-    className={`
-      ${glassBase}
+export const GlassInput: React.FC<GlassInputProps> = ({
+	className = "",
+	error = false,
+	...props
+}) => (
+	<input
+		className={`
+      ${glass.base}
       w-full px-4 py-3 rounded-xl
       bg-linear-to-r from-zinc-100/50 to-zinc-200/30
       dark:from-zinc-800/50 dark:to-zinc-700/30
@@ -22,6 +26,6 @@ export const GlassInput: React.FC<GlassInputProps> = ({ className = "", error = 
       shadow-md transition-all duration-300
       ${className}
     `}
-    {...props}
-  />
+		{...props}
+	/>
 );

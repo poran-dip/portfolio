@@ -1,21 +1,22 @@
-import type { AnchorHTMLAttributes } from "react";
-import type { BaseProps } from "../../types/glass.types";
-import { glassAnimations } from "../../styles/glass";
+import type { BaseProps } from "@/types/glass.types";
+import { glassAnimations } from "@/styles/glass";
 
-interface GlassLinkProps extends BaseProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className'> {
-  href: string;
-  variant?: 'external' | 'internal';
+interface GlassLinkProps
+	extends BaseProps,
+		Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "className"> {
+	href: string;
+	variant?: "external" | "internal";
 }
 
 // GlassLink Component
-export const GlassLink: React.FC<GlassLinkProps> = ({ 
-  children, 
-  href, 
-  variant = "external", 
-  className = "", 
-  ...props 
+export const GlassLink: React.FC<GlassLinkProps> = ({
+	children,
+	href,
+	variant = "external",
+	className = "",
+	...props
 }) => {
-  const baseClasses: string = `
+	const baseClasses: string = `
     text-blue-600 dark:text-blue-400
     hover:text-blue-800 dark:hover:text-blue-200
     transition-colors duration-200
@@ -25,23 +26,23 @@ export const GlassLink: React.FC<GlassLinkProps> = ({
     ${className}
   `;
 
-  if (variant === "internal") {
-    return (
-      <a href={href} className={baseClasses} {...props}>
-        {children}
-      </a>
-    );
-  }
+	if (variant === "internal") {
+		return (
+			<a href={href} className={baseClasses} {...props}>
+				{children}
+			</a>
+		);
+	}
 
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={baseClasses}
-      {...props}
-    >
-      {children}
-    </a>
-  );
+	return (
+		<a
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
+			className={baseClasses}
+			{...props}
+		>
+			{children}
+		</a>
+	);
 };

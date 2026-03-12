@@ -1,21 +1,22 @@
-import type { SelectHTMLAttributes } from "react";
-import type { BaseProps } from "../../types/glass.types";
-import { glassBase } from "../../styles/glass";
+import type { BaseProps } from "@/types/glass.types";
+import { glass } from "@/styles/glass";
 
-interface GlassSelectProps extends BaseProps, Omit<SelectHTMLAttributes<HTMLSelectElement>, 'className'> {
-  error?: boolean;
+interface GlassSelectProps
+	extends BaseProps,
+		Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "className"> {
+	error?: boolean;
 }
 
 // GlassSelect Component
-export const GlassSelect: React.FC<GlassSelectProps> = ({ 
-  children, 
-  className = "", 
-  error = false, 
-  ...props 
+export const GlassSelect: React.FC<GlassSelectProps> = ({
+	children,
+	className = "",
+	error = false,
+	...props
 }) => (
-  <select
-    className={`
-      ${glassBase}
+	<select
+		className={`
+      ${glass.base}
       w-full px-4 py-3 rounded-xl 
       bg-linear-to-r from-zinc-100/50 to-zinc-200/30
       dark:from-zinc-800/50 dark:to-zinc-700/30
@@ -27,8 +28,8 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
       shadow-md transition-all duration-300
       ${className}
     `}
-    {...props}
-  >
-    {children}
-  </select>
+		{...props}
+	>
+		{children}
+	</select>
 );

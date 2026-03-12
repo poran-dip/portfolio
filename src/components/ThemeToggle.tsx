@@ -1,45 +1,45 @@
-import { useState, useEffect } from 'react';
-import { Sun, Moon } from 'lucide-react';
-import { GlassButton } from './ui/GlassButton';
+import { useState, useEffect } from "react";
+import { Sun, Moon } from "lucide-react";
+import { GlassButton } from "./ui";
 
-const ThemeToggleButton = ({ className = '' }) => {
-  const [isDark, setIsDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
+const ThemeToggle = ({ className = "" }) => {
+	const [isDark, setIsDark] = useState(false);
+	const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
-    setMounted(true);
-  }, []);
+	useEffect(() => {
+		const isDarkMode = document.documentElement.classList.contains("dark");
+		setIsDark(isDarkMode);
+		setMounted(true);
+	}, []);
 
-  if (!mounted) return null;
+	if (!mounted) return null;
 
-  const toggleDarkMode = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
+	const toggleDarkMode = () => {
+		const newTheme = !isDark;
+		setIsDark(newTheme);
 
-    if (newTheme) {
-      localStorage.theme = "dark";
-      document.documentElement.classList.add("dark");
-    } else {
-      localStorage.theme = "light";
-      document.documentElement.classList.remove("dark");
-    }
-  };
+		if (newTheme) {
+			localStorage.theme = "dark";
+			document.documentElement.classList.add("dark");
+		} else {
+			localStorage.theme = "light";
+			document.documentElement.classList.remove("dark");
+		}
+	};
 
-  return (
-    <GlassButton
-      onClick={toggleDarkMode}
-      className={`p-0! px-0! py-0! h-10 md:h-12 w-10 md:w-12 flex items-center justify-center ${className}`}
-      aria-label="Toggle dark mode"
-    >
-      {isDark ? (
-        <Sun className="h-4 md:h-6 w-4 md:w-6 text-white" />
-      ) : (
-        <Moon className="h-6 w-6 text-black" />
-      )}
-    </GlassButton>
-  );
+	return (
+		<GlassButton
+			onClick={toggleDarkMode}
+			className={`p-0! px-0! py-0! h-10 md:h-12 w-10 md:w-12 flex items-center justify-center ${className}`}
+			aria-label="Toggle dark mode"
+		>
+			{isDark ? (
+				<Sun className="h-4 md:h-6 w-4 md:w-6 text-white" />
+			) : (
+				<Moon className="h-6 w-6 text-black" />
+			)}
+		</GlassButton>
+	);
 };
 
-export default ThemeToggleButton;
+export default ThemeToggle;

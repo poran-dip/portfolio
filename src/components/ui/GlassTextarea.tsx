@@ -1,16 +1,20 @@
-import type { TextareaHTMLAttributes } from "react";
-import { glassBase } from "../../styles/glass";
+import { glass } from "@/styles/glass";
 
-interface GlassTextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'> {
-  className?: string;
-  error?: boolean;
+interface GlassTextareaProps
+	extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "className"> {
+	className?: string;
+	error?: boolean;
 }
 
 // GlassTextarea Component
-export const GlassTextarea: React.FC<GlassTextareaProps> = ({ className = "", error = false, ...props }) => (
-  <textarea
-    className={`
-      ${glassBase}
+export const GlassTextarea: React.FC<GlassTextareaProps> = ({
+	className = "",
+	error = false,
+	...props
+}) => (
+	<textarea
+		className={`
+      ${glass.base}
       w-full px-4 py-3 rounded-xl
       bg-linear-to-r from-zinc-100/50 to-zinc-200/30
       dark:from-zinc-800/50 dark:to-zinc-700/30
@@ -20,9 +24,9 @@ export const GlassTextarea: React.FC<GlassTextareaProps> = ({ className = "", er
       focus:scale-[1.01] focus:-translate-y-px
       ${error ? "border-red-500/50 focus:ring-red-500/50" : ""}
       shadow-md transition-all duration-300
-      min-h-[100px] resize-none
+      min-h-25 resize-none
       ${className}
     `}
-    {...props}
-  />
+		{...props}
+	/>
 );
