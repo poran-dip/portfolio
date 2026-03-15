@@ -1,14 +1,14 @@
 import { GlassCard, GlassHeading, GlassParagraph } from "@/components/ui";
 
 const Newsletter = () => {
-	return (
-		<GlassCard hoverable={false}>
-			<GlassHeading level={2}>Subscribe to my newsletter</GlassHeading>
-			<GlassParagraph className="pt-4 italic opacity-60">
-				Stay tuned, coming soon!
-			</GlassParagraph>
-		</GlassCard>
-	);
+  return (
+    <GlassCard hoverable={false}>
+      <GlassHeading level={2}>Subscribe to my newsletter</GlassHeading>
+      <GlassParagraph className="pt-4 italic opacity-60">
+        Stay tuned, coming soon!
+      </GlassParagraph>
+    </GlassCard>
+  );
 };
 
 export default Newsletter;

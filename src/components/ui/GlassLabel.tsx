@@ -1,24 +1,26 @@
+import { cn } from "@/lib/utils";
+
 interface GlassLabelProps
-	extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "className"> {
-	className?: string;
-	required?: boolean;
+  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "className"> {
+  className?: string;
+  required?: boolean;
 }
 
 // GlassLabel Component
 export const GlassLabel: React.FC<GlassLabelProps> = ({
-	className = "",
-	required = false,
-	children,
-	...props
+  className = "",
+  required = false,
+  children,
+  ...props
 }) => (
-	<label
-		className={`
-      block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200
-      ${className}
-    `}
-		{...props}
-	>
-		{children}
-		{required && <span className="text-red-500 ml-1">*</span>}
-	</label>
+  <label
+    className={cn(
+      "block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200",
+      className,
+    )}
+    {...props}
+  >
+    {children}
+    {required && <span className="text-red-500 ml-1">*</span>}
+  </label>
 );
