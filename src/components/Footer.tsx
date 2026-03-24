@@ -18,9 +18,9 @@ const Footer = () => {
       </GlassHeading>
       <div className="flex flex-col items-center">
         <GlassParagraph className="text-sm opacity-75 font-bold">
-          Built with <GlassLink href="https://vite.dev/">Vite</GlassLink>
+          Built with <GlassLink href="https://react.dev/">React</GlassLink>
           {" + "}
-          <GlassLink href="https://react.dev/">React</GlassLink>
+          <GlassLink href="https://reactrouter.com/">React Router</GlassLink>
           {" + "}
           <GlassLink href="https://tailwindcss.com/">TailwindCSS</GlassLink>
         </GlassParagraph>
