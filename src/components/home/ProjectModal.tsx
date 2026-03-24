@@ -38,7 +38,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover rounded-lg mb-6"
+            className="w-full h-64 object-cover object-top rounded-lg mb-6"
           />
           <GlassHeading className="text-2xl mb-4">{project.title}</GlassHeading>
           <GlassParagraph className="text-base mb-6">
@@ -62,12 +62,14 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
-            <GlassLink
-              href={project.githubUrl}
-              className="pb-2 flex-1 text-center"
-            >
-              View on GitHub
-            </GlassLink>
+            {project.githubUrl && (
+              <GlassLink
+                href={project.githubUrl}
+                className="pb-2 flex-1 text-center"
+              >
+                View on GitHub
+              </GlassLink>
+            )}
             {project.liveUrl && (
               <GlassLink className="flex-1 w-full" href={project.liveUrl}>
                 <GlassButton className="w-full">Visit Live Site</GlassButton>

@@ -4,19 +4,19 @@ import TimelineCard, { type TimelineCardProps } from "./TimelineCard";
 
 const milestones: TimelineCardProps[] = [
   {
-    title: "KrishiAI Development",
-    date: "Sep 2025 - Present",
-    location: "Smart India Hackathon 2025",
+    title: "Web Wing Coordinator",
+    date: "Aug 2025 - Present",
+    location: "Coding Club, Assam Engineering College",
     description:
-      "Led team Nexhaust for SIH 2025; built KrishiAI, lead developer/system architect",
+      "Leading the web wing; developing official platforms like CodeWar and mentoring junior developers",
     status: "ongoing",
   },
   {
-    title: "Released LotL",
+    title: "Released lotl",
     date: "Aug 2025",
     location: "npmjs",
     description:
-      "Released LotL, a CLI tool for converting Markdown documents to PDF, on npm",
+      "Released lotl, a CLI tool for converting Markdown documents to PDF, on npm",
   },
   {
     title: "Full-Stack & SBC Intern",

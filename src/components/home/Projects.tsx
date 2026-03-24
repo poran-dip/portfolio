@@ -17,15 +17,37 @@ const Projects = () => {
       id: 1,
       title: "ODStream",
       description:
-        "Plug-and-play GUI for real-time object detection with YOLO models. Includes remote deployment support on SBC drones like Raspberry Pi and seamless custom model integration.",
+        "Full-stack real-time object detection platform with multi-user LAN support, YOLOv5/v7 integration, and edge deployment pipeline. Compatible with Intel RealSense hardware.",
       image: "projects/odstream.jpg",
-      technologies: ["Vite", "Flask", "OpenCV", "SocketIO", "MJPEG"],
+      technologies: ["React", "Flask", "SocketIO", "YOLOv5/v7", "MJPEG"],
       githubUrl: "https://github.com/poran-dip/uwod-rc",
       liveUrl: "https://github.com/poran-dip/uwod-rc",
       status: "Complete",
     },
     {
       id: 2,
+      title: "CodeWar 7.0",
+      description:
+        "Immersive event website for Pyrokinesis' annual coding competition. Built with Three.js featuring game-like HUD and dynamic camera movement.",
+      image: "projects/codewar.jpg",
+      technologies: ["React", "Three.js", "Motion", "Next.js"],
+      githubUrl: "",
+      liveUrl: "https://codewar.aec.ac.in",
+      status: "Live",
+    },
+    {
+      id: 3,
+      title: "lotl",
+      description:
+        "High-performance CLI and library to convert Markdown to PDF in under 2 seconds. Supports themes, layout customization, and programmatic usage.",
+      image: "projects/lotl.jpg",
+      technologies: ["Puppeteer", "Marked", "Commander", "Chalk"],
+      githubUrl: "https://github.com/poran-dip/lotl",
+      liveUrl: "https://www.npmjs.com/package/lotl",
+      status: "Live",
+    },
+    {
+      id: 4,
       title: "Eazydoc",
       description:
         "AI-powered healthcare platform for effortless specialist matching, streamlined appointment management, and powerful hospital admin controls.",
@@ -34,29 +56,7 @@ const Projects = () => {
       githubUrl: "https://github.com/poran-dip/eazy-doc",
       liveUrl: "https://eazydoc-jade.vercel.app",
       status: "Live",
-    },
-    {
-      id: 3,
-      title: "EatWise",
-      description:
-        "Smart refrigeration app that dynamically adjusts fridge temperature based on stored items, extending shelf life and sending expiry notifications straight to your phone.",
-      image: "projects/eatwise.jpg",
-      technologies: ["HTML", "CSS", "JS", "React Native"],
-      githubUrl: "https://github.com/poran-dip/eatwise",
-      liveUrl: "https://poran-dip.github.io/eatwise/",
-      status: "Live",
-    },
-    {
-      id: 4,
-      title: "Journful",
-      description:
-        "Mindful social platform where users share one journal-style post a day—designed to build meaningful connections without the doomscrolling.",
-      image: "projects/journful.jpg",
-      technologies: ["React", "Next.js", "Prisma", "Supabase"],
-      githubUrl: "https://github.com/poran-dip/social",
-      liveUrl: "https://journful.vercel.app/",
-      status: "In Development",
-    },
+    }
   ];
 
   return (
@@ -150,15 +150,27 @@ const Projects = () => {
                     >
                       Details
                     </GlassButton>
-                    <GlassButton
-                      className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.githubUrl, "_blank");
-                      }}
-                    >
-                      GitHub →
-                    </GlassButton>
+                    {project.githubUrl ? (
+                      <GlassButton
+                        className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.githubUrl, "_blank");
+                        }}
+                      >
+                        GitHub →
+                      </GlassButton>
+                    ) : project.liveUrl && (
+                      <GlassButton
+                        className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.liveUrl!, "_blank");
+                        }}
+                      >
+                        Visit
+                      </GlassButton>
+                    )}
                   </div>
                 </div>
               </div>
@@ -166,9 +178,9 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8 text-xl">
+        <div className="text-center mt-8">
           <GlassLink href="https://github.com/poran-dip?tab=repositories">
-            View All Projects on GitHub {"→"}
+            View All Projects
           </GlassLink>
         </div>
       </GlassCard>
