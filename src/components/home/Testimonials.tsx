@@ -10,7 +10,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Mom",
-      role: "Professional Life Giver",
+      role: "My Mom",
       rating: 5,
       review:
         "The website looks so cute! You know, so many intelligent people have changed the world with their computers. This is truly awesome, beta. Though I still don't understand why you stay up all night coding...",
@@ -18,18 +18,18 @@ const Testimonials = () => {
     },
     {
       name: "Memu",
-      role: "Chief Feline Officer",
+      role: "Best-est Cat",
       rating: 4,
       review:
-        "Meow mrrrow! *purrs approvingly* Mrow meow meow. *knocks over water glass* Meow.",
+        "Meow mrrrow! *purrs approvingly* Mrow meow. Meow.",
       avatar: "memu.png",
     },
     {
-      name: "My 2020 Self",
-      role: "Past Me (Innocent Era)",
+      name: "Me (2020)",
+      role: "Past Self",
       rating: 5,
       review:
-        "Dude, I never knew I had a glass fetish until I saw this design. The transparency, the blur effects, the subtle gradients... *chef's kiss* Future me has taste!",
+        "This looks insane! I have no idea how you made this, but I'm excited to build this in the future! Wait... if I build this now, would that cause a time paradox?",
       avatar: "profile.png",
     },
   ];
@@ -49,7 +49,7 @@ const Testimonials = () => {
     <GlassCard id="testimonials" hoverable={false} className="scroll-mt-20">
       <GlassHeading>TESTIMONIALS</GlassHeading>
       <GlassParagraph className="mt-6 text-lg! mb-8!">
-        What people (and cats) are saying about my work...
+        What people are saying about my work...
       </GlassParagraph>
 
       <div className="grid md:grid-cols-3 gap-6">
@@ -89,9 +89,8 @@ const Testimonials = () => {
 
       <div className="mt-8 text-center">
         <GlassParagraph className="text-sm! opacity-60 italic">
-          * Testimonials may be slightly fabricated for comedic effect. Memu's
-          review was translated from Cat. Will be updated with real content
-          later (or not).
+          * Testimonials may be slightly fabricated for comedic effect. Will
+          be updated with real content later (or not).
         </GlassParagraph>
       </div>
     </GlassCard>

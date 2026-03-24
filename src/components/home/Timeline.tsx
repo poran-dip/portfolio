@@ -32,7 +32,7 @@ const Timeline = () => {
     <GlassCard id="timeline" hoverable={false} className="scroll-mt-20">
       <GlassHeading>MY JOURNEY</GlassHeading>
       <GlassParagraph className="mt-6 text-lg!">
-        Leveling up with every project I venture on.
+        A timeline of projects, roles, and everything in between.
       </GlassParagraph>
 
       <div className="my-4 flex flex-col">

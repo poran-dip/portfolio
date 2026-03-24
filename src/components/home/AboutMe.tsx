@@ -81,7 +81,7 @@ const AboutMe = () => {
         <div className="relative">
           <GlassHeading level={3}>My Story</GlassHeading>
           <GlassParagraph className="mt-4 text-lg leading-relaxed">
-            Hey there! I'm Poran Dip, a 21-year-old CS student from Guwahati,
+            Hey there! I'm Poran Dip, a 22-year-old CS student from Guwahati,
             Assam, living my best life building pixel-perfect web apps, dropping
             hard-hitting EDM tracks, and crafting immersive gaming experiences.
             I'm all about that sweet spot where creativity meets code.

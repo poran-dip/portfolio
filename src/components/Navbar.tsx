@@ -22,14 +22,14 @@ const Navbar = () => {
         opacity-70 hover:opacity-100
         hover:backdrop-blur-md hover:bg-white/30 dark:hover:bg-black/30
         transition-all duration-300
-        shadow-sm py-4
+        shadow-sm py-3
       "
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <GlassHeading level={3}>Poran Dip</GlassHeading>
+        <GlassHeading level={4}>Poran Dip</GlassHeading>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-20 text-xl">
+        <div className="hidden md:flex space-x-12 text-lg">
           <GlassLink href="/#projects" variant="internal">
             PROJECTS
           </GlassLink>
@@ -76,8 +76,8 @@ const Navbar = () => {
       <div
         className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
       >
-        <div className="px-6 py-4 space-y-4 backdrop-blur-md bg-white/30 dark:bg-black/30 border-t border-white/20 dark:border-white/10">
-          <div className="flex flex-col space-y-4 text-lg">
+        <div className="px-6 py-3 space-y-4 backdrop-blur-md bg-white/30 dark:bg-black/30 border-t border-white/20 dark:border-white/10">
+          <div className="flex flex-col space-y-4">
             <GlassLink href="#projects" variant="internal" onClick={closeMenu}>
               PROJECTS
             </GlassLink>

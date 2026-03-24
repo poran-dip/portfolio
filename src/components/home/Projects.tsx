@@ -21,7 +21,7 @@ const Projects = () => {
       image: "projects/odstream.jpg",
       technologies: ["React", "Flask", "SocketIO", "YOLOv5/v7", "MJPEG"],
       githubUrl: "https://github.com/poran-dip/uwod-rc",
-      liveUrl: "https://github.com/poran-dip/uwod-rc",
+      liveUrl: "",
       status: "Complete",
     },
     {
@@ -64,8 +64,8 @@ const Projects = () => {
       <GlassCard id="projects" hoverable={false} className="scroll-mt-20">
         <GlassHeading>PROJECTS</GlassHeading>
         <GlassParagraph className="mt-6 text-lg!">
-          Building not just projects, but experiences, innovations, and (insert
-          trendy buzzword here)!
+          Building not just projects, but experiences (and occasionally
+          overengineering a to-do app I made 2 years ago).
         </GlassParagraph>
 
         <div className="my-6 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -158,7 +158,7 @@ const Projects = () => {
                           window.open(project.githubUrl, "_blank");
                         }}
                       >
-                        GitHub →
+                        GitHub
                       </GlassButton>
                     ) : project.liveUrl && (
                       <GlassButton

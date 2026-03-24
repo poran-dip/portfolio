@@ -13,7 +13,7 @@ const Footer = () => {
         flex flex-col items-center justify-center
       `}
     >
-      <GlassHeading level={5}>
+      <GlassHeading level={6}>
         © {new Date().getFullYear()} Poran Dip
       </GlassHeading>
       <div className="flex flex-col items-center">
@@ -24,7 +24,7 @@ const Footer = () => {
           {" + "}
           <GlassLink href="https://tailwindcss.com/">TailwindCSS</GlassLink>
         </GlassParagraph>
-        <GlassParagraph className="text-base">And lots of 💚</GlassParagraph>
+        <GlassParagraph className="text-sm">And lots of 💚</GlassParagraph>
       </div>
     </footer>
   );
