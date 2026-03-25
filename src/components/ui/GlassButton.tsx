@@ -33,7 +33,7 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
       className={cn(
         glass.base,
         !disabled ? glass.hover : "opacity-50 cursor-not-allowed",
-        "px-6 py-3 rounded-xl shadow-md font-medium",
+        "px-6 py-3 rounded-xl shadow-md font-medium flex items-center justify-center",
         variants[variant],
         className,
       )}
