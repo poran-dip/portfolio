@@ -71,7 +71,7 @@ const HeroCard = () => {
 
       <GlassCard
         hoverable={false}
-        className={`relative z-10 min-h-screen bg-linear-to-br from-blue-900/5 via-purple-900/5 to-cyan-900/5 flex items-center justify-center p-4 md:p-8 pt-24 md:pt-8 rounded-none transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        className={`relative z-10 min-h-screen bg-linear-to-br from-blue-900/5 via-purple-900/5 to-cyan-900/5 flex items-center justify-center p-4 md:p-8 pt-20 md:pt-16 lg:pt-8 rounded-none transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
         {/* Mouse follower glow */}
         <div
@@ -161,18 +161,8 @@ const HeroCard = () => {
                     variant="success"
                     className="w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group cursor-pointer"
                   >
-                    <span className="relative z-10">Let's Connect</span>
+                    <span className="relative z-10">Get In Touch</span>
                     <div className="absolute inset-0 bg-linear-to-r from-green-500/20 to-cyan-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-                  </GlassButton>
-                </a>
-
-                <a href="/blog" className="no-underline">
-                  <GlassButton
-                    variant="danger"
-                    className="w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group cursor-pointer"
-                  >
-                    <span className="relative z-10">Read Blog</span>
-                    <div className="absolute inset-0 bg-linear-to-r from-red-500/20 to-orange-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                   </GlassButton>
                 </a>
               </div>

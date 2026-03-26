@@ -29,7 +29,7 @@ const milestones: TimelineCardProps[] = [
 
 const Timeline = () => {
   return (
-    <GlassCard id="timeline" hoverable={false} className="scroll-mt-20">
+    <GlassCard id="timeline" hoverable={false} className="scroll-mt-16">
       <GlassHeading>MY JOURNEY</GlassHeading>
       <GlassParagraph className="mt-6 text-lg!">
         A timeline of projects, roles, and everything in between.

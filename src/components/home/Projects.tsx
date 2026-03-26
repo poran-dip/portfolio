@@ -61,7 +61,7 @@ const Projects = () => {
 
   return (
     <>
-      <GlassCard id="projects" hoverable={false} className="scroll-mt-20">
+      <GlassCard id="projects" hoverable={false} className="scroll-mt-16">
         <GlassHeading>PROJECTS</GlassHeading>
         <GlassParagraph className="mt-6 text-lg!">
           Building not just projects, but experiences (and occasionally

@@ -45,7 +45,7 @@ const Testimonials = () => {
   };
 
   return (
-    <GlassCard id="testimonials" hoverable={false} className="scroll-mt-20">
+    <GlassCard id="testimonials" hoverable={false} className="scroll-mt-16">
       <GlassHeading>TESTIMONIALS</GlassHeading>
       <GlassParagraph className="mt-6 text-lg! mb-8!">
         What people are saying about my work...

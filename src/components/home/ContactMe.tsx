@@ -14,7 +14,7 @@ const ContactMe = () => {
   const [state, handleSubmit] = useForm("xpwlpbwa");
 
   return (
-    <GlassCard id="contact" hoverable={false} className="scroll-mt-20">
+    <GlassCard id="contact" hoverable={false} className="scroll-mt-16">
       <GlassHeading>CONTACT ME</GlassHeading>
 
       {!state.succeeded ? (

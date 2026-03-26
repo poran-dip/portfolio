@@ -27,10 +27,10 @@ const Home = () => {
     <GlassLayout className="mx-auto flex flex-col justify-start items-center">
       <Navbar />
       <HeroSection />
-      <main className="mt-12 px-6 w-full md:max-w-7xl space-y-12 items-center">
+      <main className="mt-12 px-4 sm:px-6 w-full md:max-w-7xl space-y-12 items-center">
+        <AboutMe />
         <Projects />
         <Timeline />
-        <AboutMe />
         <ContactMe />
         <Testimonials />
         <Newsletter />

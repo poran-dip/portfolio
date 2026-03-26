@@ -10,13 +10,12 @@ import {
   Star,
   Music,
   Gamepad2Icon,
-  Ellipsis,
+  Settings,
 } from "lucide-react";
 import {
   GlassButton,
   GlassCard,
   GlassHeading,
-  GlassLink,
   GlassParagraph,
 } from "@/components/ui";
 import SocialLink, { type SocialLinkProps } from "./SocialLink";
@@ -74,13 +73,17 @@ const AboutMe = () => {
   ];
 
   return (
-    <GlassCard hoverable={false} id="about" className="scroll-mt-20">
-      <GlassHeading>ABOUT ME</GlassHeading>
-      <div className="mt-6 space-y-8">
+    <section id="about" className="scroll-mt-8 py-4 md:py-12 lg:py-16">
+      <div className="flex items-center gap-4">
+        <GlassHeading level={3} className="font-bold whitespace-nowrap">ABOUT ME</GlassHeading>
+        <div className="h-px flex-1 bg-white/20" />
+      </div>
+
+      <div className="mt-6 flex flex-col gap-12">
         {/* Story */}
-        <div className="relative">
-          <GlassHeading level={3}>My Story</GlassHeading>
-          <GlassParagraph className="mt-4 text-lg leading-relaxed">
+        <div className="mt-2 relative">
+          <GlassHeading level={4}>My Story</GlassHeading>
+          <GlassParagraph className="mt-4">
             Hey there! I'm Poran Dip, a 22-year-old CS student from Guwahati,
             Assam, living my best life building pixel-perfect web apps, dropping
             hard-hitting EDM tracks, and crafting immersive gaming experiences.
@@ -89,62 +92,62 @@ const AboutMe = () => {
         </div>
 
         <div>
-          <GlassHeading level={3}>My Skill Trees</GlassHeading>
+          <GlassHeading level={4}>Skill Trees</GlassHeading>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-4">
+          <div className="mt-6 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {/* Web Dev */}
-            <GlassCard className="from-blue-400/80! to-purple-500/80!">
-              <div className="flex space-x-4 items-center">
-                <Code2 className="h-5 w-5 text-blue-50" />
-                <GlassHeading level={5} className="font-bold! text-blue-50!">
-                  Web Wizardry
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-violet-400/80! to-blue-500/80!">
+              <div className="flex items-center gap-4">
+                <Code2 className="h-5 w-5 text-indigo-50" />
+                <GlassHeading level={6} className="text-indigo-50!">
+                  Full-Stack Atelier
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-base text-blue-50!">
-                React, TypeScript, TailwindCSS, Vite, Node.js, Prisma, Flask,
-                MongoDB, Postgres, Supabase, Custom UI Components
+              <GlassParagraph className="text-indigo-50!">
+                TypeScript, Python · React, Next.js, TailwindCSS, React Router,
+                Vite · Node.js, Express, Socket.IO, Flask · PostgreSQL, Prisma
               </GlassParagraph>
             </GlassCard>
 
             {/* Music */}
-            <GlassCard className="from-pink-400/80! to-red-500/80!">
-              <div className="flex space-x-4 items-center">
-                <Music className="h-5 w-5 text-rose-50" />
-                <GlassHeading level={5} className="font-bold! text-rose-50!">
-                  Music Alchemy
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-indigo-400/80! to-sky-500/80!">
+              <div className="flex items-center gap-4">
+                <Settings className="h-5 w-5 text-blue-50" />
+                <GlassHeading level={6} className="text-blue-50!">
+                  Developer Toolkit
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-base text-rose-50!">
-                EDM, Electro Pop, Lo-Fi, J-Pop, Game OST, and more; FL Studio,
-                Piano, Music Theory, Sound Design, Mixing & Mastering
+              <GlassParagraph className="text-blue-50!">
+                Git, GitHub, GitHub Actions · Docker · CLI Tooling (Chalk, Commander)
+                · Browser Extensions (MV3) · npm Package Publishing
               </GlassParagraph>
             </GlassCard>
 
             {/* Game Dev */}
-            <GlassCard className="from-green-400/80! to-emerald-500/80!">
-              <div className="flex space-x-4 items-center">
-                <Gamepad2Icon className="h-5 w-5 text-lime-50" />
-                <GlassHeading level={5} className="font-bold! text-lime-50!">
-                  Game Dev Forge
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-cyan-400/80! to-emerald-500/80!">
+              <div className="flex items-center gap-4">
+                <Music className="h-5 w-5 text-teal-50" />
+                <GlassHeading level={6} className="text-teal-50!">
+                  Music Production Lab
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-base text-lime-50!">
-                Visual Novels, FPS Battlers (newbie); RenPy, Twine, Unity
-                (basics); Programming, Art & Animations, OST Production
+              <GlassParagraph className="text-teal-50!">
+                EDM, Electropop, Lo-Fi, J-Pop, Game OST · FL Studio, Sylenth1,
+                Piano · Sound Design, Mixing, Mastering, Music Theory
               </GlassParagraph>
             </GlassCard>
 
             {/* Misc */}
-            <GlassCard className="from-yellow-400/80! to-orange-500/80!">
-              <div className="flex space-x-4 items-center">
-                <Ellipsis className="h-5 w-5 text-amber-50" />
-                <GlassHeading level={5} className="font-bold! text-amber-50!">
-                  Misc Arcana
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-teal-400/80! to-green-500/80!">
+              <div className="flex items-center gap-4">
+                <Gamepad2Icon className="h-5 w-5 text-emerald-50" />
+                <GlassHeading level={6} className="text-emerald-50!">
+                  Game Dev Forge
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-base text-amber-50!">
-                YOLO-based Object Detection, LAN & WiFi Networking, AI Chatbot
-                Prototypes, SBC Deployments (Jetson Nano)
+              <GlassParagraph className="text-emerald-50!">
+                Visual Novels, FPS Prototypes · Ren'Py, Twine, Unity · Programming,
+                Art, Animation, Soundtrack Production
               </GlassParagraph>
             </GlassCard>
           </div>
@@ -152,8 +155,8 @@ const AboutMe = () => {
 
         {/* Social Links */}
         <div>
-          <GlassHeading level={3}>My Online Presence</GlassHeading>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+          <GlassHeading level={4}>Online Presence</GlassHeading>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
             {socialLinks.map((link) => (
               <SocialLink key={link.platform} {...link} />
             ))}
@@ -162,16 +165,16 @@ const AboutMe = () => {
 
         {/* Fun facts */}
         <div>
-          <GlassHeading level={3}>Random Fun Facts About Me</GlassHeading>
-          <div className="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <GlassCard className="flex flex-col from-green-500/60! to-emerald-600/60!">
-              <div className="flex items-center space-x-2">
-                <span className="text-2xl">🌱</span>
-                <GlassHeading level={5} className="text-lime-50!">
+          <GlassHeading level={4}>Random Fun Facts</GlassHeading>
+          <div className="mt-6 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-lime-500/60! to-emerald-600/60!">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🌱</span>
+                <GlassHeading level={6} className="text-green-50!">
                   Radish Enjoyer
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-lime-50!">
+              <GlassParagraph className="text-green-50!">
                 Big Genshin fan! My little{" "}
                 <a
                   href="https://youtu.be/7zkCp_kVtj4"
@@ -184,19 +187,19 @@ const AboutMe = () => {
               </GlassParagraph>
             </GlassCard>
 
-            <GlassCard className="flex flex-col from-red-500/60! to-orange-600/60!">
-              <div className="flex items-center space-x-2">
-                <span className="text-2xl">🥔</span>
-                <GlassHeading level={5} className="text-orange-50!">
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-teal-500/60! to-sky-600/60!">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🥔</span>
+                <GlassHeading level={6} className="text-cyan-50!">
                   Anime Enthusiast
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-red-50!">
+              <GlassParagraph className="text-cyan-50!">
                 Team Light Yagami for{" "}
                 <a
                   href="https://youtu.be/KC6T3_O2iWc"
                   target="_blank"
-                  className="underline decoration-dotted decoration-orange-200 dark:decoration-orange-400 hover:text-orange-200 dark:hover:text-orange-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-cyan-200 dark:decoration-cyan-400 hover:text-cyan-200 dark:hover:text-cyan-400 hover:decoration-solid"
                 >
                   professional chip eating
                 </a>
@@ -204,18 +207,18 @@ const AboutMe = () => {
               </GlassParagraph>
             </GlassCard>
 
-            <GlassCard className="flex flex-col from-amber-500/60! to-yellow-600/60!">
-              <div className="flex items-center space-x-2">
-                <span className="text-2xl">♘</span>
-                <GlassHeading level={5} className="text-yellow-50!">
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-indigo-500/60! to-purple-600/60!">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">♘</span>
+                <GlassHeading level={6} className="text-violet-50!">
                   Brilliant Blunderer
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-slate-50!">
+              <GlassParagraph className="text-violet-50!">
                 <a
                   href="https://anarchychess.fandom.com/wiki/%22Google_en_passant%22_Comment_Chain"
                   target="_blank"
-                  className="underline decoration-dotted decoration-yellow-200 dark:decoration-yellow-400 hover:text-yellow-200 dark:hover:text-yellow-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-violet-200 dark:decoration-violet-400 hover:text-violet-200 dark:hover:text-violet-400 hover:decoration-solid"
                 >
                   Holy hell!
                 </a>{" "}
@@ -223,26 +226,26 @@ const AboutMe = () => {
                 <a
                   href="https://www.chess.com/member/porandip/stats/rapid?days=0"
                   target="_blank"
-                  className="underline decoration-dotted decoration-yellow-200 dark:decoration-yellow-400 hover:text-yellow-200 dark:hover:text-yellow-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-violet-200 dark:decoration-violet-400 hover:text-violet-200 dark:hover:text-violet-400 hover:decoration-solid"
                 >
                   (top 0.5% worldwide)
                 </a>
               </GlassParagraph>
             </GlassCard>
 
-            <GlassCard className="flex flex-col from-purple-500/60! to-indigo-600/60!">
-              <div className="flex items-center space-x-2">
-                <span className="text-2xl">🐀</span>
-                <GlassHeading level={5} className="text-blue-50!">
+            <GlassCard className="p-4 md:p-5 flex flex-col gap-3 from-fuchsia-500/60! to-rose-600/60!">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🐀</span>
+                <GlassHeading level={6} className="text-pink-50!">
                   OG Story Weaver
                 </GlassHeading>
               </div>
-              <GlassParagraph className="mt-2 text-purple-50!">
+              <GlassParagraph className="text-pink-50!">
                 Been crafting digital tales since age 10 with Twine. My{" "}
                 <a
                   href="/flea-market.html"
                   target="_blank"
-                  className="underline decoration-dotted decoration-blue-200 dark:decoration-blue-400 hover:text-blue-200 dark:hover:text-blue-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-pink-200 dark:decoration-pink-400 hover:text-pink-200 dark:hover:text-pink-400 hover:decoration-solid"
                 >
                   "Rat Killers" flea market
                 </a>{" "}
@@ -251,20 +254,22 @@ const AboutMe = () => {
             </GlassCard>
           </div>
         </div>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <GlassLink href="Poran_Dip_Resume.pdf">
-            <GlassButton className="w-full cursor-pointer" variant="success">
-              Download My Resume
+
+        {/* CTA buttons */}
+        <div className="pt-3 sm:pt-6 flex flex-col sm:flex-row gap-3 sm:gap-6 sm:justify-center">
+          <a href="Poran_Dip_Resume.pdf">
+            <GlassButton className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12">
+              View Resume
             </GlassButton>
-          </GlassLink>
-          <GlassLink href="#testimonials" variant="internal">
-            <GlassButton variant="secondary" className="w-full cursor-pointer">
-              View Testimonials
+          </a>
+          <a href="/#testimonials">
+            <GlassButton variant="success" className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12">
+              Testimonials
             </GlassButton>
-          </GlassLink>
+          </a>
         </div>
       </div>
-    </GlassCard>
+    </section>
   );
 };
 

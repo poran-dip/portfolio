@@ -1,12 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GlassHeading, GlassLink } from "./ui";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
+  const scrolledStyles = `
+    backdrop-blur-sm bg-white/20 dark:bg-black/20
+    border-b border-white/20 dark:border-white/10
+    opacity-80 hover:opacity-100 shadow-sm
+    hover:backdrop-blur-md hover:bg-white/30 dark:hover:bg-black/30
+  `;
+
+  const topStyles = `
+    bg-transparent
+    border-b border-transparent
+    shadow-none
+  `;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   const closeMenu = () => {
@@ -15,17 +40,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className="
+      className={`
         fixed top-0 left-0 right-0 z-40
-        backdrop-blur-sm bg-white/20 dark:bg-black/20
-        border-b border-white/20 dark:border-white/10
-        opacity-70 hover:opacity-100
-        hover:backdrop-blur-md hover:bg-white/30 dark:hover:bg-black/30
         transition-all duration-300
-        shadow-sm
-      "
+        ${scrolled ? scrolledStyles : topStyles}
+      `}
     >
-      <div className="container mx-auto px-3 md:px-6 py-3 flex items-center justify-between">
+      <div className={`container mx-auto px-3 md:px-6 ${scrolled ? 'py-3' : 'py-5'} flex items-center justify-between transition-all duration-300`}>
         <GlassHeading level={4}>
           <a href="/#">Poran Dip</a>
         </GlassHeading>
@@ -59,13 +80,13 @@ const Navbar = () => {
         >
           <div className="w-5 h-4 flex flex-col justify-between">
             <span
-              className={`block h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.75" : ""}`}
+              className={`block h-0.5 bg-black/80 dark:bg-white/80 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.75" : ""}`}
             ></span>
             <span
-              className={`block h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
+              className={`block h-0.5 bg-black/80 dark:bg-white/80 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
             ></span>
             <span
-              className={`block h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.75" : ""}`}
+              className={`block h-0.5 bg-black/80 dark:bg-white/80 transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.75" : ""}`}
             ></span>
           </div>
         </button>
