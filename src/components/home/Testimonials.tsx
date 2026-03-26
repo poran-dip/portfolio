@@ -20,8 +20,7 @@ const Testimonials = () => {
       name: "Memu",
       role: "Best-est Cat",
       rating: 4,
-      review:
-        "Meow mrrrow! *purrs approvingly* Mrow meow. Meow.",
+      review: "Meow mrrrow! *purrs approvingly* Mrow meow. Meow.",
       avatar: "memu.png",
     },
     {
@@ -89,8 +88,8 @@ const Testimonials = () => {
 
       <div className="mt-8 text-center">
         <GlassParagraph className="text-sm! opacity-60 italic">
-          * Testimonials may be slightly fabricated for comedic effect. Will
-          be updated with real content later (or not).
+          * Testimonials may be slightly fabricated for comedic effect. Will be
+          updated with real content later (or not).
         </GlassParagraph>
       </div>
     </GlassCard>

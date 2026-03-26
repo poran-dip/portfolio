@@ -56,7 +56,7 @@ const Projects = () => {
       githubUrl: "https://github.com/poran-dip/eazy-doc",
       liveUrl: "https://eazydoc-jade.vercel.app",
       status: "Live",
-    }
+    },
   ];
 
   return (
@@ -160,16 +160,18 @@ const Projects = () => {
                       >
                         GitHub
                       </GlassButton>
-                    ) : project.liveUrl && (
-                      <GlassButton
-                        className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(project.liveUrl!, "_blank");
-                        }}
-                      >
-                        Visit
-                      </GlassButton>
+                    ) : (
+                      project.liveUrl && (
+                        <GlassButton
+                          className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(project.liveUrl!, "_blank");
+                          }}
+                        >
+                          Visit
+                        </GlassButton>
+                      )
                     )}
                   </div>
                 </div>

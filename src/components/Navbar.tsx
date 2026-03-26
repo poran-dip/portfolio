@@ -26,7 +26,9 @@ const Navbar = () => {
       "
     >
       <div className="container mx-auto px-3 md:px-6 py-3 flex items-center justify-between">
-        <GlassHeading level={4}><a href="/#">Poran Dip</a></GlassHeading>
+        <GlassHeading level={4}>
+          <a href="/#">Poran Dip</a>
+        </GlassHeading>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-12 text-lg">
@@ -75,10 +77,20 @@ const Navbar = () => {
       >
         <div className="px-6 py-4 space-y-4 border-t border-white/20 dark:border-white/10">
           <div className="flex flex-col space-y-4">
-            <GlassLink href="#about" variant="internal" onClick={closeMenu} className="border-b border-white/15 pb-4">
+            <GlassLink
+              href="#about"
+              variant="internal"
+              onClick={closeMenu}
+              className="border-b border-white/15 pb-4"
+            >
               ABOUT
             </GlassLink>
-            <GlassLink href="#projects" variant="internal" onClick={closeMenu} className="border-b border-white/15 pb-4">
+            <GlassLink
+              href="#projects"
+              variant="internal"
+              onClick={closeMenu}
+              className="border-b border-white/15 pb-4"
+            >
               WORK
             </GlassLink>
             <GlassLink
@@ -89,7 +101,12 @@ const Navbar = () => {
             >
               MUSIC
             </GlassLink>
-            <GlassLink href="#contact" variant="internal" onClick={closeMenu} className="border-b border-white/15 pb-4">
+            <GlassLink
+              href="#contact"
+              variant="internal"
+              onClick={closeMenu}
+              className="border-b border-white/15 pb-4"
+            >
               CONTACT
             </GlassLink>
 

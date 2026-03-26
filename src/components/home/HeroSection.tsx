@@ -22,29 +22,26 @@ const HeroCard = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const titles = [
-    "CS Student",
-    "Software Developer",
-    "Music Producer",
-  ];
+  const titles = ["CS Student", "Software Developer", "Music Producer"];
   const [currentTitle, setCurrentTitle] = useState(0);
 
   const particles = useMemo(
-    () => [
-      [...Array(20)].map((_, i) => {
-        const t = i / 19;
-        return { left: t * 100, top: t * 100 };
-      }),
-      [...Array(10)].map((_, i) => {
-        const t = i / 9;
-        return { left: 50 + t * 50, top: t * 50 };
-      }),
-      [...Array(10)].map((_, i) => {
-        const t = i / 9;
-        return { left: t * 50, top: 50 + t * 50 };
-      }),
-    ].flat(),
-    []
+    () =>
+      [
+        [...Array(20)].map((_, i) => {
+          const t = i / 19;
+          return { left: t * 100, top: t * 100 };
+        }),
+        [...Array(10)].map((_, i) => {
+          const t = i / 9;
+          return { left: 50 + t * 50, top: t * 50 };
+        }),
+        [...Array(10)].map((_, i) => {
+          const t = i / 9;
+          return { left: t * 50, top: 50 + t * 50 };
+        }),
+      ].flat(),
+    [],
   );
 
   useEffect(() => {
@@ -129,8 +126,8 @@ const HeroCard = () => {
               {/* Bio */}
               <div className="space-y-4 sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 <p className="opacity-90">
-                  I build full-stack apps and occasionally overengineer things for 
-                  fun. I also produce music. 🎶
+                  I build full-stack apps and occasionally overengineer things
+                  for fun. I also produce music. 🎶
                 </p>
 
                 <p className="opacity-90">
@@ -147,9 +144,7 @@ const HeroCard = () => {
                   (Yuegui supremacy).
                 </p>
 
-                <p className="opacity-90">
-                  Based in Assam, India. 🇮🇳
-                </p>
+                <p className="opacity-90">Based in Assam, India. 🇮🇳</p>
               </div>
 
               {/* CTA buttons */}
