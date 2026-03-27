@@ -1,3 +1,4 @@
+import type { Project } from "@/types/project";
 import {
   GlassButton,
   GlassCard,
@@ -5,17 +6,6 @@ import {
   GlassLink,
   GlassParagraph,
 } from "@/components/ui";
-
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  githubUrl: string;
-  liveUrl: string | null;
-  status: string;
-}
 
 interface ProjectModalProps {
   project: Project | null;
@@ -26,8 +16,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center h-screen">
-      <GlassCard className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div onClick={onClose} className="fixed inset-0 p-3 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center h-screen">
+      <GlassCard hoverable={false} className="max-w-2xl w-full max-h-[90vh] overflow-y-auto p-4 md:p-5">
         <div className="relative">
           <button
             onClick={onClose}
@@ -38,9 +28,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover object-top rounded-lg mb-6"
+            className="w-full h-40 sm:h-52 md:h-64 object-cover object-top rounded-lg mb-6"
           />
-          <GlassHeading className="text-2xl mb-4">{project.title}</GlassHeading>
+          <GlassHeading level={4} className="font-bold mb-4">{project.title}</GlassHeading>
           <GlassParagraph className="text-base mb-6">
             {project.description}
           </GlassParagraph>
@@ -61,18 +51,18 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
+          <div className="flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-center">
+            {project.liveUrl && (
+              <a href={project.liveUrl}>
+                <GlassButton className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12">Visit Live Site</GlassButton>
+              </a>
+            )}
             {project.githubUrl && (
               <GlassLink
                 href={project.githubUrl}
-                className="pb-2 flex-1 text-center"
+                className="w-full sm:w-40 lg:w-48 pb-2 text-center text-sm lg:text-base"
               >
                 View on GitHub
-              </GlassLink>
-            )}
-            {project.liveUrl && (
-              <GlassLink className="flex-1 w-full" href={project.liveUrl}>
-                <GlassButton className="w-full">Visit Live Site</GlassButton>
               </GlassLink>
             )}
           </div>

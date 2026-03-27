@@ -58,7 +58,7 @@ const Testimonials = () => {
           What people are saying about my work...
         </GlassParagraph>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid lg:grid-cols-3 gap-4">
           {testimonials.map((testimonial, index) => (
             <GlassCard
               key={index}
