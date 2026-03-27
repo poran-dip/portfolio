@@ -21,7 +21,7 @@ const ContactMe = () => {
         <GlassHeading level={3} className="font-bold whitespace-nowrap">
           CONTACT ME
         </GlassHeading>
-        <div className="h-px flex-1 bg-white/20" />
+        <div className="h-px flex-1 bg-black/20 dark:bg-white/20" />
       </div>
 
       {!state.succeeded ? (
