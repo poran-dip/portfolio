@@ -75,7 +75,9 @@ const AboutMe = () => {
   return (
     <section id="about" className="scroll-mt-8 py-4 md:py-12 lg:py-16">
       <div className="flex items-center gap-4">
-        <GlassHeading level={3} className="font-bold whitespace-nowrap">ABOUT ME</GlassHeading>
+        <GlassHeading level={3} className="font-bold whitespace-nowrap">
+          ABOUT ME
+        </GlassHeading>
         <div className="h-px flex-1 bg-white/20" />
       </div>
 
@@ -118,8 +120,8 @@ const AboutMe = () => {
                 </GlassHeading>
               </div>
               <GlassParagraph className="text-blue-50!">
-                Git, GitHub, GitHub Actions · Docker · CLI Tooling (Chalk, Commander)
-                · Browser Extensions (MV3) · npm Package Publishing
+                Git, GitHub, GitHub Actions · Docker · CLI Tooling (Chalk,
+                Commander) · Browser Extensions (MV3) · npm Package Publishing
               </GlassParagraph>
             </GlassCard>
 
@@ -146,8 +148,8 @@ const AboutMe = () => {
                 </GlassHeading>
               </div>
               <GlassParagraph className="text-emerald-50!">
-                Visual Novels, FPS Prototypes · Ren'Py, Twine, Unity · Programming,
-                Art, Animation, Soundtrack Production
+                Visual Novels, FPS Prototypes · Ren'Py, Twine, Unity ·
+                Programming, Art, Animation, Soundtrack Production
               </GlassParagraph>
             </GlassCard>
           </div>
@@ -263,7 +265,10 @@ const AboutMe = () => {
             </GlassButton>
           </a>
           <a href="/#testimonials">
-            <GlassButton variant="success" className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12">
+            <GlassButton
+              variant="success"
+              className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
+            >
               Testimonials
             </GlassButton>
           </a>

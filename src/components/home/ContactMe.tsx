@@ -15,7 +15,9 @@ const ContactMe = () => {
   return (
     <section id="contact" className="scroll-mt-8 py-4 md:py-12 lg:py-16">
       <div className="flex items-center gap-4">
-        <GlassHeading level={3} className="font-bold whitespace-nowrap">CONTACT ME</GlassHeading>
+        <GlassHeading level={3} className="font-bold whitespace-nowrap">
+          CONTACT ME
+        </GlassHeading>
         <div className="h-px flex-1 bg-white/20" />
       </div>
 
@@ -113,11 +115,11 @@ const ContactMe = () => {
           </GlassParagraph>
 
           <div className="flex justify-center">
-            <GlassButton 
+            <GlassButton
               onClick={() => {
                 reset();
                 document.getElementById("contact")?.scrollIntoView();
-              }} 
+              }}
               className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
             >
               Message Again

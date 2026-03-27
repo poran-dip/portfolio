@@ -46,7 +46,9 @@ const Navbar = () => {
         ${scrolled ? scrolledStyles : topStyles}
       `}
     >
-      <div className={`container mx-auto px-3 md:px-6 ${scrolled ? 'py-3' : 'py-5'} flex items-center justify-between transition-all duration-300`}>
+      <div
+        className={`container mx-auto px-3 md:px-6 ${scrolled ? "py-3" : "py-5"} flex items-center justify-between transition-all duration-300`}
+      >
         <GlassHeading level={4}>
           <a href="/#">Poran Dip</a>
         </GlassHeading>
