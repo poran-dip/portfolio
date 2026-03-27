@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { glass } from "@/styles/glass";
 import type { BaseProps } from "@/types/glass.types";
 
-// Add this to your GlassButton file or create a separate component
 interface GlassFilePickerProps extends BaseProps {
   variant?: "primary" | "secondary" | "success" | "danger";
   disabled?: boolean;
@@ -12,7 +11,7 @@ interface GlassFilePickerProps extends BaseProps {
 
 export const GlassFilePicker: React.FC<GlassFilePickerProps> = ({
   children,
-  variant = "success",
+  variant = "primary",
   className = "",
   disabled = false,
   name,

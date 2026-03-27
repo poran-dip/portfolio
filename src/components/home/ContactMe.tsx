@@ -1,7 +1,6 @@
 import { useForm, ValidationError } from "@formspree/react";
 import {
   GlassButton,
-  GlassCard,
   GlassFilePicker,
   GlassHeading,
   GlassInput,
@@ -11,27 +10,27 @@ import {
 } from "@/components/ui";
 
 const ContactMe = () => {
-  const [state, handleSubmit] = useForm("xpwlpbwa");
+  const [state, handleSubmit, reset] = useForm("xpwlpbwa");
 
   return (
-    <GlassCard id="contact" hoverable={false} className="scroll-mt-16">
-      <GlassHeading>CONTACT ME</GlassHeading>
+    <section id="contact" className="scroll-mt-8 py-4 md:py-12 lg:py-16">
+      <div className="flex items-center gap-4">
+        <GlassHeading level={3} className="font-bold whitespace-nowrap">CONTACT ME</GlassHeading>
+        <div className="h-px flex-1 bg-white/20" />
+      </div>
 
       {!state.succeeded ? (
-        <div className="mt-6 space-y-4">
-          <GlassParagraph className="text-lg! mb-0!">
+        <div className="mt-6 flex flex-col gap-6">
+          <GlassParagraph>
             Need a tech solution? Want to collab on a track? Got a song that
             needs mixing or mastering? Dreaming of your own game? Just wanna say
-            hi?
-          </GlassParagraph>
-          <GlassParagraph className="text-lg! mt-0!">
-            <strong>Let’s make it happen</strong>—get in touch today!
+            hi? <strong>Let's make it happen</strong>—get in touch today!
           </GlassParagraph>
 
           <form
             onSubmit={handleSubmit}
             encType="multipart/form-data"
-            className="gap-6 grid grid-cols-1 md:grid-cols-2"
+            className="gap-3 grid grid-cols-1 md:grid-cols-2"
           >
             <GlassInput
               type="text"
@@ -87,31 +86,46 @@ const ContactMe = () => {
               />
             </div>
 
-            <GlassFilePicker
-              name="attachment"
-              variant="success"
-              className="from-lime-400/80! to-lime-500/80! text-white"
-            >
-              Add attachment (optional)
-            </GlassFilePicker>
+            <div className="pt-3 sm:pt-6 md:col-span-2 flex flex-col sm:flex-row gap-3 sm:gap-6 sm:justify-center">
+              <GlassFilePicker
+                name="attachment"
+                className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
+              >
+                Add Attachment
+              </GlassFilePicker>
 
-            <GlassButton
-              type="submit"
-              className="px-4 py-2 cursor-pointer rounded bg-blue-500/80 text-white font-semibold hover:bg-blue-600/80 transition"
-            >
-              Submit
-            </GlassButton>
+              <GlassButton
+                type="submit"
+                variant="success"
+                disabled={state.submitting}
+                className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
+              >
+                {state.submitting ? "Sending..." : "Submit"}
+              </GlassButton>
+            </div>
           </form>
         </div>
       ) : (
-        <div className="grid md:grid-cols-4">
-          <GlassParagraph className="text-lg! mt-4 md:col-span-4">
-            Thanks for submitting! I will get back to you within 48 hours.
+        <div className="mt-6 flex flex-col gap-6">
+          <GlassParagraph>
+            Thanks for reaching out! I will get back to you within 48 hours.
             Looking forward to working together!
           </GlassParagraph>
+
+          <div className="flex justify-center">
+            <GlassButton 
+              onClick={() => {
+                reset();
+                document.getElementById("contact")?.scrollIntoView();
+              }} 
+              className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
+            >
+              Message Again
+            </GlassButton>
+          </div>
         </div>
       )}
-    </GlassCard>
+    </section>
   );
 };
 
