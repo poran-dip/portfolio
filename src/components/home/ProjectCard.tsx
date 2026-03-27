@@ -1,10 +1,15 @@
 import type { Project } from "@/types/project";
 import { glass } from "@/styles/glass";
-import { GlassButton, GlassCard, GlassHeading, GlassParagraph } from "@/components/ui";
+import {
+  GlassButton,
+  GlassCard,
+  GlassHeading,
+  GlassParagraph,
+} from "@/components/ui";
 
 interface ProjectCardProps {
-  project: Project
-  setSelectedProject: (project: Project) => void
+  project: Project;
+  setSelectedProject: (project: Project) => void;
 }
 
 const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
@@ -116,7 +121,7 @@ const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
         </div>
       </div>
     </GlassCard>
-  )
-}
+  );
+};
 
 export default ProjectCard;

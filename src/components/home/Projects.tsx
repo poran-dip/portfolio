@@ -1,10 +1,6 @@
 import type { Project } from "@/types/project";
 import { useState } from "react";
-import {
-  GlassButton,
-  GlassHeading,
-  GlassParagraph,
-} from "@/components/ui";
+import { GlassButton, GlassHeading, GlassParagraph } from "@/components/ui";
 import ProjectModal from "./ProjectModal";
 import ProjectCard from "./ProjectCard";
 
@@ -76,7 +72,10 @@ const Projects = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {projects.map((project) => (
-              <ProjectCard project={project} setSelectedProject={setSelectedProject} />
+              <ProjectCard
+                project={project}
+                setSelectedProject={setSelectedProject}
+              />
             ))}
           </div>
 

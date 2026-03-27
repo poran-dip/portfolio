@@ -56,7 +56,11 @@ const Timeline = () => {
 
           <div className="flex">
             <div className="flex flex-col items-center pt-1">
-              <Dot size={60} strokeWidth={0.35} className="text-black dark:text-white" />
+              <Dot
+                size={60}
+                strokeWidth={0.35}
+                className="text-black dark:text-white"
+              />
 
               <div
                 className={`grow w-0.5 bg-linear-to-b from-gray-900/30 dark:from-gray-100/30 to-transparent`}
@@ -65,9 +69,13 @@ const Timeline = () => {
 
             <div className="flex-1 space-y-5 pt-5 pb-6">
               <div className="space-y-px">
-                <GlassHeading level={6} className="font-bold">Journey begins</GlassHeading>
+                <GlassHeading level={6} className="font-bold">
+                  Journey begins
+                </GlassHeading>
               </div>
-              <GlassParagraph>And thus, a little radish sprouted!</GlassParagraph>
+              <GlassParagraph>
+                And thus, a little radish sprouted!
+              </GlassParagraph>
             </div>
           </div>
         </div>

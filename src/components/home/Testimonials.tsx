@@ -54,9 +54,7 @@ const Testimonials = () => {
       </div>
 
       <div className="mt-6 flex flex-col gap-6">
-        <GlassParagraph>
-          What people are saying about my work...
-        </GlassParagraph>
+        <GlassParagraph>What people are saying about my work...</GlassParagraph>
 
         <div className="grid lg:grid-cols-3 gap-4">
           {testimonials.map((testimonial, index) => (
@@ -73,9 +71,7 @@ const Testimonials = () => {
                   className="mr-2"
                 />
                 <div className="flex-1">
-                  <GlassHeading level={6}>
-                    {testimonial.name}
-                  </GlassHeading>
+                  <GlassHeading level={6}>{testimonial.name}</GlassHeading>
                   <GlassParagraph className="text-sm! opacity-75 mb-1!">
                     {testimonial.role}
                   </GlassParagraph>
@@ -95,8 +91,8 @@ const Testimonials = () => {
 
         <div className="mt-2 text-center">
           <GlassParagraph className="text-sm sm:text-base opacity-60 italic">
-            * Testimonials may be slightly fabricated for comedic effect. Will be
-            updated with real content later (or not).
+            * Testimonials may be slightly fabricated for comedic effect. Will
+            be updated with real content later (or not).
           </GlassParagraph>
         </div>
       </div>

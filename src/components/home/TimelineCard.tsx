@@ -31,7 +31,9 @@ const TimelineCard = ({
 
       <div className="flex-1 space-y-5 pt-2 pb-6">
         <div className="space-y-px">
-          <GlassHeading level={6} className="font-bold">{title}</GlassHeading>
+          <GlassHeading level={6} className="font-bold">
+            {title}
+          </GlassHeading>
           <GlassParagraph className="text-sm italic">
             {location && `${location} · `}
             {date}
