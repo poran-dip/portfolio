@@ -73,7 +73,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <section id="about" className="scroll-mt-8 py-4 md:py-12 lg:py-16">
+    <section id="about" className="scroll-mt-8 py-4 md:py-12">
       <div className="flex items-center gap-4">
         <GlassHeading level={3} className="font-bold whitespace-nowrap">
           ABOUT ME

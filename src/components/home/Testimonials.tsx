@@ -45,54 +45,62 @@ const Testimonials = () => {
   };
 
   return (
-    <GlassCard id="testimonials" hoverable={false} className="scroll-mt-16">
-      <GlassHeading>TESTIMONIALS</GlassHeading>
-      <GlassParagraph className="mt-6 text-lg! mb-8!">
-        What people are saying about my work...
-      </GlassParagraph>
+    <section id="testimonials" className="scroll-mt-8 py-4 md:py-12">
+      <div className="flex items-center gap-4">
+        <GlassHeading level={3} className="font-bold whitespace-nowrap">
+          TESTIMONIALS
+        </GlassHeading>
+        <div className="h-px flex-1 bg-white/20" />
+      </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <GlassCard
-            key={index}
-            className="flex flex-col h-full from-blue-500/30! to-cyan-300/30!"
-          >
-            {/* Header with avatar and rating */}
-            <div className="flex items-center gap-4 mb-4">
-              <GlassAvatar
-                src={testimonial.avatar}
-                alt={`${testimonial.name} avatar`}
-                size="lg"
-                className="mr-2"
-              />
-              <div className="flex-1">
-                <GlassHeading level={4} className="mb-1!">
-                  {testimonial.name}
-                </GlassHeading>
-                <GlassParagraph className="text-sm! opacity-75 mb-2!">
-                  {testimonial.role}
-                </GlassParagraph>
-                <div className="flex gap-1">
-                  {renderStars(testimonial.rating)}
+      <div className="mt-6 flex flex-col gap-6">
+        <GlassParagraph>
+          What people are saying about my work...
+        </GlassParagraph>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          {testimonials.map((testimonial, index) => (
+            <GlassCard
+              key={index}
+              className="p-3 md:p-5 flex flex-col h-full from-blue-500/30! to-cyan-300/30!"
+            >
+              {/* Header with avatar and rating */}
+              <div className="flex items-center gap-3 mb-2">
+                <GlassAvatar
+                  src={testimonial.avatar}
+                  alt={`${testimonial.name} avatar`}
+                  size="md"
+                  className="mr-2"
+                />
+                <div className="flex-1">
+                  <GlassHeading level={6}>
+                    {testimonial.name}
+                  </GlassHeading>
+                  <GlassParagraph className="text-sm! opacity-75 mb-1!">
+                    {testimonial.role}
+                  </GlassParagraph>
+                  <div className="flex gap-1">
+                    {renderStars(testimonial.rating)}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Review content */}
-            <GlassParagraph className="flex-1 text-base! leading-relaxed italic">
-              "{testimonial.review}"
-            </GlassParagraph>
-          </GlassCard>
-        ))}
-      </div>
+              {/* Review content */}
+              <GlassParagraph className="flex-1 text-base! leading-relaxed italic">
+                "{testimonial.review}"
+              </GlassParagraph>
+            </GlassCard>
+          ))}
+        </div>
 
-      <div className="mt-8 text-center">
-        <GlassParagraph className="text-sm! opacity-60 italic">
-          * Testimonials may be slightly fabricated for comedic effect. Will be
-          updated with real content later (or not).
-        </GlassParagraph>
+        <div className="mt-2 text-center">
+          <GlassParagraph className="text-sm sm:text-base opacity-60 italic">
+            * Testimonials may be slightly fabricated for comedic effect. Will be
+            updated with real content later (or not).
+          </GlassParagraph>
+        </div>
       </div>
-    </GlassCard>
+    </section>
   );
 };
 

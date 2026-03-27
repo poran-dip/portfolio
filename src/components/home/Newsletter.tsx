@@ -2,7 +2,7 @@ import { GlassHeading, GlassParagraph } from "@/components/ui";
 
 const Newsletter = () => {
   return (
-    <section id="newsletter" className="scroll-mt-8 py-4 md:py-12 lg:py-16">
+    <section id="newsletter" className="scroll-mt-8 py-4 md:py-12">
       <div className="flex items-center gap-4">
         <GlassHeading level={3} className="font-bold whitespace-nowrap">
           NEWSLETTER
@@ -14,7 +14,7 @@ const Newsletter = () => {
           Subscribe to my newsletter and follow along as I share updates on my
           projects, music, and whatever I'm building next.
         </GlassParagraph>
-        <GlassParagraph className="italic opacity-60">
+        <GlassParagraph className="text-sm sm:text-base italic opacity-60">
           Coming soon, stay tuned!
         </GlassParagraph>
       </div>
