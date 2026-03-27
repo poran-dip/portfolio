@@ -15,7 +15,6 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
   return (
     <GlassCard
-      key={project.id}
       className="p-4 md:p-5 group relative overflow-hidden rounded-xl h-64 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
       onClick={() => setSelectedProject(project)}
     >

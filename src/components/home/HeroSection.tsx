@@ -12,6 +12,7 @@ const HeroCard = () => {
   const scrollX = typeof window !== "undefined" ? window.scrollX : 0;
   const scrollY = typeof window !== "undefined" ? window.scrollY : 0;
   const [isVisible, setIsVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -51,6 +52,10 @@ const HeroCard = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Floating particles */}
@@ -74,15 +79,17 @@ const HeroCard = () => {
         className={`relative z-10 min-h-screen bg-linear-to-br from-blue-900/5 via-purple-900/5 to-cyan-900/5 flex items-center justify-center p-4 md:p-8 pt-20 md:pt-16 lg:pt-8 rounded-none transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
       >
         {/* Mouse follower glow */}
-        <div
-          className="absolute w-120 h-120 rounded-full pointer-events-none"
-          style={{
-            left: mousePosition.x + scrollX - 240,
-            top: mousePosition.y + scrollY - 240,
-            background:
-              "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, transparent 70%)",
-          }}
-        ></div>
+        {mounted && (
+          <div
+            className="absolute w-120 h-120 rounded-full pointer-events-none"
+            style={{
+              left: mousePosition.x + scrollX - 240,
+              top: mousePosition.y + scrollY - 240,
+              background:
+                "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, transparent 70%)",
+            }}
+          ></div>
+        )}
 
         <div className="max-w-7xl w-full mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-3 lg:gap-12 items-center space-y-8 lg:space-y-0">

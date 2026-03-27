@@ -56,7 +56,10 @@ const Projects = () => {
 
   return (
     <>
-      <section id="projects" className="scroll-mt-8 py-4 md:py-12">
+      <section
+        id="projects"
+        className="scroll-mt-16 md:scroll-mt-12 py-4 md:py-12"
+      >
         <div className="flex items-center gap-4">
           <GlassHeading level={3} className="font-bold whitespace-nowrap">
             PROJECTS
@@ -73,6 +76,7 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {projects.map((project) => (
               <ProjectCard
+                key={project.id}
                 project={project}
                 setSelectedProject={setSelectedProject}
               />

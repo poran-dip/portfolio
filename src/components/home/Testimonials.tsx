@@ -45,7 +45,10 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="scroll-mt-8 py-4 md:py-12">
+    <section
+      id="testimonials"
+      className="scroll-mt-16 md:scroll-mt-12 py-4 md:py-12"
+    >
       <div className="flex items-center gap-4">
         <GlassHeading level={3} className="font-bold whitespace-nowrap">
           TESTIMONIALS
