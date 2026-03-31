@@ -118,7 +118,7 @@ const HeroCard = () => {
             <div className="w-full lg:col-span-2 space-y-6 lg:space-y-8 text-center lg:text-left px-4 lg:px-0">
               {/* Name */}
               <div className="space-y-3 lg:space-y-4">
-                <GlassHeading className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-linear-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+                <GlassHeading className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide bg-linear-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
                   Poran Dip
                 </GlassHeading>
 

@@ -6,6 +6,7 @@ import {
   GlassLink,
   GlassParagraph,
 } from "@/components/ui";
+import { X } from "lucide-react";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -24,13 +25,15 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         hoverable={false}
         className="max-w-2xl w-full max-h-[90vh] overflow-y-auto p-4 md:p-5"
       >
-        <div className="relative">
-          <button
-            onClick={onClose}
-            className="absolute -top-2 right-2 text-shadow-lg text-white/70 hover:text-white text-4xl z-10"
-          >
-            ×
-          </button>
+        <GlassButton
+          variant="danger"
+          onClick={onClose}
+          className="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 p-1 rounded-lg text-white/90 hover:text-white z-10 cursor-pointer"
+        >
+          <X />
+        </GlassButton>
+
+        <div>
           <img
             src={project.image}
             alt={project.title}
