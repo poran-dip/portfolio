@@ -1,8 +1,8 @@
-import type { Project } from "@/types/project";
 import { useState } from "react";
 import { GlassButton, GlassHeading, GlassParagraph } from "@/components/ui";
-import ProjectModal from "./ProjectModal";
+import type { Project } from "@/types/project";
 import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);

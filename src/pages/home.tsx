@@ -1,5 +1,3 @@
-import type { Route } from "./+types/home";
-import { GlassLayout } from "@/components/ui";
 import { Footer, Navbar, ScrollToTop } from "@/components";
 import {
   AboutMe,
@@ -10,8 +8,10 @@ import {
   Testimonials,
   Timeline,
 } from "@/components/home";
+import { GlassLayout } from "@/components/ui";
+import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "Poran Dip — Developer & Music Producer" },
     {

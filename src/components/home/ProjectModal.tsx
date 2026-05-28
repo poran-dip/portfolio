@@ -1,4 +1,4 @@
-import type { Project } from "@/types/project";
+import { X } from "lucide-react";
 import {
   GlassButton,
   GlassCard,
@@ -6,7 +6,7 @@ import {
   GlassLink,
   GlassParagraph,
 } from "@/components/ui";
-import { X } from "lucide-react";
+import type { Project } from "@/types/project";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -17,10 +17,14 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   if (!project) return null;
 
   return (
-    <div
-      onClick={onClose}
-      className="fixed inset-0 p-3 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center h-screen"
-    >
+    <div className="fixed inset-0 p-3 z-50 flex items-center justify-center h-screen">
+      <button
+        type="button"
+        aria-hidden="true"
+        tabIndex={-1}
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-default"
+        onClick={onClose}
+      />
       <GlassCard
         hoverable={false}
         className="max-w-2xl w-full max-h-[90vh] overflow-y-auto p-4 md:p-5"
@@ -51,9 +55,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               Technologies Used:
             </h4>
             <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
+              {project.technologies.map((tech) => (
                 <span
-                  key={index}
+                  key={tech}
                   className="px-3 py-1 bg-white/10 rounded-full text-sm text-white/80"
                 >
                   {tech}

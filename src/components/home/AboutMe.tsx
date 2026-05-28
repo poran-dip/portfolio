@@ -1,16 +1,16 @@
 import {
   Code2,
   Gamepad2,
-  Github,
-  Music2,
-  Linkedin,
-  Instagram,
-  Youtube,
-  Twitter,
-  Star,
-  Music,
   Gamepad2Icon,
+  Github,
+  Instagram,
+  Linkedin,
+  Music,
+  Music2,
   Settings,
+  Star,
+  Twitter,
+  Youtube,
 } from "lucide-react";
 import {
   GlassButton,
@@ -182,6 +182,7 @@ const AboutMe = () => {
                   href="https://youtu.be/7zkCp_kVtj4"
                   className="underline decoration-dotted decoration-green-200 dark:decoration-green-400 hover:text-green-200 dark:hover:text-green-400 hover:decoration-solid"
                   target="_blank"
+                  rel="noopener"
                 >
                   radish God Nahida
                 </a>{" "}
@@ -202,6 +203,7 @@ const AboutMe = () => {
                   href="https://youtu.be/KC6T3_O2iWc"
                   target="_blank"
                   className="underline decoration-dotted decoration-cyan-200 dark:decoration-cyan-400 hover:text-cyan-200 dark:hover:text-cyan-400 hover:decoration-solid"
+                  rel="noopener"
                 >
                   professional chip eating
                 </a>
@@ -221,6 +223,7 @@ const AboutMe = () => {
                   href="https://anarchychess.fandom.com/wiki/%22Google_en_passant%22_Comment_Chain"
                   target="_blank"
                   className="underline decoration-dotted decoration-violet-200 dark:decoration-violet-400 hover:text-violet-200 dark:hover:text-violet-400 hover:decoration-solid"
+                  rel="noopener"
                 >
                   Holy hell!
                 </a>{" "}
@@ -229,6 +232,7 @@ const AboutMe = () => {
                   href="https://www.chess.com/member/porandip/stats/rapid?days=0"
                   target="_blank"
                   className="underline decoration-dotted decoration-violet-200 dark:decoration-violet-400 hover:text-violet-200 dark:hover:text-violet-400 hover:decoration-solid"
+                  rel="noopener"
                 >
                   (top 0.5% worldwide)
                 </a>
@@ -248,6 +252,7 @@ const AboutMe = () => {
                   href="/flea-market.html"
                   target="_blank"
                   className="underline decoration-dotted decoration-pink-200 dark:decoration-pink-400 hover:text-pink-200 dark:hover:text-pink-400 hover:decoration-solid"
+                  rel="noopener"
                 >
                   "Rat Killers" flea market
                 </a>{" "}

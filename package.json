@@ -1,15 +1,25 @@
 {
-  "name": "portfolio",
+  "name": "poran-dev",
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "description": "Poran Dip's personal portfolio and developer website.",
+  "keywords": [
+    "portfolio",
+    "poran-dip",
+    "react",
+    "react-router",
+    "tailwindcss",
+    "typescript"
+  ],
   "packageManager": "pnpm@11.4.0",
   "scripts": {
     "dev": "react-router dev --host",
     "build": "react-router build",
     "start": "react-router-serve ./build/server/index.js",
-    "lint": "biome lint .",
-    "format": "biome format --write ."
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "lint": "biome check --write",
+    "format": "biome format --write"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

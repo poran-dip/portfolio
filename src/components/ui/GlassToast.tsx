@@ -42,6 +42,7 @@ export const GlassToast: React.FC<GlassToastProps> = ({
         <span className="font-medium">{message}</span>
         {onClose && (
           <button
+            type="button"
             onClick={onClose}
             className={cn(
               "ml-3 text-current hover:opacity-70 transition-opacity",

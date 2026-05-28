@@ -1,8 +1,8 @@
-import type { Route } from "./+types/blog";
-import { GlassHeading, GlassLayout, GlassParagraph } from "@/components/ui";
 import { Footer, Navbar } from "@/components";
+import { GlassHeading, GlassLayout, GlassParagraph } from "@/components/ui";
+import type { Route } from "./+types/blog";
 
-export function meta({}: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "Blog | Poran Dip" },
     {

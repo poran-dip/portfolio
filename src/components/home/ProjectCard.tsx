@@ -1,11 +1,11 @@
-import type { Project } from "@/types/project";
-import { glass } from "@/styles/glass";
 import {
   GlassButton,
   GlassCard,
   GlassHeading,
   GlassParagraph,
 } from "@/components/ui";
+import { glass } from "@/styles/glass";
+import type { Project } from "@/types/project";
 
 interface ProjectCardProps {
   project: Project;
@@ -67,9 +67,9 @@ const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
         <div className="space-y-4">
           {/* Tech Stack */}
           <div className="flex flex-wrap gap-1">
-            {project.technologies.slice(0, 4).map((tech, index) => (
+            {project.technologies.slice(0, 4).map((tech) => (
               <span
-                key={index}
+                key={tech}
                 className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/10 backdrop-blur-sm rounded-md text-sm text-white/80 border border-white/20 hover:scale-105 hover:-translate-y-1 duration-200"
               >
                 {tech}
@@ -109,6 +109,7 @@ const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
                   className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
                   onClick={(e) => {
                     e.stopPropagation();
+                    // biome-ignore lint: live url always exists
                     window.open(project.liveUrl!, "_blank");
                   }}
                 >

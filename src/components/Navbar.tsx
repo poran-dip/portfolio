@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { GlassHeading, GlassLink } from "./ui";
 import ThemeToggle from "./ThemeToggle";
+import { GlassHeading, GlassLink } from "./ui";
 
 const Navbar = () => {
   const scrolledStyles = `
@@ -76,6 +76,7 @@ const Navbar = () => {
 
         {/* Mobile Hamburger Button */}
         <button
+          type="button"
           onClick={toggleMenu}
           className="md:hidden p-2 rounded-lg backdrop-blur-sm bg-white/20 dark:bg-black/20 border border-white/20 dark:border-white/10 hover:bg-white/30 dark:hover:bg-black/30 transition-all duration-300"
           aria-label="Toggle menu"

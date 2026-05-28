@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
 import { Rocket, Sparkles, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 import type { Route } from "./+types/not-found";
 
-export function meta({}: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "404 — Page Not Found | Poran Dip" },
     {
@@ -59,7 +59,8 @@ const NotFound404 = () => {
       <div className="absolute inset-0">
         {[...Array(15)].map((_, i) => (
           <div
-            key={`sparkle-${i}`}
+            //biome-ignore lint: stable
+            key={i}
             className="absolute animate-pulse"
             style={{
               left: `${(i * 7 + 10) % 90}%`,
@@ -77,7 +78,8 @@ const NotFound404 = () => {
       <div className="absolute inset-0">
         {[...Array(25)].map((_, i) => (
           <div
-            key={`star-${i}`}
+            // biome-ignore lint: stable
+            key={i}
             className="absolute animate-ping"
             style={{
               left: `${(i * 13 + 5) % 95}%`,
@@ -111,7 +113,8 @@ const NotFound404 = () => {
           <div className="absolute inset-0">
             {[...Array(6)].map((_, i) => (
               <div
-                key={`trail-${i}`}
+                // biome-ignore lint: stable
+                key={i}
                 className="absolute w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-40"
                 style={{
                   left: `${45 + Math.cos((rocketFloat - i * 20) * 0.017) * 15}%`,
@@ -160,6 +163,7 @@ const NotFound404 = () => {
 
       {/* Enhanced button with space effects */}
       <button
+        type="button"
         onClick={() => (window.location.href = "/")}
         className="relative z-10 mt-8 px-8 py-4 rounded-full 
                    bg-linear-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold 

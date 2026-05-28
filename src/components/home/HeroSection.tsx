@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
 import { ChevronDown } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import {
   GlassAvatar,
   GlassButton,
@@ -50,7 +50,7 @@ const HeroCard = () => {
       setCurrentTitle((prev) => (prev + 1) % titles.length);
     }, 2500);
     return () => clearInterval(interval);
-  }, []);
+  }, [titles.length]);
 
   useEffect(() => {
     setMounted(true);
@@ -62,7 +62,7 @@ const HeroCard = () => {
       <div className="absolute inset-0">
         {particles.map((p, i) => (
           <div
-            key={i}
+            key={`${p.left}-${p.top}`}
             className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full animate-bounce"
             style={{
               left: `${p.left}%`,

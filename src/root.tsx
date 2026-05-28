@@ -74,17 +74,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
 
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              document.documentElement.classList.toggle(
-                "dark",
-                localStorage.theme === "dark" ||
-                (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-              );
-            `,
-          }}
-        />
+        <script>
+          {`
+            try {
+              const isDark = localStorage.theme === "dark" || 
+                (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+              
+              document.documentElement.classList.toggle("dark", isDark);
+            } catch (_) {}
+          `}
+        </script>
       </head>
       <body className="font-sans">
         {children}

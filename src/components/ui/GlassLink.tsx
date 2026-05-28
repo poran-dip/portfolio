@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import type { BaseProps } from "@/types/glass.types";
 import { glassAnimations } from "@/styles/glass";
+import type { BaseProps } from "@/types/glass.types";
 
 interface GlassLinkProps
   extends BaseProps,

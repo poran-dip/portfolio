@@ -36,6 +36,7 @@ const Testimonials = () => {
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
+        // biome-ignore lint: stable
         key={i}
         className={`w-4 h-4 ${
           i < rating ? "text-yellow-400 fill-current" : "text-gray-400"
@@ -60,9 +61,9 @@ const Testimonials = () => {
         <GlassParagraph>What people are saying about my work...</GlassParagraph>
 
         <div className="grid lg:grid-cols-3 gap-4">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <GlassCard
-              key={index}
+              key={testimonial.name}
               className="p-3 md:p-5 flex flex-col h-full from-blue-500/30! to-cyan-300/30!"
             >
               {/* Header with avatar and rating */}

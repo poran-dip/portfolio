@@ -46,9 +46,9 @@ const Timeline = () => {
         </GlassParagraph>
 
         <div className="flex flex-col">
-          {milestones.map((m, i) => (
+          {milestones.map((m) => (
             <TimelineCard
-              key={`timeline-${i}`}
+              key={m.date}
               title={m.title}
               location={m.location}
               date={m.date}

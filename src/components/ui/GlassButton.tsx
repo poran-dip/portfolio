@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import type { BaseProps } from "@/types/glass.types";
 import { glass } from "@/styles/glass";
+import type { BaseProps } from "@/types/glass.types";
 
 interface GlassButtonProps
   extends BaseProps,
@@ -30,6 +30,7 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
 
   return (
     <button
+      type="button"
       className={cn(
         glass.base,
         !disabled ? glass.hover : "opacity-50 cursor-not-allowed",
