@@ -63,6 +63,7 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap",
   },
+  { rel: "canonical", href: "https://poran.dev" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
