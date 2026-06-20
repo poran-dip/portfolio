@@ -124,14 +124,14 @@ const HeroCard = () => {
 
                 {/* Animated role titles */}
                 <div className="h-6 sm:h-8 overflow-hidden">
-                  <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-400 transition-all duration-500 transform">
+                  <p className="text-lg sm:text-xl lg:text-3xl font-semibold text-blue-400 transition-all duration-500 transform">
                     {titles[currentTitle]}
                   </p>
                 </div>
               </div>
 
               {/* Bio */}
-              <div className="space-y-4 sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <div className="space-y-4 sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
                 <p className="opacity-90">
                   I build full-stack apps and occasionally overengineer things
                   for fun. I also produce music. 🎶
@@ -165,11 +165,11 @@ const HeroCard = () => {
 
                 <a href="#contact" className="no-underline">
                   <GlassButton
-                    variant="success"
+                    variant="secondary"
                     className="w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group cursor-pointer"
                   >
                     <span className="relative z-10">Get In Touch</span>
-                    <div className="absolute inset-0 bg-linear-to-r from-green-500/20 to-cyan-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-zinc-500/20 to-zinc-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
                   </GlassButton>
                 </a>
               </div>

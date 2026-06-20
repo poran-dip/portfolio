@@ -35,7 +35,7 @@ const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
       {/* Status Badge */}
       <div className="absolute top-4 right-4 z-10">
         <span
-          className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
+          className={`px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
             project.status === "Live" || project.status === "Complete"
               ? "bg-green-500/30 text-green-200 border border-green-500/50"
               : project.status === "Beta"
