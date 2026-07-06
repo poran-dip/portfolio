@@ -1,1 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><g clip-path="url(#SvgjsClipPath1282)"><rect width="1000" height="1000" fill="#000000"></rect><g transform="matrix(0.9929078014184397,0,0,0.9929078014184397,150,150)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705 705" width="705" height="705"><path d="M 56 0 L 571 186 L 571 284 L 495 255 L 495 239 L 149 113 L 149 416 L 339 348 L 448 383 L 149 499 L 149 666 L 56 705 Z" fill="#fff"></path><path d="M 215 186 L 650 343 L 650 515 L 216 699 L 216 506 L 299 472 L 299 583 L 577 466 L 577 392 L 299 298 L 299 334 L 216 362 Z" fill="#fff"></path></svg></g></g><defs><clipPath id="SvgjsClipPath1282"><rect width="1000" height="1000" x="0" y="0" rx="200" ry="200"></rect></clipPath></defs></svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1000"
+  height="1000"
+>
+  <title>Poran Dip Logo</title>
+  <metadata>
+    <rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+    >
+      <rdf:Description>
+        <dc:creator>RealFaviconGenerator</dc:creator>
+        <dc:source> https://realfavicongenerator.net </dc:source>
+      </rdf:Description>
+    </rdf:RDF>
+  </metadata>
+  <g clip-path="url(#SvgjsClipPath1282)">
+    <rect width="1000" height="1000" fill="#000000"></rect>
+    <g transform="matrix(0.9929078014184397,0,0,0.9929078014184397,150,150)">
+      <path
+        d="M 56 0 L 571 186 L 571 284 L 495 255 L 495 239 L 149 113 L 149 416 L 339 348 L 448 383 L 149 499 L 149 666 L 56 705 Z"
+        fill="#fff"
+      ></path>
+      <path
+        d="M 215 186 L 650 343 L 650 515 L 216 699 L 216 506 L 299 472 L 299 583 L 577 466 L 577 392 L 299 298 L 299 334 L 216 362 Z"
+        fill="#fff"
+      ></path>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="SvgjsClipPath1282">
+      <rect width="1000" height="1000" x="0" y="0" rx="200" ry="200"></rect>
+    </clipPath>
+  </defs>
+</svg>
