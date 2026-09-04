@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Outfit", sans-serif;
+  --font-mono: "Inconsolata", monospace;
 
   /* deep sea bioluminescence palette */
   --color-abyss: #04060c;
@@ -15,7 +15,7 @@
   --color-bioglow: #2fe0c7;
   --color-jelly: #a374ff;
 
-  --color-current: #4fa8f0;
+  --color-tide: #4fa8f0;
   --color-lure: #f2b345;
   --color-vent: #f2495c;
 
@@ -151,11 +151,11 @@
 }
 
 @utility glass-info {
-  background: color-mix(in oklab, var(--color-current) 20%, transparent);
-  color: var(--color-current);
+  background: color-mix(in oklab, var(--color-tide) 20%, transparent);
+  color: var(--color-tide);
 
   &:hover {
-    background: color-mix(in oklab, var(--color-current) 30%, transparent);
+    background: color-mix(in oklab, var(--color-tide) 30%, transparent);
   }
 }
 
@@ -175,4 +175,27 @@
   &:hover {
     background: color-mix(in oklab, var(--color-vent) 30%, transparent);
   }
+}
+
+/* bioluminescent text glow */
+
+@keyframes bioglow-pulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 4px color-mix(in oklab, var(--color-bioglow) 70%, transparent),
+      0 0 10px color-mix(in oklab, var(--color-bioglow) 45%, transparent),
+      0 0 22px color-mix(in oklab, var(--color-jelly) 30%, transparent);
+  }
+  50% {
+    text-shadow:
+      0 0 6px color-mix(in oklab, var(--color-bioglow) 90%, transparent),
+      0 0 18px color-mix(in oklab, var(--color-bioglow) 65%, transparent),
+      0 0 36px color-mix(in oklab, var(--color-jelly) 55%, transparent),
+      0 0 54px color-mix(in oklab, var(--color-jelly) 25%, transparent);
+  }
+}
+
+@utility text-glow-bio {
+  animation: bioglow-pulse 3.2s ease-in-out infinite;
 }

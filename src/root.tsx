@@ -61,7 +61,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap",
   },
   { rel: "canonical", href: "https://poran.dev" },
 ];
@@ -75,7 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="font-sans">
+      <body className="font-mono">
         {children}
         <ScrollRestoration />
         <Scripts />
