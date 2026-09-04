@@ -1,135 +1,106 @@
-import { useForm, ValidationError } from "@formspree/react";
-import {
-  GlassButton,
-  GlassFilePicker,
-  GlassHeading,
-  GlassInput,
-  GlassLabel,
-  GlassParagraph,
-  GlassTextarea,
-} from "@/components/ui";
+import type { LucideIcon } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { contactEmailEncoded, contactPhoneEncoded } from "@/data/contact";
+import { socialLinks } from "@/data/social-links";
+import SocialLink from "./SocialLink";
+
+interface RevealContactProps {
+  icon: LucideIcon;
+  label: string;
+  encoded: string;
+  hrefPrefix: string;
+  formatHref?: (value: string) => string;
+}
+
+const RevealContact = ({
+  icon: Icon,
+  label,
+  encoded,
+  hrefPrefix,
+  formatHref,
+}: RevealContactProps) => {
+  const [value, setValue] = useState<string | null>(null);
+
+  return (
+    <div className="glass flex items-center gap-3 rounded-xl p-3 sm:p-4">
+      <span className="glass-panel flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg text-bioglow">
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+      </span>
+      <div className="flex flex-col min-w-0 flex-1">
+        <span className="text-xs sm:text-sm text-mist">{label}</span>
+        {value ? (
+          <a
+            href={`${hrefPrefix}${formatHref ? formatHref(value) : value}`}
+            className="text-sm sm:text-base font-medium text-foam hover:text-bioglow transition-colors duration-200 truncate"
+          >
+            {value}
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setValue(atob(encoded))}
+            className="text-left text-sm sm:text-base font-medium text-mist hover:text-bioglow transition-colors duration-200 cursor-pointer"
+          >
+            Click to reveal
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ContactMe = () => {
-  const [state, handleSubmit, reset] = useForm("xpwlpbwa");
+  const primaryLinks = socialLinks.filter((link) => link.primary);
+  const otherLinks = socialLinks.filter((link) => !link.primary);
 
   return (
     <section
       id="contact"
-      className="scroll-mt-16 md:scroll-mt-12 mx-auto max-w-7xl px-4 sm:px-6 py-4 md:py-12"
+      className="w-full scroll-mt-12 md:scroll-mt-14 mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-16"
     >
-      <div className="flex items-center gap-4">
-        <GlassHeading level={3} className="font-bold whitespace-nowrap">
-          CONTACT ME
-        </GlassHeading>
-        <div className="h-px flex-1 bg-black/20" />
-      </div>
+      <h3 className="font-bold whitespace-nowrap text-2xl">
+        <span className="text-jelly">&gt; </span>
+        <span className="text-bioglow">./</span>
+        <span className="text-foam">contact</span>
+      </h3>
 
-      {!state.succeeded ? (
-        <div className="mt-6 flex flex-col gap-6">
-          <GlassParagraph>
-            Need a tech solution? Want to collab on a track? Got a song that
-            needs mixing or mastering? Dreaming of your own game? Just wanna say
-            hi? <strong>Let's make it happen</strong>—get in touch today!
-          </GlassParagraph>
+      <div className="mt-6 flex flex-col gap-10">
+        <p className="text-foam opacity-90">
+          Open to full-time roles, freelance work, and collaborations. Reach out
+          through any of the channels below — I'll get back to you soon.
+        </p>
 
-          <form
-            onSubmit={handleSubmit}
-            encType="multipart/form-data"
-            className="gap-3 grid grid-cols-1 md:grid-cols-2"
-          >
-            <GlassInput
-              type="text"
-              name="_gotcha"
-              className="hidden"
-              autoComplete="off"
-            />
-            <div>
-              <GlassLabel htmlFor="name">Name *</GlassLabel>
-              <GlassInput
-                type="text"
-                name="name"
-                id="name"
-                required
-                autoComplete="name"
-              />
-              <ValidationError
-                prefix="Name"
-                field="name"
-                errors={state.errors}
-              />
-            </div>
-
-            <div>
-              <GlassLabel htmlFor="email">Email *</GlassLabel>
-              <GlassInput
-                type="email"
-                name="email"
-                id="email"
-                required
-                autoComplete="email"
-              />
-              <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-              />
-            </div>
-
-            <div className="md:col-span-2">
-              <GlassLabel htmlFor="message">Message *</GlassLabel>
-              <GlassTextarea
-                name="message"
-                id="message"
-                rows={4}
-                required
-                autoComplete="off"
-              />
-              <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-              />
-            </div>
-
-            <div className="pt-3 sm:pt-6 md:col-span-2 flex flex-col sm:flex-row gap-3 sm:gap-6 sm:justify-center">
-              <GlassFilePicker
-                name="attachment"
-                className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
-              >
-                Add Attachment
-              </GlassFilePicker>
-
-              <GlassButton
-                type="submit"
-                variant="success"
-                disabled={state.submitting}
-                className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
-              >
-                {state.submitting ? "Sending..." : "Submit"}
-              </GlassButton>
-            </div>
-          </form>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <RevealContact
+            icon={Mail}
+            label="Email"
+            encoded={contactEmailEncoded}
+            hrefPrefix="mailto:"
+          />
+          <RevealContact
+            icon={Phone}
+            label="Phone"
+            encoded={contactPhoneEncoded}
+            hrefPrefix="tel:"
+            formatHref={(value) => value.replace(/\s+/g, "")}
+          />
+          {primaryLinks.map((link) => (
+            <SocialLink key={link.platform} {...link} />
+          ))}
         </div>
-      ) : (
-        <div className="mt-6 flex flex-col gap-6">
-          <GlassParagraph>
-            Thanks for reaching out! I will get back to you within 48 hours.
-            Looking forward to working together!
-          </GlassParagraph>
 
-          <div className="flex justify-center">
-            <GlassButton
-              onClick={() => {
-                reset();
-                document.getElementById("contact")?.scrollIntoView();
-              }}
-              className="w-full sm:w-40 lg:w-48 cursor-pointer text-sm lg:text-base h-10 lg:h-12"
-            >
-              Message Again
-            </GlassButton>
+        <div>
+          <p className="text-sm text-mist mb-3">
+            Or check out my other official accounts
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {otherLinks.map((link) => (
+              <SocialLink key={link.platform} {...link} />
+            ))}
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 };

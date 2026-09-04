@@ -5,4 +5,5 @@ export interface SocialLink {
   Icon: LucideIcon;
   platform: string;
   description: string;
+  primary?: boolean;
 }

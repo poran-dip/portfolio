@@ -3,16 +3,18 @@ import type { SocialLink } from "@/types/social";
 
 export const socialLinks: SocialLink[] = [
   {
-    href: "https://github.com/poran-dip",
-    Icon: Link,
-    platform: "GitHub",
-    description: "code heaven",
-  },
-  {
     href: "https://linkedin.com/in/poran-dip/",
     Icon: Link,
     platform: "Linkedin",
     description: "professional me",
+    primary: true,
+  },
+  {
+    href: "https://github.com/poran-dip",
+    Icon: Link,
+    platform: "GitHub",
+    description: "code heaven",
+    primary: true,
   },
   {
     href: "https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM",

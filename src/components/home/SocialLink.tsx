@@ -1,18 +1,25 @@
-import { GlassLink } from "@/components/ui";
 import type { SocialLink as SocialLinkType } from "@/types/social";
 
 const SocialLink = ({ href, Icon, platform, description }: SocialLinkType) => {
   return (
-    <GlassLink
+    <a
       href={href}
-      className="p-2 sm:p-3 flex items-center gap-4 sm:gap-6 rounded-lg hover:bg-black/5 transition-all duration-200"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="glass glass-hover-sm group flex items-center gap-3 rounded-xl p-3 sm:p-4"
     >
-      <Icon className="shrink-0 w-5 sm:w-6 h-5 sm:h-6" />
-      <div className="flex flex-col">
-        <span className="text-sm sm:text-base">{platform}</span>
-        <span className="text-xs sm:text-sm opacity-60">{description}</span>
+      <span className="glass-panel flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg text-bioglow transition-colors duration-200 group-hover:text-jelly">
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+      </span>
+      <div className="flex flex-col min-w-0">
+        <span className="text-sm sm:text-base font-medium text-foam truncate">
+          {platform}
+        </span>
+        <span className="text-xs sm:text-sm text-mist truncate">
+          {description}
+        </span>
       </div>
-    </GlassLink>
+    </a>
   );
 };
 
