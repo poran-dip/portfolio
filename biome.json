@@ -1,13 +1,17 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false,
-    "includes": ["**", "!public/flea-market.html"]
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!public/flea-market.html",
+      "!public/google55fb43709b18f0c6.html"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -17,7 +21,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "correctness": {
         "useExhaustiveDependencies": "error"
       },
@@ -29,25 +33,48 @@
       }
     }
   },
-  "css": {
-    "formatter": {
-      "enabled": false
-    },
-    "parser": {
-      "tailwindDirectives": true
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double"
-    }
-  },
   "assist": {
     "enabled": true,
     "actions": {
       "source": {
         "organizeImports": "on"
       }
+    }
+  },
+  "html": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    },
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "javascript": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "double"
+    }
+  },
+  "json": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
     }
   }
 }

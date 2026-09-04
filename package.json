@@ -12,36 +12,35 @@
     "tailwindcss",
     "typescript"
   ],
-  "packageManager": "pnpm@11.4.0",
+  "packageManager": "pnpm@11.25.0+sha512.5cde925b4f075f725eb71fbae18a42ffe784524789f19b61c731cb8721ec28aaee160e01a8d5af4fedb2a42cdbf300efe23db356b0d4a17b4d63e11f8ab7c956",
   "scripts": {
     "dev": "react-router dev --host",
     "build": "react-router build",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc --noEmit",
-    "lint": "biome check --write",
-    "format": "biome format --write"
+    "lint": "biome check --write"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
-    "@react-router/node": "^7.15.1",
-    "@react-router/serve": "^7.15.1",
-    "isbot": "^5",
-    "lucide-react": "^0.577.0",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "react-router": "^7.15.1"
+    "@react-router/node": "^8.1.0",
+    "@react-router/serve": "^8.1.0",
+    "isbot": "^5.1.44",
+    "lucide-react": "^1.23.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
-    "@react-router/dev": "^7.15.1",
-    "@tailwindcss/vite": "^4.3.0",
-    "@types/node": "^25.9.1",
-    "@types/react": "^19.2.15",
+    "@biomejs/biome": "^2.5.2",
+    "@react-router/dev": "^8.1.0",
+    "@tailwindcss/vite": "^4.3.2",
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.6.0",
-    "tailwindcss": "^4.3.0",
-    "typescript": "~5.9.3",
-    "vite": "^8.0.14"
+    "tailwindcss": "^4.3.2",
+    "typescript": "~6.0.3",
+    "vite": "^8.1.3"
   }
 }
