@@ -1,31 +1,7 @@
 import { Dot } from "lucide-react";
 import { GlassHeading, GlassParagraph } from "@/components/ui";
-import TimelineCard, { type TimelineCardProps } from "./TimelineCard";
-
-const milestones: TimelineCardProps[] = [
-  {
-    title: "Web Wing Coordinator",
-    date: "Aug 2025 - Present",
-    location: "Coding Club, Assam Engineering College",
-    description:
-      "Leading the web wing; developing official platforms like CodeWar and mentoring junior developers",
-    status: "ongoing",
-  },
-  {
-    title: "Released lotl",
-    date: "Aug 2025",
-    location: "npmjs",
-    description:
-      "Released lotl, a CLI tool for converting Markdown documents to PDF, on npm",
-  },
-  {
-    title: "Full-Stack & SBC Intern",
-    date: "Jul 2025",
-    location: "IIT Guwahati",
-    description:
-      "Developed ODStream (look at projects above) for underwater object detection applications",
-  },
-];
+import { timeline } from "@/data/timeline";
+import TimelineCard from "./TimelineCard";
 
 const Timeline = () => {
   return (
@@ -46,7 +22,7 @@ const Timeline = () => {
         </GlassParagraph>
 
         <div className="flex flex-col">
-          {milestones.map((m) => (
+          {timeline.map((m) => (
             <TimelineCard
               key={m.date}
               title={m.title}

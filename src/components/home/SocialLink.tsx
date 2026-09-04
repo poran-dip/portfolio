@@ -1,14 +1,7 @@
-import type { LucideIcon } from "lucide-react";
 import { GlassLink } from "@/components/ui";
+import type { SocialLink as SocialLinkType } from "@/types/social";
 
-export interface SocialLinkProps {
-  href: string;
-  Icon: LucideIcon;
-  platform: string;
-  description: string;
-}
-
-const SocialLink = ({ href, Icon, platform, description }: SocialLinkProps) => {
+const SocialLink = ({ href, Icon, platform, description }: SocialLinkType) => {
   return (
     <GlassLink
       href={href}

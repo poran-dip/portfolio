@@ -1,73 +1,14 @@
-import {
-  Code2,
-  Gamepad2,
-  Gamepad2Icon,
-  Link,
-  Music,
-  Music2,
-  Settings,
-  Star,
-} from "lucide-react";
+import { Code2, Gamepad2Icon, Music, Settings } from "lucide-react";
 import {
   GlassButton,
   GlassCard,
   GlassHeading,
   GlassParagraph,
 } from "@/components/ui";
-import SocialLink, { type SocialLinkProps } from "./SocialLink";
+import { socialLinks } from "@/data/social-links";
+import SocialLink from "./SocialLink";
 
 const AboutMe = () => {
-  const socialLinks: SocialLinkProps[] = [
-    {
-      href: "https://github.com/poran-dip",
-      Icon: Link,
-      platform: "GitHub",
-      description: "code heaven",
-    },
-    {
-      href: "https://linkedin.com/in/poran-dip/",
-      Icon: Link,
-      platform: "Linkedin",
-      description: "professional me",
-    },
-    {
-      href: "https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM",
-      Icon: Music2,
-      platform: "Spotify",
-      description: "my beats",
-    },
-    {
-      href: "https://littleradishes.itch.io/",
-      Icon: Gamepad2,
-      platform: "Itch.io",
-      description: "game experiments",
-    },
-    {
-      href: "https://youtube.com/@poran_dip",
-      Icon: Link,
-      platform: "YouTube",
-      description: "coming soon",
-    },
-    {
-      href: "https://instagram.com/poran_dip",
-      Icon: Link,
-      platform: "Instagram",
-      description: "music vibes",
-    },
-    {
-      href: "https://hoyolab.com/accountCenter/postList?id=342955108",
-      Icon: Star,
-      platform: "HoYoLAB",
-      description: "gacha life",
-    },
-    {
-      href: "https://x.com/poran_dip",
-      Icon: Link,
-      platform: "X",
-      description: "digital graveyard",
-    },
-  ];
-
   return (
     <section id="about" className="scroll-mt-16 md:scroll-mt-12 py-4 md:py-12">
       <div className="flex items-center gap-4">
