@@ -1,13 +1,6 @@
 import { Dot, Star } from "lucide-react";
 import { GlassHeading, GlassParagraph } from "@/components/ui";
-
-export interface TimelineCardProps {
-  title: string;
-  location?: string;
-  date: string;
-  description: string;
-  status?: "done" | "ongoing";
-}
+import type { TimelineEntry } from "@/types/timeline";
 
 const TimelineCard = ({
   title,
@@ -15,7 +8,7 @@ const TimelineCard = ({
   date,
   description,
   status = "done",
-}: TimelineCardProps) => {
+}: TimelineEntry) => {
   return (
     <div className="flex">
       <div className="flex flex-col items-center pt-1">
