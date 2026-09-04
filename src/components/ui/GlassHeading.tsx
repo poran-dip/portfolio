@@ -31,7 +31,7 @@ export const GlassHeading: React.FC<GlassHeadingProps> = ({
     Component,
     {
       className: cn(
-        "text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300",
+        "text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600",
         sizes[level],
         glassAnimations.hoverSubtle,
         className,

@@ -8,8 +8,7 @@ const Footer = () => {
         ${glass.base}
         mt-6 p-8 rounded-t-2xl w-full gap-4
         bg-linear-to-t from-zinc-200/80 to-zinc-100/60
-        dark:from-zinc-900/80 dark:to-zinc-800/60
-        text-gray-800 dark:text-white
+        text-gray-800
         flex flex-col items-center justify-center
       `}
     >

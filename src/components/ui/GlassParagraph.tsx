@@ -11,13 +11,7 @@ export const GlassParagraph: React.FC<GlassParagraphProps> = ({
   className = "",
   ...props
 }) => (
-  <p
-    className={cn(
-      "text-gray-700 dark:text-gray-300 leading-relaxed",
-      className,
-    )}
-    {...props}
-  >
+  <p className={cn("text-gray-700 leading-relaxed", className)} {...props}>
     {children}
   </p>
 );

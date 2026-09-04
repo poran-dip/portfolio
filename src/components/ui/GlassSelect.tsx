@@ -18,7 +18,7 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
   <select
     className={cn(
       glass.base,
-      "w-full px-4 py-3 rounded-xl bg-linear-to-r from-zinc-100/50 to-zinc-200/30 dark:from-zinc-800/50 dark:to-zinc-700/30 focus:bg-zinc-200 dark:focus:bg-zinc-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:scale-[1.01] focus:-translate-y-px shadow-md transition-all duration-300",
+      "w-full px-4 py-3 rounded-xl bg-linear-to-r from-zinc-100/50 to-zinc-200/30 focus:bg-zinc-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:scale-[1.01] focus:-translate-y-px shadow-md transition-all duration-300",
       error && "border-red-500/50 focus:ring-red-500/50",
       className,
     )}

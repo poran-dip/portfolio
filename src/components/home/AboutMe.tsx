@@ -74,7 +74,7 @@ const AboutMe = () => {
         <GlassHeading level={3} className="font-bold whitespace-nowrap">
           ABOUT ME
         </GlassHeading>
-        <div className="h-px flex-1 bg-black/20 dark:bg-white/20" />
+        <div className="h-px flex-1 bg-black/20" />
       </div>
 
       <div className="mt-6 flex flex-col gap-12">
@@ -176,7 +176,7 @@ const AboutMe = () => {
                 Big Genshin fan! My little{" "}
                 <a
                   href="https://youtu.be/7zkCp_kVtj4"
-                  className="underline decoration-dotted decoration-green-200 dark:decoration-green-400 hover:text-green-200 dark:hover:text-green-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-green-200 hover:text-green-200 hover:decoration-solid"
                   target="_blank"
                   rel="noopener"
                 >
@@ -198,7 +198,7 @@ const AboutMe = () => {
                 <a
                   href="https://youtu.be/KC6T3_O2iWc"
                   target="_blank"
-                  className="underline decoration-dotted decoration-cyan-200 dark:decoration-cyan-400 hover:text-cyan-200 dark:hover:text-cyan-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-cyan-200 hover:text-cyan-200 hover:decoration-solid"
                   rel="noopener"
                 >
                   professional chip eating
@@ -218,7 +218,7 @@ const AboutMe = () => {
                 <a
                   href="https://anarchychess.fandom.com/wiki/%22Google_en_passant%22_Comment_Chain"
                   target="_blank"
-                  className="underline decoration-dotted decoration-violet-200 dark:decoration-violet-400 hover:text-violet-200 dark:hover:text-violet-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-violet-200 hover:text-violet-200 hover:decoration-solid"
                   rel="noopener"
                 >
                   Holy hell!
@@ -227,7 +227,7 @@ const AboutMe = () => {
                 <a
                   href="https://www.chess.com/member/porandip/stats/rapid?days=0"
                   target="_blank"
-                  className="underline decoration-dotted decoration-violet-200 dark:decoration-violet-400 hover:text-violet-200 dark:hover:text-violet-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-violet-200 hover:text-violet-200 hover:decoration-solid"
                   rel="noopener"
                 >
                   (top 0.5% worldwide)
@@ -247,7 +247,7 @@ const AboutMe = () => {
                 <a
                   href="/flea-market.html"
                   target="_blank"
-                  className="underline decoration-dotted decoration-pink-200 dark:decoration-pink-400 hover:text-pink-200 dark:hover:text-pink-400 hover:decoration-solid"
+                  className="underline decoration-dotted decoration-pink-200 hover:text-pink-200 hover:decoration-solid"
                   rel="noopener"
                 >
                   "Rat Killers" flea market

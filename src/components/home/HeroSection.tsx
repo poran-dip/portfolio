@@ -63,7 +63,7 @@ const HeroCard = () => {
         {particles.map((p, i) => (
           <div
             key={`${p.left}-${p.top}`}
-            className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full animate-bounce"
+            className="absolute w-4 h-4 bg-blue-600 rounded-full animate-bounce"
             style={{
               left: `${p.left}%`,
               top: `${p.top}%`,
@@ -143,7 +143,7 @@ const HeroCard = () => {
                     href="https://youtu.be/7zkCp_kVtj4"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative inline-block hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300 group"
+                    className="relative inline-block hover:text-green-600 transition-colors duration-300 group"
                   >
                     <span className="relative z-10">Radish Enjoyer™</span>
                     <span className="absolute inset-0 bg-green-400/20 scale-0 group-hover:scale-100 transition-transform duration-300 rounded"></span>

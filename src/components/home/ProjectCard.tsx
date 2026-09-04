@@ -20,7 +20,7 @@ const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
     >
       {/* Background Image with Low Opacity */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-110 opacity-50 dark:opacity-25"
+        className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-110 opacity-50"
         style={{
           backgroundImage: `url(${project.image})`,
         }}

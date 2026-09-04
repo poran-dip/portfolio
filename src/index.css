@@ -1,17 +1,178 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --font-sans: "Outfit", sans-serif;
+
+  /* deep sea bioluminescence palette */
+  --color-abyss: #04060c;
+  --color-deep: #080e1a;
+  --color-surface: #101a2c;
+  --color-surface-raised: #17233a;
+
+  --color-foam: #eaf2f4;
+  --color-mist: #8fa4b8;
+
+  --color-bioglow: #2fe0c7;
+  --color-jelly: #a374ff;
+
+  --color-current: #4fa8f0;
+  --color-lure: #f2b345;
+  --color-vent: #f2495c;
+
   --animate-gradient-shimmer: gradient-shimmer 1s linear infinite;
 
   @keyframes gradient-shimmer {
     0% {
-      background-position: "0% 50%";
+      background-position: 0% 50%;
     }
     100% {
-      background-position: "200% 50%";
+      background-position: 200% 50%;
     }
+  }
+}
+
+/* glass primitives */
+
+@utility glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in oklab, var(--color-foam) 12%, transparent);
+  transition: all 200ms ease;
+}
+
+@utility glass-panel {
+  background: linear-gradient(
+    to bottom right,
+    color-mix(in oklab, var(--color-surface) 90%, transparent),
+    color-mix(in oklab, var(--color-surface-raised) 70%, transparent)
+  );
+  box-shadow: 0 10px 30px -10px
+    color-mix(in oklab, var(--color-abyss) 60%, transparent);
+}
+
+/* hover lifts */
+
+@utility glass-hover-sm {
+  &:hover {
+    transform: scale(1.01) translateY(-1px);
+  }
+}
+
+@utility glass-hover {
+  &:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 20px 40px -12px
+      color-mix(in oklab, var(--color-bioglow) 25%, transparent);
+  }
+}
+
+@utility glass-hover-lg {
+  &:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 25px 50px -12px
+      color-mix(in oklab, var(--color-bioglow) 30%, transparent);
+  }
+}
+
+@utility glass-hover-xl {
+  &:hover {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 30px 60px -12px
+      color-mix(in oklab, var(--color-jelly) 35%, transparent);
+  }
+}
+
+/* form fields */
+
+@utility glass-field {
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(
+    to right,
+    color-mix(in oklab, var(--color-surface) 70%, transparent),
+    color-mix(in oklab, var(--color-surface-raised) 50%, transparent)
+  );
+  color: var(--color-foam);
+  box-shadow: 0 4px 12px -4px
+    color-mix(in oklab, var(--color-abyss) 50%, transparent);
+
+  &::placeholder {
+    color: var(--color-mist);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px
+      color-mix(in oklab, var(--color-bioglow) 50%, transparent);
+    transform: scale(1.01) translateY(-1px);
+  }
+}
+
+@utility glass-field-error {
+  border-color: color-mix(in oklab, var(--color-vent) 50%, transparent);
+
+  &:focus {
+    box-shadow: 0 0 0 2px
+      color-mix(in oklab, var(--color-vent) 50%, transparent);
+  }
+}
+
+/* semantic variants */
+
+@utility glass-primary {
+  background: linear-gradient(
+    to right,
+    color-mix(in oklab, var(--color-bioglow) 20%, transparent),
+    color-mix(in oklab, var(--color-jelly) 20%, transparent)
+  );
+  color: var(--color-bioglow);
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      color-mix(in oklab, var(--color-bioglow) 30%, transparent),
+      color-mix(in oklab, var(--color-jelly) 30%, transparent)
+    );
+  }
+}
+
+@utility glass-secondary {
+  background: color-mix(in oklab, var(--color-surface-raised) 60%, transparent);
+  color: var(--color-mist);
+
+  &:hover {
+    background: color-mix(
+      in oklab,
+      var(--color-surface-raised) 80%,
+      transparent
+    );
+  }
+}
+
+@utility glass-info {
+  background: color-mix(in oklab, var(--color-current) 20%, transparent);
+  color: var(--color-current);
+
+  &:hover {
+    background: color-mix(in oklab, var(--color-current) 30%, transparent);
+  }
+}
+
+@utility glass-warn {
+  background: color-mix(in oklab, var(--color-lure) 20%, transparent);
+  color: var(--color-lure);
+
+  &:hover {
+    background: color-mix(in oklab, var(--color-lure) 30%, transparent);
+  }
+}
+
+@utility glass-danger {
+  background: color-mix(in oklab, var(--color-vent) 20%, transparent);
+  color: var(--color-vent);
+
+  &:hover {
+    background: color-mix(in oklab, var(--color-vent) 30%, transparent);
   }
 }
