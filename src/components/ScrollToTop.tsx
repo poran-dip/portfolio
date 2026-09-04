@@ -30,20 +30,19 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       className={`
         fixed bottom-6 right-6 w-12 h-12 rounded-full
-        bg-zinc-200/80
-        backdrop-blur-md border border-zinc-300/50
+        bg-surface-raised/70 hover:bg-surface-raised
+        backdrop-blur-md border border-mist/20
         shadow-lg hover:shadow-xl
         transition-all duration-300 ease-in-out
-        opacity-80 hover:opacity-100
-        hover:scale-110 active:scale-95
-        flex items-center justify-center
+        hover:scale-108 active:scale-92
+        flex items-center justify-center cursor-pointer
         ${isVisible ? "translate-y-0 pointer-events-auto" : "translate-y-16 pointer-events-none"}
       `}
       aria-label="Scroll to top"
     >
       <ChevronUp
         size={20}
-        className="text-zinc-700 transition-colors duration-200"
+        className="text-foam hover:text-bioglow transition-colors duration-200"
       />
     </button>
   );
