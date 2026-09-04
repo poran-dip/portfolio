@@ -18,11 +18,10 @@ export const GlassToast: React.FC<GlassToastProps> = ({
   className = "",
 }) => {
   const variants: Record<NonNullable<GlassToastProps["variant"]>, string> = {
-    info: "from-blue-500/20 to-cyan-500/20 border-blue-500/30 text-blue-900 dark:text-blue-100",
+    info: "from-blue-500/20 to-cyan-500/20 border-blue-500/30 text-blue-900",
     success:
-      "from-green-500/20 to-emerald-500/20 border-green-500/30 text-green-900 dark:text-green-100",
-    error:
-      "from-red-500/20 to-pink-500/20 border-red-500/30 text-red-900 dark:text-red-100",
+      "from-green-500/20 to-emerald-500/20 border-green-500/30 text-green-900",
+    error: "from-red-500/20 to-pink-500/20 border-red-500/30 text-red-900",
   };
 
   if (!isVisible) return null;

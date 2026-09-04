@@ -19,7 +19,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
     className={cn(
       glass.base,
       hoverable && glass.hover,
-      "p-6 rounded-2xl shadow-lg bg-linear-to-br from-zinc-100/40 to-zinc-200/40 dark:from-zinc-900/40 dark:to-zinc-800/40 text-gray-800 dark:text-white",
+      "p-6 rounded-2xl shadow-lg bg-linear-to-br from-zinc-100/40 to-zinc-200/40 text-gray-800",
       className,
     )}
     {...props}

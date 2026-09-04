@@ -46,7 +46,7 @@ export const meta: Route.MetaFunction = () => [
     content: "https://porandip.vercel.app/thumbnail.png",
   },
 
-  { name: "theme-color", content: "#ffffff" },
+  { name: "theme-color", content: "#04060c" },
 ];
 
 export const links: Route.LinksFunction = () => [
@@ -68,23 +68,12 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Meta />
         <Links />
-
-        <script>
-          {`
-            try {
-              const isDark = localStorage.theme === "dark" || 
-                (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
-              
-              document.documentElement.classList.toggle("dark", isDark);
-            } catch (_) {}
-          `}
-        </script>
       </head>
       <body className="font-sans">
         {children}

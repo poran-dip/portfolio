@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 import { GlassHeading, GlassLink } from "./ui";
 
 const Navbar = () => {
   const scrolledStyles = `
-    backdrop-blur-sm bg-white/20 dark:bg-black/20
-    border-b border-white/20 dark:border-white/10
+    backdrop-blur-sm bg-white/20
+    border-b border-white/20
     opacity-80 hover:opacity-100 shadow-sm
-    hover:backdrop-blur-md hover:bg-white/30 dark:hover:bg-black/30
+    hover:backdrop-blur-md hover:bg-white/30
   `;
 
   const topStyles = `
@@ -70,26 +69,24 @@ const Navbar = () => {
           <GlassLink href="/#contact" variant="internal">
             CONTACT
           </GlassLink>
-
-          <ThemeToggle />
         </div>
 
         {/* Mobile Hamburger Button */}
         <button
           type="button"
           onClick={toggleMenu}
-          className="md:hidden p-2 rounded-lg backdrop-blur-sm bg-white/20 dark:bg-black/20 border border-white/20 dark:border-white/10 hover:bg-white/30 dark:hover:bg-black/30 transition-all duration-300"
+          className="md:hidden p-2 rounded-lg backdrop-blur-sm bg-white/20 border border-white/20 hover:bg-white/30 transition-all duration-300"
           aria-label="Toggle menu"
         >
           <div className="w-5 h-4 flex flex-col justify-between">
             <span
-              className={`block h-0.5 bg-black/80 dark:bg-white/80 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.75" : ""}`}
+              className={`block h-0.5 bg-black/80 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.75" : ""}`}
             ></span>
             <span
-              className={`block h-0.5 bg-black/80 dark:bg-white/80 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
+              className={`block h-0.5 bg-black/80 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
             ></span>
             <span
-              className={`block h-0.5 bg-black/80 dark:bg-white/80 transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.75" : ""}`}
+              className={`block h-0.5 bg-black/80 transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.75" : ""}`}
             ></span>
           </div>
         </button>
@@ -97,9 +94,9 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden backdrop-blur-md bg-white/30 dark:bg-black/30 transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
+        className={`md:hidden backdrop-blur-md bg-white/30 transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
       >
-        <div className="px-6 py-4 space-y-4 border-t border-white/20 dark:border-white/10">
+        <div className="px-6 py-4 space-y-4 border-t border-white/20">
           <div className="flex flex-col space-y-4">
             <GlassLink
               href="#about"
@@ -133,8 +130,6 @@ const Navbar = () => {
             >
               CONTACT
             </GlassLink>
-
-            <ThemeToggle />
           </div>
         </div>
       </div>

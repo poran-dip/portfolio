@@ -20,12 +20,12 @@ const TimelineCard = ({
     <div className="flex">
       <div className="flex flex-col items-center pt-1">
         {status === "done" ? (
-          <Dot size={60} className="text-black dark:text-white" />
+          <Dot size={60} className="text-black" />
         ) : (
-          <Star size={20} className="m-5 text-black dark:text-white" />
+          <Star size={20} className="m-5 text-black" />
         )}
         <div
-          className={`grow w-0.5 border-l-2 border-gray-900/30 dark:border-gray-100/30 ${status === "ongoing" && "border-dashed"}`}
+          className={`grow w-0.5 border-l-2 border-gray-900/30 ${status === "ongoing" && "border-dashed"}`}
         />
       </div>
 

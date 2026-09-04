@@ -18,7 +18,7 @@ export const GlassLink: React.FC<GlassLinkProps> = ({
   ...props
 }) => {
   const baseClasses = cn(
-    "text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 transition-colors duration-200 font-medium underline-offset-4 hover:underline",
+    "text-blue-600 hover:text-blue-800 transition-colors duration-200 font-medium underline-offset-4 hover:underline",
     glassAnimations.hoverSubtle,
     className,
   );

@@ -17,10 +17,7 @@ export const GlassLabel: React.FC<GlassLabelProps> = ({
 }) => (
   <label
     htmlFor={htmlFor}
-    className={cn(
-      "block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200",
-      className,
-    )}
+    className={cn("block mb-2 text-sm font-semibold text-gray-700", className)}
     {...props}
   >
     {children}

@@ -1,10 +1,8 @@
 // Base glass styles
 export const glass = {
-  base: "backdrop-blur-md border border-white/20 dark:border-white/10 transition-all duration-200",
-  hover:
-    "hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-xl dark:hover:shadow-white/20",
-  hoverLg:
-    "hover:scale-[1.03] hover:-translate-y-1 hover:shadow-2xl dark:hover:shadow-white/30",
+  base: "backdrop-blur-md border border-white/20 transition-all duration-200",
+  hover: "hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-xl",
+  hoverLg: "hover:scale-[1.03] hover:-translate-y-1 hover:shadow-2xl",
 } as const;
 
 // Reusable hover animations

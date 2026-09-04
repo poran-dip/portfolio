@@ -37,7 +37,7 @@ const Timeline = () => {
         <GlassHeading level={3} className="font-bold whitespace-nowrap">
           MY JOURNEY
         </GlassHeading>
-        <div className="h-px flex-1 bg-black/20 dark:bg-white/20" />
+        <div className="h-px flex-1 bg-black/20" />
       </div>
 
       <div className="mt-6 flex flex-col gap-6">
@@ -59,14 +59,10 @@ const Timeline = () => {
 
           <div className="flex">
             <div className="flex flex-col items-center pt-1">
-              <Dot
-                size={60}
-                strokeWidth={0.35}
-                className="text-black dark:text-white"
-              />
+              <Dot size={60} strokeWidth={0.35} className="text-black" />
 
               <div
-                className={`grow w-0.5 bg-linear-to-b from-gray-900/30 dark:from-gray-100/30 to-transparent`}
+                className={`grow w-0.5 bg-linear-to-b from-gray-900/30 to-transparent`}
               />
             </div>
 
