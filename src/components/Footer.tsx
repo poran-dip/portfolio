@@ -1,29 +1,40 @@
-import { glass } from "@/styles/glass";
-import { GlassHeading, GlassLink, GlassParagraph } from "./ui";
-
 const Footer = () => {
   return (
-    <footer
-      className={`
-        ${glass.base}
-        mt-6 p-8 rounded-t-2xl w-full gap-4
-        bg-linear-to-t from-zinc-200/80 to-zinc-100/60
-        text-gray-800
-        flex flex-col items-center justify-center
-      `}
-    >
-      <GlassHeading level={6}>
+    <footer className="glass mt-6 pt-12 pb-8 rounded-t-2xl w-full gap-4 bg-linear-to-t from-abyss to-surface text-mist flex flex-col items-center justify-center">
+      <p className="text-base font-medium text-foam">
         © {new Date().getFullYear()} Poran Dip
-      </GlassHeading>
+      </p>
       <div className="flex flex-col items-center">
-        <GlassParagraph className="text-sm opacity-80 font-bold">
-          Built with <GlassLink href="https://react.dev/">React</GlassLink>
+        <p className="text-sm opacity-80 font-bold">
+          Built with{" "}
+          <a
+            href="https://react.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-bioglow hover:text-jelly transition-colors duration-200"
+          >
+            React
+          </a>
           {" + "}
-          <GlassLink href="https://reactrouter.com/">React Router</GlassLink>
+          <a
+            href="https://reactrouter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-bioglow hover:text-jelly transition-colors duration-200"
+          >
+            React Router
+          </a>
           {" + "}
-          <GlassLink href="https://tailwindcss.com/">TailwindCSS</GlassLink>
-        </GlassParagraph>
-        <GlassParagraph className="text-sm">And lots of 💚</GlassParagraph>
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-bioglow hover:text-jelly transition-colors duration-200"
+          >
+            TailwindCSS
+          </a>
+        </p>
+        <p className="text-sm">And lots of 💚</p>
       </div>
     </footer>
   );

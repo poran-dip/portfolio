@@ -3,12 +3,9 @@ import {
   AboutMe,
   ContactMe,
   HeroSection,
-  Newsletter,
   Projects,
-  Testimonials,
   Timeline,
 } from "@/components/home";
-import { GlassLayout } from "@/components/ui";
 import type { Route } from "./+types/home";
 
 export function meta(_: Route.MetaArgs) {
@@ -24,20 +21,18 @@ export function meta(_: Route.MetaArgs) {
 
 const Home = () => {
   return (
-    <GlassLayout className="mx-auto flex flex-col justify-start items-center">
+    <div className="min-h-screen bg-abyss flex flex-col items-center">
       <Navbar />
       <HeroSection />
-      <main className="mt-12 px-4 sm:px-6 w-full md:max-w-7xl space-y-12 items-center">
+      <main className="w-full flex flex-col items-center">
         <AboutMe />
         <Projects />
         <Timeline />
         <ContactMe />
-        <Testimonials />
-        <Newsletter />
       </main>
       <Footer />
       <ScrollToTop />
-    </GlassLayout>
+    </div>
   );
 };
 

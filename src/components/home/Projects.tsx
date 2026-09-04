@@ -12,7 +12,7 @@ const Projects = () => {
     <>
       <section
         id="projects"
-        className="scroll-mt-16 md:scroll-mt-12 py-4 md:py-12"
+        className="scroll-mt-16 md:scroll-mt-12 mx-auto max-w-7xl px-4 sm:px-6 py-4 md:py-12"
       >
         <div className="flex items-center gap-4">
           <GlassHeading level={3} className="font-bold whitespace-nowrap">
