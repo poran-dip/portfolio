@@ -2,15 +2,11 @@ import {
   Code2,
   Gamepad2,
   Gamepad2Icon,
-  Github,
-  Instagram,
-  Linkedin,
+  Link,
   Music,
   Music2,
   Settings,
   Star,
-  Twitter,
-  Youtube,
 } from "lucide-react";
 import {
   GlassButton,
@@ -24,14 +20,14 @@ const AboutMe = () => {
   const socialLinks: SocialLinkProps[] = [
     {
       href: "https://github.com/poran-dip",
-      Icon: Github,
+      Icon: Link,
       platform: "GitHub",
       description: "code heaven",
     },
     {
       href: "https://linkedin.com/in/poran-dip/",
-      Icon: Linkedin,
-      platform: "LinkedIn",
+      Icon: Link,
+      platform: "Linkedin",
       description: "professional me",
     },
     {
@@ -48,13 +44,13 @@ const AboutMe = () => {
     },
     {
       href: "https://youtube.com/@poran_dip",
-      Icon: Youtube,
+      Icon: Link,
       platform: "YouTube",
       description: "coming soon",
     },
     {
       href: "https://instagram.com/poran_dip",
-      Icon: Instagram,
+      Icon: Link,
       platform: "Instagram",
       description: "music vibes",
     },
@@ -66,7 +62,7 @@ const AboutMe = () => {
     },
     {
       href: "https://x.com/poran_dip",
-      Icon: Twitter,
+      Icon: Link,
       platform: "X",
       description: "digital graveyard",
     },
@@ -120,7 +116,7 @@ const AboutMe = () => {
                 </GlassHeading>
               </div>
               <GlassParagraph className="text-blue-50!">
-                Git, GitHub, GitHub Actions · Docker · CLI Tooling (Chalk,
+                Git, Link, Link Actions · Docker · CLI Tooling (Chalk,
                 Commander) · Browser Extensions (MV3) · npm Package Publishing
               </GlassParagraph>
             </GlassCard>
