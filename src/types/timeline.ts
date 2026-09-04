@@ -4,4 +4,5 @@ export interface TimelineEntry {
   location?: string;
   description: string;
   status?: "done" | "ongoing";
+  link?: string;
 }
