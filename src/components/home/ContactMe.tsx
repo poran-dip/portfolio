@@ -100,6 +100,24 @@ const ContactMe = () => {
             ))}
           </div>
         </div>
+
+        {/* CTA buttons */}
+        <div className="pt-3 sm:pt-6 flex flex-col sm:flex-row gap-3 sm:gap-6 sm:justify-center">
+          <a
+            href="/Poran_Dip_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-hover glass-primary flex items-center justify-center rounded-xl w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
+          >
+            View Resume
+          </a>
+          <a
+            href="/#about"
+            className="glass glass-hover glass-secondary flex items-center justify-center rounded-xl w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
+          >
+            Back To Top
+          </a>
+        </div>
       </div>
     </section>
   );
