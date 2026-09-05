@@ -11,7 +11,7 @@ const API_HEADERS = {
   Accept: "application/vnd.github+json",
   "X-GitHub-Api-Version": "2026-03-10",
 };
-const MAX_ACTIVITY_ITEMS = 5;
+const MAX_ACTIVITY_ITEMS = 4;
 const MAX_LANGUAGES = 4;
 
 interface GitHubUser {
