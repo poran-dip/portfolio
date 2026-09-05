@@ -282,10 +282,13 @@ const DevTerminal = ({
               />
             </div>
             <input
+              id="terminal-easter-egg"
+              name="terminal-easter-egg"
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
+              enterKeyHint="enter"
               onClick={moveCaretToEnd}
               onFocus={() => {
                 setIsFocused(true);

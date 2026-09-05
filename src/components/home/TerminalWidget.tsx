@@ -2,8 +2,25 @@ import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import DevTerminal from "./DevTerminal";
 
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const update = () => setIsDesktop(mediaQuery.matches);
+
+    update();
+    mediaQuery.addEventListener("change", update);
+    return () => mediaQuery.removeEventListener("change", update);
+  }, []);
+
+  return isDesktop;
+};
+
 const TerminalWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isDesktop = useIsDesktop();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -16,10 +33,10 @@ const TerminalWidget = () => {
 
   return (
     <>
-      {/* Desktop — inline terminal alongside the story copy */}
-      <DevTerminal className="hidden lg:flex h-60 w-full" />
+      {/* desktop — only mounted on desktop */}
+      {isDesktop && <DevTerminal className="h-60 w-full" />}
 
-      {/* Mobile — small teaser that opens a full-screen terminal */}
+      {/* mobile — teaser */}
       <button
         type="button"
         onClick={() => setIsOpen(true)}

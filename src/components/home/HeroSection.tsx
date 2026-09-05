@@ -1,5 +1,5 @@
 import { ChevronDown, MapPin } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ROLES = [
   "Full-Stack Developer",
@@ -32,9 +32,9 @@ const createBubbles = (): Bubble[] =>
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
-  const bubbles = useMemo(() => createBubbles(), []);
-  const bubblesRef = useRef<Bubble[]>(bubbles);
+  const bubblesRef = useRef<Bubble[]>([]);
   const bubbleElRefs = useRef<(HTMLDivElement | null)[]>([]);
   const frameRef = useRef<number>(0);
 
@@ -43,6 +43,10 @@ const HeroSection = () => {
 
   useEffect(() => {
     setIsVisible(true);
+
+    const initialBubbles = createBubbles();
+    setBubbles(initialBubbles);
+    bubblesRef.current = initialBubbles;
   }, []);
 
   useEffect(() => {

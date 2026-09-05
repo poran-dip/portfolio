@@ -1,7 +1,7 @@
 const FunFacts = () => {
   return (
     <div>
-      <h4 className="text-xl font-bold text-foam">Fun Facts About Me</h4>
+      <h3 className="text-xl font-bold text-foam">Fun Facts About Me</h3>
 
       <div className="mt-4 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <div className="glass rounded-xl p-4 flex flex-col gap-2">

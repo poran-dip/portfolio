@@ -146,9 +146,9 @@ const SkillMatchDialog = ({ isOpen, onClose }: SkillMatchDialogProps) => {
         className="glass glass-panel relative w-full max-w-md rounded-2xl p-6"
       >
         <div className="flex items-center justify-between">
-          <h4 id={titleId} className="text-lg font-bold text-foam">
+          <h3 id={titleId} className="text-lg font-bold text-foam">
             Am I a good fit?
-          </h4>
+          </h3>
           <button
             type="button"
             onClick={onClose}
@@ -166,6 +166,8 @@ const SkillMatchDialog = ({ isOpen, onClose }: SkillMatchDialogProps) => {
         <div className="mt-4 relative">
           <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-mist" />
           <input
+            id="search-skills"
+            name="search-skills"
             ref={inputRef}
             type="text"
             value={query}
