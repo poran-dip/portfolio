@@ -1,126 +1,101 @@
-import {
-  GlassButton,
-  GlassCard,
-  GlassHeading,
-  GlassParagraph,
-} from "@/components/ui";
-import { glass } from "@/styles/glass";
+import { ExternalLink, Link } from "lucide-react";
 import type { Project } from "@/types/project";
 
 interface ProjectCardProps {
   project: Project;
-  setSelectedProject: (project: Project) => void;
+  onSelect: (project: Project) => void;
+  highlighted?: boolean;
 }
 
-const ProjectCard = ({ project, setSelectedProject }: ProjectCardProps) => {
+const ProjectCard = ({
+  project,
+  onSelect,
+  highlighted = false,
+}: ProjectCardProps) => {
+  const coverImage = project.images[0];
+
   return (
-    <GlassCard
-      className="p-4 md:p-5 group relative overflow-hidden rounded-xl h-64 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-      onClick={() => setSelectedProject(project)}
+    // biome-ignore lint/a11y/noStaticElementInteractions: mouse-only convenience click — the Details button below provides the keyboard/screen-reader-accessible equivalent. Adding role="button" here would be worse: it'd wrap other real buttons/links, a recognized ARIA anti-pattern.
+    // biome-ignore lint/a11y/useKeyWithClickEvents: see above
+    <div
+      onClick={() => onSelect(project)}
+      className={`clip-corners group relative flex cursor-pointer flex-col bg-linear-to-br p-0.5 transition-all duration-300 ${
+        highlighted
+          ? "from-bioglow to-jelly shadow-lg shadow-bioglow/30"
+          : "from-bioglow/40 to-jelly/40 hover:from-bioglow hover:to-jelly hover:shadow-lg hover:shadow-bioglow/25"
+      }`}
     >
-      {/* Background Image with Low Opacity */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-110 opacity-50"
-        style={{
-          backgroundImage: `url(${project.image})`,
-        }}
-      />
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/40" />
-
-      {/* Glass Effect Background */}
-      <div className={`absolute inset-0 ${glass.base}`} />
-
-      {/* Status Badge */}
-      <div className="absolute top-4 right-4 z-10">
-        <span
-          className={`px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-            project.status === "Live" || project.status === "Complete"
-              ? "bg-green-500/30 text-green-200 border border-green-500/50"
-              : project.status === "Beta"
-                ? "bg-blue-500/30 text-blue-200 border border-blue-500/50"
-                : "bg-yellow-500/30 text-yellow-200 border border-yellow-500/50"
-          }`}
-        >
-          {project.status}
-        </span>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-between">
-        {/* Title at Top */}
-        <div>
-          <GlassHeading
-            level={4}
-            className="from-white! to-gray-300! font-bold group-hover:text-blue-300 transition-all duration-200 mb-2"
-          >
-            {project.title}
-          </GlassHeading>
-
-          <GlassParagraph className="text-white/90 line-clamp-3">
-            {project.description}
-          </GlassParagraph>
+      <div className="clip-corners flex flex-1 flex-col overflow-hidden bg-surface">
+        <div className="relative h-36 sm:h-40 w-full shrink-0 overflow-hidden">
+          {coverImage ? (
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+              style={{ backgroundImage: `url(${coverImage})` }}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-linear-to-br from-bioglow/15 via-surface to-jelly/15" />
+          )}
         </div>
 
-        {/* Bottom Content */}
-        <div className="space-y-4">
-          {/* Tech Stack */}
-          <div className="flex flex-wrap gap-1">
+        <div className="flex flex-1 flex-col gap-2 p-4">
+          <p className="font-semibold text-foam">{project.title}</p>
+          <p className="text-sm text-mist">{project.tagline}</p>
+
+          <div className="hidden sm:flex mt-1 flex-wrap gap-1.5">
             {project.technologies.slice(0, 4).map((tech) => (
               <span
                 key={tech}
-                className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/10 backdrop-blur-sm rounded-md text-sm text-white/80 border border-white/20 hover:scale-105 hover:-translate-y-1 duration-200"
+                className="rounded border border-mist/20 bg-surface-raised/60 px-1.5 py-0.5 text-[11px] text-foam"
               >
                 {tech}
               </span>
             ))}
             {project.technologies.length > 4 && (
-              <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white/10 backdrop-blur-sm rounded-md text-sm text-white/80 border border-white/20 hover:scale-105 hover:-translate-y-1 duration-200">
+              <span className="rounded border border-mist/20 bg-surface-raised/60 px-1.5 py-0.5 text-[11px] text-foam">
                 +{project.technologies.length - 4}
               </span>
             )}
           </div>
 
-          {/* Buttons */}
-          <div className="flex gap-2">
-            <GlassButton
-              className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
+          <div className="mt-auto flex gap-2 pt-3">
+            <button
+              type="button"
               onClick={(e) => {
                 e.stopPropagation();
-                setSelectedProject(project);
+                onSelect(project);
               }}
+              className="hidden sm:block glass-hover glass-secondary flex-1 cursor-pointer rounded-lg py-1.5 text-xs font-semibold"
             >
               Details
-            </GlassButton>
-            {project.githubUrl ? (
-              <GlassButton
-                className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(project.githubUrl, "_blank");
-                }}
+            </button>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="glass-hover glass-secondary flex flex-1 cursor-pointer items-center justify-center gap-1 rounded-lg py-1.5 text-xs font-semibold"
               >
+                <ExternalLink className="w-3 h-3" />
+                Live
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="glass-hover glass-secondary flex flex-1 cursor-pointer items-center justify-center gap-1 rounded-lg py-1.5 text-xs font-semibold"
+              >
+                <Link className="w-3 h-3" />
                 GitHub
-              </GlassButton>
-            ) : (
-              project.liveUrl && (
-                <GlassButton
-                  className="flex-1 text-sm py-2 bg-white/10 hover:bg-white/20 text-blue-100! backdrop-blur-sm border border-white/30 cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    // biome-ignore lint: live url always exists
-                    window.open(project.liveUrl!, "_blank");
-                  }}
-                >
-                  Visit
-                </GlassButton>
-              )
+              </a>
             )}
           </div>
         </div>
       </div>
-    </GlassCard>
+    </div>
   );
 };
 
