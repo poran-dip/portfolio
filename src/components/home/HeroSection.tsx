@@ -228,10 +228,10 @@ const HeroSection = () => {
                 </a>
 
                 <a
-                  href="#contact"
+                  href="#projects"
                   className="glass glass-hover glass-secondary flex items-center justify-center rounded-xl w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
                 >
-                  Get In Touch
+                  Explore Projects
                 </a>
               </div>
             </div>
