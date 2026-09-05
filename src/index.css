@@ -253,3 +253,134 @@
 @utility text-glow-bio {
   animation: bioglow-pulse 3.2s ease-in-out infinite;
 }
+
+/* Faceted card shape — chamfered top-right/bottom-left corners, used for
+   project cards and the featured carousel to avoid plain rectangles */
+
+@utility clip-corners {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
+}
+
+@utility clip-corners-xl {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 40px) 0,
+    100% 40px,
+    100% 100%,
+    40px 100%,
+    0 calc(100% - 40px)
+  );
+}
+
+/* Featured carousel — directional slide transition when the shown project
+   changes. Duration must stay in sync with FeaturedCarousel's ANIMATION_MS. */
+
+@keyframes carousel-slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes carousel-slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0.5;
+  }
+}
+
+@keyframes carousel-slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes carousel-slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0.5;
+  }
+}
+
+@utility carousel-slide-in-right {
+  animation: carousel-slide-in-right 450ms ease-out forwards;
+}
+
+@utility carousel-slide-out-left {
+  animation: carousel-slide-out-left 450ms ease-out forwards;
+}
+
+@utility carousel-slide-in-left {
+  animation: carousel-slide-in-left 450ms ease-out forwards;
+}
+
+@utility carousel-slide-out-right {
+  animation: carousel-slide-out-right 450ms ease-out forwards;
+}
+
+/* Themed scrollbar — replaces the default browser scrollbar look wherever applied */
+
+@utility themed-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--color-bioglow) 40%, transparent)
+    transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--color-bioglow) 40%, transparent);
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--color-bioglow) 65%, transparent);
+  }
+}
+
+/* Terminal block cursor — sharp on/off blink, not a smooth fade */
+
+@keyframes terminal-cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@utility terminal-cursor {
+  animation: terminal-cursor-blink 1s step-end infinite;
+}
