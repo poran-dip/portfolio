@@ -35,7 +35,6 @@
 
 @utility glass {
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid color-mix(in oklab, var(--color-foam) 12%, transparent);
   transition: all 200ms ease;
 }
@@ -127,7 +126,6 @@
 @utility glass-primary {
   border: none;
   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
   transition: all 200ms ease;
   background: linear-gradient(
     to right,
@@ -148,7 +146,6 @@
 @utility glass-secondary {
   border: 1px solid color-mix(in oklab, var(--color-mist) 35%, transparent);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: all 200ms ease;
   background: transparent;
   color: var(--color-foam);
@@ -166,7 +163,6 @@
 @utility glass-info {
   border: 1px solid color-mix(in oklab, var(--color-tide) 30%, transparent);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: all 200ms ease;
   background: color-mix(in oklab, var(--color-tide) 20%, transparent);
   color: var(--color-tide);
@@ -179,7 +175,6 @@
 @utility glass-warn {
   border: 1px solid color-mix(in oklab, var(--color-lure) 30%, transparent);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: all 200ms ease;
   background: color-mix(in oklab, var(--color-lure) 20%, transparent);
   color: var(--color-lure);
@@ -192,7 +187,6 @@
 @utility glass-danger {
   border: 1px solid color-mix(in oklab, var(--color-vent) 30%, transparent);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: all 200ms ease;
   background: color-mix(in oklab, var(--color-vent) 20%, transparent);
   color: var(--color-vent);

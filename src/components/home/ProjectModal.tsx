@@ -107,9 +107,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         )}
 
         <div className="p-5 sm:p-6">
-          <h4 id={titleId} className="text-2xl font-bold text-foam">
+          <h3 id={titleId} className="text-2xl font-bold text-foam">
             {project.title}
-          </h4>
+          </h3>
           <p className="mt-1 text-sm font-medium text-bioglow">
             {project.tagline}
           </p>

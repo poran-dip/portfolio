@@ -30,11 +30,11 @@ const Projects = () => {
         id="projects"
         className="w-full scroll-mt-12 md:scroll-mt-14 mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-16"
       >
-        <h3 className="font-bold whitespace-nowrap text-2xl">
+        <h2 className="font-bold whitespace-nowrap text-2xl">
           <span className="text-jelly">&gt; </span>
           <span className="text-bioglow">./</span>
           <span className="text-foam">projects</span>
-        </h3>
+        </h2>
 
         <div className="mt-6 flex flex-col gap-10">
           <p className="text-foam opacity-90">
@@ -65,9 +65,9 @@ const Projects = () => {
 
           {visibleProjects.length > 0 && (
             <div>
-              <h4 className="mb-4 text-xl font-bold text-foam">
+              <h3 className="mb-4 text-xl font-bold text-foam">
                 More notable projects
-              </h4>
+              </h3>
               <ProjectGrid
                 projects={visibleProjects}
                 onSelect={setSelectedProject}

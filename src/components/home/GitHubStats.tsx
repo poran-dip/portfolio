@@ -282,7 +282,7 @@ const GitHubStats = () => {
   return (
     <div className="glass glass-panel rounded-2xl p-6 sm:p-8">
       <div className="mb-6 flex items-center justify-between gap-3">
-        <h4 className="text-lg font-bold text-foam">Live Stats</h4>
+        <h3 className="text-lg font-bold text-foam">Live Stats</h3>
         <a
           href={`https://github.com/${GITHUB_USERNAME}`}
           target="_blank"

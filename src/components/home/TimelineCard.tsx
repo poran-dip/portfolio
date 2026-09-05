@@ -35,7 +35,7 @@ const TimelineCard = ({
                 {title}
               </a>
             ) : (
-              <p>{title}</p>
+              title
             )}
           </p>
           <p className="text-sm italic text-mist">

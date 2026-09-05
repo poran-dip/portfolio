@@ -48,9 +48,9 @@ const SlideContent = ({ project, onSelect }: SlideContentProps) => {
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-abyss via-abyss/40 to-transparent" />
 
       <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 sm:p-8 lg:p-10">
-        <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foam">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foam">
           {project.title}
-        </h4>
+        </h3>
         <p className="max-w-xl text-sm sm:text-base text-foam">
           {project.tagline}
         </p>

@@ -63,7 +63,7 @@ const SkillsSection = () => {
   return (
     <div id="skills" className="scroll-mt-12 md:scroll-mt-14">
       <div className="flex items-center justify-between gap-3">
-        <h4 className="text-xl font-bold text-foam">Skills</h4>
+        <h3 className="text-xl font-bold text-foam">Skills</h3>
         <button
           type="button"
           onClick={() => setIsDialogOpen(true)}
