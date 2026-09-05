@@ -1,40 +1,84 @@
+import { Link } from "lucide-react";
+
+const REPO_URL = "https://github.com/poran-dip/portfolio";
+
+const QUICK_LINKS = [
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const formatCommitDate = (iso: string): string => {
+  if (!iso) return "";
+  try {
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }).format(new Date(iso));
+  } catch {
+    return "";
+  }
+};
+
 const Footer = () => {
+  const commitDate = formatCommitDate(__BUILD_COMMIT_DATE__);
+
   return (
-    <footer className="glass mt-6 pt-12 pb-8 rounded-t-2xl w-full gap-4 bg-linear-to-t from-abyss to-surface text-mist flex flex-col items-center justify-center">
-      <p className="text-base font-medium text-foam">
-        © {new Date().getFullYear()} Poran Dip
-      </p>
-      <div className="flex flex-col items-center">
-        <p className="text-sm opacity-80 font-bold">
-          Built with{" "}
-          <a
-            href="https://react.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-bioglow hover:text-jelly transition-colors duration-200"
-          >
-            React
-          </a>
-          {" + "}
-          <a
-            href="https://reactrouter.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-bioglow hover:text-jelly transition-colors duration-200"
-          >
-            React Router
-          </a>
-          {" + "}
-          <a
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-bioglow hover:text-jelly transition-colors duration-200"
-          >
-            TailwindCSS
-          </a>
+    <footer className="glass mt-6 w-full rounded-t-2xl bg-linear-to-t from-abyss to-surface text-mist">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-10">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+          {/* Left: repo + build metadata */}
+          <div className="flex flex-col gap-2">
+            <a
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-2 text-sm font-medium text-bioglow transition-colors duration-200 hover:text-jelly"
+            >
+              <Link className="h-4 w-4" />
+              View this site's source
+            </a>
+            {commitDate && (
+              <p className="text-xs text-mist">
+                Last updated {commitDate}
+                {__BUILD_COMMIT__ !== "unknown" && (
+                  <>
+                    {" · "}
+                    <a
+                      href={`${REPO_URL}/commit/${__BUILD_COMMIT__}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-dotted transition-colors duration-200 hover:text-bioglow"
+                    >
+                      {__BUILD_COMMIT__}
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
+          </div>
+
+          {/* Right: quick links */}
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
+            {QUICK_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="nav-link text-sm font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <div className="h-px w-full bg-mist/10" />
+
+        <p className="text-center text-sm text-mist">
+          © {new Date().getFullYear()} Poran Dip
         </p>
-        <p className="text-sm">And lots of 💚</p>
       </div>
     </footer>
   );
