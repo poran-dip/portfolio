@@ -1,5 +1,6 @@
 import { Dot } from "lucide-react";
 import { timeline } from "@/data/timeline";
+import GitHubStatsPanel from "./GitHubStatsPanel";
 import TimelineCard from "./TimelineCard";
 
 const Timeline = () => {
@@ -20,37 +21,59 @@ const Timeline = () => {
             A timeline of projects, roles, and everything in between.
           </p>
 
-          <div className="flex flex-col">
-            {timeline.map((m) => (
-              <TimelineCard
-                key={m.date}
-                title={m.title}
-                location={m.location}
-                date={m.date}
-                description={m.description}
-                status={m.status}
-                link={m.link}
-              />
-            ))}
-
-            <div className="flex">
-              <div className="flex flex-col items-center pt-1">
-                <Dot size={60} strokeWidth={0.35} className="text-bioglow" />
-
-                <div
-                  className={`grow w-0.5 bg-linear-to-b from-bioglow/30 to-transparent`}
+          <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[2fr_1fr] lg:gap-8">
+            <div className="flex flex-col">
+              {timeline.map((m) => (
+                <TimelineCard
+                  key={m.date}
+                  title={m.title}
+                  location={m.location}
+                  date={m.date}
+                  description={m.description}
+                  status={m.status}
+                  link={m.link}
                 />
-              </div>
+              ))}
 
-              <div className="flex-1 space-y-5 pt-5 pb-6">
-                <div className="space-y-px">
-                  <p className="font-bold text-foam">Journey begins</p>
+              <div className="flex">
+                <div className="flex flex-col items-center pt-1">
+                  <Dot size={60} strokeWidth={0.35} className="text-bioglow" />
+
+                  <div
+                    className={`grow w-0.5 bg-linear-to-b from-bioglow/30 to-transparent`}
+                  />
                 </div>
-                <p className="text-foam">
-                  And so, a tiny glimmer first pierced the abyss.
-                </p>
+
+                <div className="flex-1 space-y-5 pt-5 pb-6">
+                  <div className="space-y-px">
+                    <p className="font-bold text-foam">Journey begins</p>
+                  </div>
+                  <p className="text-foam">
+                    And so, a tiny glimmer first pierced the abyss.
+                  </p>
+                </div>
               </div>
             </div>
+
+            <GitHubStatsPanel />
+          </div>
+
+          {/* CTA buttons */}
+          <div className="pt-3 sm:pt-6 flex flex-col sm:flex-row gap-3 sm:gap-6 sm:justify-center">
+            <a
+              href="/Poran_Dip_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-hover glass-primary flex items-center justify-center rounded-xl w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
+            >
+              View Full Resume
+            </a>
+            <a
+              href="/#skills"
+              className="glass glass-hover glass-secondary flex items-center justify-center rounded-xl w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
+            >
+              View Skills
+            </a>
           </div>
         </div>
       </section>
