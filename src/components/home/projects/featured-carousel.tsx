@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useSwipe } from "@/hooks/use-swipe";
 import type { ProjectEntry } from "@/types/projects.types";
 import SlideContent from "./slide-content";
 
@@ -58,16 +59,6 @@ const FeaturedCarousel = ({
     return () => window.clearTimeout(transitionTimerRef.current);
   }, []);
 
-  const project = projects[currentIndex];
-  const outgoingProject = prevIndex !== null ? projects[prevIndex] : null;
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: onActiveChange is intentionally excluded — callers rarely memoize it, and including it would refire this on every parent render, not just when the active project changes
-  useEffect(() => {
-    if (project) onActiveChange?.(project);
-  }, [project]);
-
-  if (!project) return null;
-
   const goToManual = (index: number, dir: Direction) => {
     goTo(index, dir);
     pausedUntilRef.current = Date.now() + PAUSE_DURATION;
@@ -79,13 +70,32 @@ const FeaturedCarousel = ({
   const goToDot = (index: number) =>
     goToManual(index, index > currentIndex ? 1 : -1);
 
+  // Swipe left/right mirrors the arrow buttons — same goNext/goPrev
+  // transition, just triggered by touch instead of a click.
+  const { onTouchStart, onTouchEnd, wrapClick } = useSwipe({
+    onSwipeLeft: goNext,
+    onSwipeRight: goPrev,
+  });
+
+  const project = projects[currentIndex];
+  const outgoingProject = prevIndex !== null ? projects[prevIndex] : null;
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: onActiveChange is intentionally excluded — callers rarely memoize it, and including it would refire this on every parent render, not just when the active project changes
+  useEffect(() => {
+    if (project) onActiveChange?.(project);
+  }, [project]);
+
+  if (!project) return null;
+
   return (
     <div className="mx-auto max-w-2xl w-full">
       {/* biome-ignore lint/a11y/noStaticElementInteractions: mouse-only convenience click — the Details button inside provides the keyboard/screen-reader-accessible equivalent. Adding role="button" here would be worse: it'd wrap other real buttons/links, a recognized ARIA anti-pattern. */}
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: see above */}
       <div
-        onClick={() => onSelect(project)}
-        className="clip-corners group relative block h-105 sm:h-120 lg:h-100 w-full cursor-pointer overflow-hidden bg-linear-to-br from-bioglow/40 to-jelly/40 p-0.5 text-left transition-all duration-300 hover:from-bioglow hover:to-jelly hover:shadow-lg hover:shadow-bioglow/25"
+        onClick={wrapClick(() => onSelect(project))}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        className="clip-corners group relative block h-105 sm:h-120 lg:h-100 w-full cursor-pointer touch-pan-y overflow-hidden bg-linear-to-br from-bioglow/40 to-jelly/40 p-0.5 text-left transition-all duration-300 hover:from-bioglow hover:to-jelly hover:shadow-lg hover:shadow-bioglow/25"
       >
         {outgoingProject && (
           <div
