@@ -65,7 +65,7 @@ export const skillCategories: SkillCategoryEntry[] = [
     skills: [
       {
         name: "YOLOv5/v8",
-        aliases: ["yolo", "yolov5", "yolov7", "yolo v5", "yolo v7"],
+        aliases: ["yolo", "yolov5", "yolov8", "yolo v5", "yolo v8"],
       },
       { name: "OpenCV", aliases: ["opencv", "open cv", "cv2"] },
       {

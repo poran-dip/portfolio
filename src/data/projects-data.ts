@@ -7,7 +7,7 @@ export const projects: ProjectEntry[] = [
     title: "ODStream",
     tagline: "Real-time multi-user object detection platform.",
     description:
-      "Full-stack real-time object detection platform with multi-user LAN support, YOLOv5/v7 integration, and edge deployment pipeline. Compatible with Intel RealSense hardware.",
+      "Full-stack real-time object detection platform with multi-user LAN support, YOLOv5/v8 integration, and edge deployment pipeline. Compatible with Intel RealSense hardware.",
     images: ["projects/odstream.jpg"],
     technologies: ["React", "Flask", "SocketIO", "YOLOv5/v8", "MJPEG"],
     githubUrl: "https://github.com/poran-dip/uwod-rc",

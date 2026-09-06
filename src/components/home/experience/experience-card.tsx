@@ -43,7 +43,14 @@ const ExperienceCard = ({
             {date}
           </p>
         </div>
-        <p className="text-foam">{description}</p>
+        <ul className="flex flex-col gap-2">
+          {description.map((point) => (
+            <li key={point} className="flex gap-2 text-foam">
+              <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-bioglow" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
