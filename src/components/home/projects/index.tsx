@@ -1,15 +1,17 @@
 import { useCallback, useState } from "react";
-import { projects } from "@/data/projects";
-import type { Project } from "@/types/project";
-import FeaturedCarousel from "./FeaturedCarousel";
-import ProjectCard from "./ProjectCard";
-import ProjectGrid from "./ProjectGrid";
-import ProjectModal from "./ProjectModal";
+import { projects } from "@/data/projects-data";
+import type { ProjectEntry } from "@/types/projects.types";
+import FeaturedCarousel from "./featured-carousel";
+import ProjectCard from "./project-card";
+import ProjectGrid from "./project-grid";
+import ProjectModal from "./project-modal";
 
 const MAX_FEATURED = 4;
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectEntry | null>(
+    null,
+  );
 
   const mainProjects = projects
     .filter((p) => p.featured === "main")
@@ -20,7 +22,7 @@ const Projects = () => {
     mainProjects[0]?.id ?? null,
   );
 
-  const handleActiveChange = useCallback((project: Project) => {
+  const handleActiveChange = useCallback((project: ProjectEntry) => {
     setActiveFeaturedId(project.id);
   }, []);
 

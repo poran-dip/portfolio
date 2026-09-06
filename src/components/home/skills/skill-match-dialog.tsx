@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 import { Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { skillCategories } from "@/data/skills";
+import { skillCategories } from "@/data/skills-data";
 
 interface FlatSkill {
   name: string;

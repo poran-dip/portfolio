@@ -1,11 +1,11 @@
 import { ChevronDown, Search } from "lucide-react";
 import { useState } from "react";
-import { skillCategories } from "@/data/skills";
-import type { SkillCategory } from "@/types/skills";
-import SkillMatchDialog from "./SkillMatchDialog";
+import { skillCategories } from "@/data/skills-data";
+import type { SkillCategoryEntry } from "@/types/skills.types";
+import SkillMatchDialog from "./skill-match-dialog";
 
 interface SkillCategoryRowProps {
-  category: SkillCategory;
+  category: SkillCategoryEntry;
   open: boolean;
   onToggle: () => void;
 }

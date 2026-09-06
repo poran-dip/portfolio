@@ -1,4 +1,4 @@
-export interface TimelineEntry {
+export interface ExperienceEntry {
   title: string;
   date: string;
   location?: string;

@@ -1,6 +1,6 @@
-import type { Project } from "@/types/project";
+import type { ProjectEntry } from "@/types/projects.types";
 
-export const projects: Project[] = [
+export const projects: ProjectEntry[] = [
   {
     id: 1,
     slug: "odstream",

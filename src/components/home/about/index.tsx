@@ -1,8 +1,8 @@
-import FunFacts from "./FunFacts";
-import SkillsSection from "./SkillsSection";
-import TerminalWidget from "./TerminalWidget";
+import SkillsSection from "@/components/home/skills";
+import TerminalWidget from "@/components/home/terminal";
+import FunFacts from "./fun-facts";
 
-const AboutMe = () => {
+const About = () => {
   return (
     <div className="w-full bg-deep">
       <section
@@ -67,4 +67,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default About;

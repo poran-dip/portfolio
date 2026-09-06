@@ -1,6 +1,6 @@
-import type { TimelineEntry } from "@/types/timeline";
+import type { ExperienceEntry } from "@/types/experience.types";
 
-export const timeline: TimelineEntry[] = [
+export const experiences: ExperienceEntry[] = [
   {
     title: "Web Wing Coordinator",
     date: "Aug 2025 - Present",

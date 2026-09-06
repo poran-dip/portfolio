@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { projects } from "@/data/projects";
-import { skillCategories } from "@/data/skills";
-import { timeline } from "@/data/timeline";
+import { experiences } from "@/data/experience-data";
+import { projects } from "@/data/projects-data";
+import { skillCategories } from "@/data/skills-data";
 
 const SECTIONS = ["about", "skills", "projects", "experience", "contact"];
 
@@ -48,7 +48,7 @@ const buildProjectsMd = () =>
     .join("\n")}\n\nType 'cd projects' to see them all.`;
 
 const buildExperienceLog = () =>
-  `${timeline
+  `${experiences
     .map(
       (entry) =>
         `[${entry.date}] ${entry.title}${entry.location ? ` — ${entry.location}` : ""}`,

@@ -29,7 +29,7 @@ const createBubbles = (): Bubble[] =>
     accent: i % 3 === 0 ? "jelly" : "bioglow",
   }));
 
-const HeroSection = () => {
+const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
@@ -255,4 +255,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;

@@ -1,7 +1,7 @@
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
-import type { Project } from "@/types/project";
-import ProjectCard from "./ProjectCard";
+import type { ProjectEntry } from "@/types/projects.types";
+import ProjectCard from "./project-card";
 
 const INITIAL_COUNT = 7;
 const MAX_EXPANDED = 15;
@@ -35,8 +35,8 @@ const CollapseCard = ({ onClick }: { onClick: () => void }) => (
 );
 
 interface ProjectGridProps {
-  projects: Project[];
-  onSelect: (project: Project) => void;
+  projects: ProjectEntry[];
+  onSelect: (project: ProjectEntry) => void;
 }
 
 const ProjectGrid = ({ projects, onSelect }: ProjectGridProps) => {

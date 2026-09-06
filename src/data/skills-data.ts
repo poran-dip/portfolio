@@ -1,6 +1,6 @@
-import type { SkillCategory } from "@/types/skills";
+import type { SkillCategoryEntry } from "@/types/skills.types";
 
-export const skillCategories: SkillCategory[] = [
+export const skillCategories: SkillCategoryEntry[] = [
   {
     id: "languages",
     title: "Languages",
