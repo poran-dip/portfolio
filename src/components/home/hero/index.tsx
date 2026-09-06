@@ -1,5 +1,7 @@
 import { ChevronDown, MapPin } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import AmbientBubbles from "./ambient-bubbles";
+import CursorTrail from "./cursor-trail";
 
 const ROLES = [
   "Full-Stack Developer",
@@ -7,46 +9,12 @@ const ROLES = [
   "Open Source Contributor",
 ];
 
-const BUBBLE_COUNT = 22;
-const BUBBLE_SPEED = 0.07;
-
-interface Bubble {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  size: number;
-  accent: "bioglow" | "jelly";
-}
-
-const createBubbles = (): Bubble[] =>
-  Array.from({ length: BUBBLE_COUNT }, (_, i) => ({
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    vx: (Math.random() - 0.5) * BUBBLE_SPEED,
-    vy: (Math.random() - 0.5) * BUBBLE_SPEED,
-    size: 4 + Math.random() * 7,
-    accent: i % 3 === 0 ? "jelly" : "bioglow",
-  }));
-
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
-  const [bubbles, setBubbles] = useState<Bubble[]>([]);
-
-  const bubblesRef = useRef<Bubble[]>([]);
-  const bubbleElRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const frameRef = useRef<number>(0);
-
-  const trailDotRef = useRef<HTMLDivElement>(null);
-  const trailHaloRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
-
-    const initialBubbles = createBubbles();
-    setBubbles(initialBubbles);
-    bubblesRef.current = initialBubbles;
   }, []);
 
   useEffect(() => {
@@ -56,97 +24,10 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Short glow trail following the cursor
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { pageX: x, pageY: y } = e;
-      if (trailDotRef.current) {
-        trailDotRef.current.style.transform = `translate(${x}px, ${y}px)`;
-      }
-      if (trailHaloRef.current) {
-        trailHaloRef.current.style.transform = `translate(${x}px, ${y}px)`;
-      }
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  // Bubbles drifting slowly, bouncing off the hero's edges
-  useEffect(() => {
-    const tick = () => {
-      const list = bubblesRef.current;
-      for (let i = 0; i < list.length; i++) {
-        const b = list[i];
-        if (!b) continue;
-        b.x += b.vx;
-        b.y += b.vy;
-
-        if (b.x <= 0 || b.x >= 100) {
-          b.vx *= -1;
-          b.x = Math.min(100, Math.max(0, b.x));
-        }
-        if (b.y <= 0 || b.y >= 100) {
-          b.vy *= -1;
-          b.y = Math.min(100, Math.max(0, b.y));
-        }
-
-        const el = bubbleElRefs.current[i];
-        if (el) {
-          el.style.left = `${b.x}%`;
-          el.style.top = `${b.y}%`;
-        }
-      }
-      frameRef.current = requestAnimationFrame(tick);
-    };
-
-    frameRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frameRef.current);
-  }, []);
-
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-deep">
-      {/* Bubbles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {bubbles.map((b, i) => (
-          <div
-            key={`bubble-${
-              // biome-ignore lint: stable bubble count, index is a fine key here
-              i
-            }`}
-            ref={(el) => {
-              bubbleElRefs.current[i] = el;
-            }}
-            className="absolute rounded-full"
-            style={{
-              left: `${b.x}%`,
-              top: `${b.y}%`,
-              width: b.size,
-              height: b.size,
-              background: `color-mix(in oklab, var(--color-${b.accent}) 45%, transparent)`,
-              border: `1px solid color-mix(in oklab, var(--color-${b.accent}) 70%, transparent)`,
-              boxShadow: `0 0 ${b.size}px color-mix(in oklab, var(--color-${b.accent}) 35%, transparent)`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Short cursor glow trail */}
-      <div
-        ref={trailHaloRef}
-        className="absolute -top-10 -left-10 w-20 h-20 rounded-full pointer-events-none blur-xl transition-transform duration-300 ease-out"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-jelly) 35%, transparent) 0%, transparent 70%)",
-        }}
-      />
-      <div
-        ref={trailDotRef}
-        className="absolute -top-1.5 -left-1.5 w-3 h-3 rounded-full pointer-events-none blur-[2px] transition-transform duration-100 ease-out"
-        style={{
-          background:
-            "color-mix(in oklab, var(--color-bioglow) 70%, transparent)",
-        }}
-      />
+      <AmbientBubbles />
+      <CursorTrail />
 
       <div
         className={`glass relative z-10 min-h-screen bg-linear-to-br from-bioglow/5 via-jelly/5 to-tide/5 flex items-center justify-center p-4 md:p-8 pt-16 lg:pt-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -232,7 +113,7 @@ const Hero = () => {
                 </a>
 
                 <a
-                  href="#projects"
+                  href="/#projects"
                   className="glass glass-hover glass-secondary flex items-center justify-center rounded-xl w-full sm:w-40 lg:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
                 >
                   Explore Projects

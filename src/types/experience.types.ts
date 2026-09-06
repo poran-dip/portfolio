@@ -1,4 +1,5 @@
 export interface ExperienceEntry {
+  id: string;
   title: string;
   date: string;
   location?: string;

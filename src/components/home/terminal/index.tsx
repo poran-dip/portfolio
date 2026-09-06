@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useBodyScrollLock } from "@/hooks/use-body-scroll-lock";
 import DevTerminal from "./dev-terminal";
 
 const useIsDesktop = () => {
@@ -21,6 +22,8 @@ const useIsDesktop = () => {
 const TerminalWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isDesktop = useIsDesktop();
+
+  useBodyScrollLock(isOpen);
 
   useEffect(() => {
     if (!isOpen) return;

@@ -2,6 +2,7 @@ import type { ExperienceEntry } from "@/types/experience.types";
 
 export const experiences: ExperienceEntry[] = [
   {
+    id: "1",
     title: "Web Wing Coordinator",
     date: "Aug 2025 - Present",
     location: "Coding Club, Assam Engineering College",
@@ -10,6 +11,7 @@ export const experiences: ExperienceEntry[] = [
     status: "ongoing",
   },
   {
+    id: "2",
     title: "Released lotl",
     date: "Aug 2025",
     location: "npmjs",
@@ -17,6 +19,7 @@ export const experiences: ExperienceEntry[] = [
       "Released lotl, a CLI tool for converting Markdown documents to PDF, on npm",
   },
   {
+    id: "3",
     title: "Full-Stack & SBC Intern",
     date: "Jul 2025",
     location: "IIT Guwahati",

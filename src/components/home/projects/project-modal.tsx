@@ -1,5 +1,6 @@
 import { ExternalLink, Link, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useBodyScrollLock } from "@/hooks/use-body-scroll-lock";
 import type { ProjectEntry } from "@/types/projects.types";
 
 interface ProjectModalProps {
@@ -11,6 +12,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   const [imageIndex, setImageIndex] = useState(0);
   const galleryRef = useRef<HTMLDivElement>(null);
   const titleId = "project-modal-title";
+
+  useBodyScrollLock(project !== null);
 
   // Reset to the first image whenever a different project opens (this
   // component stays mounted between selections, so an empty dependency

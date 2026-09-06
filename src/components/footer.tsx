@@ -1,13 +1,7 @@
 import { Link } from "lucide-react";
+import { navLinks } from "@/data/nav-links";
 
 const REPO_URL = "https://github.com/poran-dip/portfolio";
-
-const QUICK_LINKS = [
-  { label: "About", href: "/#about" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Contact", href: "/#contact" },
-];
 
 const formatCommitDate = (iso: string): string => {
   if (!iso) return "";
@@ -62,7 +56,7 @@ const Footer = () => {
 
           {/* Right: quick links */}
           <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:justify-end">
-            {QUICK_LINKS.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
