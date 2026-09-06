@@ -1,7 +1,7 @@
-export { default as AboutMe } from "./AboutMe";
-export { default as ContactMe } from "./ContactMe";
-export { default as HeroSection } from "./HeroSection";
-export { default as Newsletter } from "./Newsletter";
-export { default as Projects } from "./Projects";
-export { default as Testimonials } from "./Testimonials";
-export { default as Timeline } from "./Timeline";
+export { default as About } from "./about";
+export { default as Contact } from "./contact";
+export { default as Experience } from "./experience";
+export { default as Hero } from "./hero";
+export { default as Newsletter } from "./newsletter";
+export { default as Projects } from "./projects";
+export { default as Testimonials } from "./testimonials";

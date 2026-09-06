@@ -1,14 +1,14 @@
 import { Dot, Star } from "lucide-react";
-import type { TimelineEntry } from "@/types/timeline";
+import type { ExperienceEntry } from "@/types/experience.types";
 
-const TimelineCard = ({
+const ExperienceCard = ({
   title,
   location,
   date,
   description,
   status = "done",
   link,
-}: TimelineEntry) => {
+}: ExperienceEntry) => {
   return (
     <div className="flex">
       <div className="flex flex-col items-center pt-1">
@@ -49,4 +49,4 @@ const TimelineCard = ({
   );
 };
 
-export default TimelineCard;
+export default ExperienceCard;

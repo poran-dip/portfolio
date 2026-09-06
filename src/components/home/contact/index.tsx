@@ -1,9 +1,9 @@
 import type { LucideIcon } from "lucide-react";
 import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
-import { contactEmailEncoded, contactPhoneEncoded } from "@/data/contact";
-import { socialLinks } from "@/data/social-links";
-import SocialLink from "./SocialLink";
+import { contactEmailEncoded, contactPhoneEncoded } from "@/data/contact-data";
+import { socialLinks } from "@/data/social-links-data";
+import SocialLink from "./social-link";
 
 interface RevealContactProps {
   icon: LucideIcon;
@@ -50,7 +50,7 @@ const RevealContact = ({
   );
 };
 
-const ContactMe = () => {
+const Contact = () => {
   const primaryLinks = socialLinks.filter((link) => link.primary);
   const otherLinks = socialLinks.filter((link) => !link.primary);
 
@@ -123,4 +123,4 @@ const ContactMe = () => {
   );
 };
 
-export default ContactMe;
+export default Contact;

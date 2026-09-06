@@ -1,9 +1,9 @@
 import { Dot } from "lucide-react";
-import { timeline } from "@/data/timeline";
-import GitHubStatsPanel from "./GitHubStatsPanel";
-import TimelineCard from "./TimelineCard";
+import GitHubStatsPanel from "@/components/home/github-stats";
+import { experiences } from "@/data/experience-data";
+import ExperienceCard from "./experience-card";
 
-const Timeline = () => {
+const Experience = () => {
   return (
     <div className="w-full bg-deep">
       <section
@@ -23,8 +23,8 @@ const Timeline = () => {
 
           <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[2fr_1fr] lg:gap-8">
             <div className="flex flex-col">
-              {timeline.map((m) => (
-                <TimelineCard
+              {experiences.map((m) => (
+                <ExperienceCard
                   key={m.date}
                   title={m.title}
                   location={m.location}
@@ -81,4 +81,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default Experience;

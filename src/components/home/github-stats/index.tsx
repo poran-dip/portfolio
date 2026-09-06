@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import GitHubStats from "./GitHubStats";
+import GitHubStats from "./stats-display";
 
 const LG_BREAKPOINT_QUERY = "(min-width: 1024px)";
 

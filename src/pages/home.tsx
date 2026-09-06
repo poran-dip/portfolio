@@ -1,11 +1,5 @@
 import { Footer, Navbar, ScrollToTop } from "@/components";
-import {
-  AboutMe,
-  ContactMe,
-  HeroSection,
-  Projects,
-  Timeline,
-} from "@/components/home";
+import { About, Contact, Experience, Hero, Projects } from "@/components/home";
 import type { Route } from "./+types/home";
 
 export function meta(_: Route.MetaArgs) {
@@ -23,12 +17,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-abyss flex flex-col items-center">
       <Navbar />
-      <HeroSection />
+      <Hero />
       <main className="w-full flex flex-col items-center">
-        <AboutMe />
+        <About />
         <Projects />
-        <Timeline />
-        <ContactMe />
+        <Experience />
+        <Contact />
       </main>
       <Footer />
       <ScrollToTop />

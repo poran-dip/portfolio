@@ -1,6 +1,6 @@
 type ProjectFeatured = "main" | "visible" | "hidden";
 
-export interface Project {
+export interface ProjectEntry {
   id: number;
   slug: string;
   title: string;

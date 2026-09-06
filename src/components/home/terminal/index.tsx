@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
-import DevTerminal from "./DevTerminal";
+import DevTerminal from "./dev-terminal";
 
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = useState(false);

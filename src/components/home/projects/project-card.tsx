@@ -1,9 +1,9 @@
 import { ExternalLink, Link } from "lucide-react";
-import type { Project } from "@/types/project";
+import type { ProjectEntry } from "@/types/projects.types";
 
 interface ProjectCardProps {
-  project: Project;
-  onSelect: (project: Project) => void;
+  project: ProjectEntry;
+  onSelect: (project: ProjectEntry) => void;
   highlighted?: boolean;
 }
 

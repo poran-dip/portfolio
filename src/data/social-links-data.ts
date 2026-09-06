@@ -1,7 +1,7 @@
 import { Gamepad2, Link, Music2, Star } from "lucide-react";
-import type { SocialLink } from "@/types/social";
+import type { SocialLinkEntry } from "@/types/social-links.types";
 
-export const socialLinks: SocialLink[] = [
+export const socialLinks: SocialLinkEntry[] = [
   {
     href: "https://linkedin.com/in/poran-dip/",
     Icon: Link,

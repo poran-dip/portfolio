@@ -1,9 +1,9 @@
 import { ExternalLink, Link, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { Project } from "@/types/project";
+import type { ProjectEntry } from "@/types/projects.types";
 
 interface ProjectModalProps {
-  project: Project | null;
+  project: ProjectEntry | null;
   onClose: () => void;
 }
 

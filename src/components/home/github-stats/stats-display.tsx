@@ -1,6 +1,6 @@
 import { GitBranch, type LucideIcon, Star, Users } from "lucide-react";
 import { useEffect, useState } from "react";
-import { GITHUB_USERNAME } from "@/data/github";
+import { GITHUB_USERNAME } from "@/data/github-data";
 
 // GitHub's events endpoint isn't real-time — GitHub's own docs note latency
 // of up to 6 hours depending on load. "Recent activity" below is framed

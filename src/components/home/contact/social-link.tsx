@@ -1,6 +1,6 @@
-import type { SocialLink as SocialLinkType } from "@/types/social";
+import type { SocialLinkEntry } from "@/types/social-links.types";
 
-const SocialLink = ({ href, Icon, platform, description }: SocialLinkType) => {
+const SocialLink = ({ href, Icon, platform, description }: SocialLinkEntry) => {
   return (
     <a
       href={href}

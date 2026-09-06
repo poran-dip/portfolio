@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight, ExternalLink, Link } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Project } from "@/types/project";
+import type { ProjectEntry } from "@/types/projects.types";
 
 const ROTATE_INTERVAL = 3500;
 const PAUSE_DURATION = 6500;
@@ -27,8 +27,8 @@ const truncateAtWord = (text: string, maxLength: number): string => {
 type Direction = 1 | -1;
 
 interface SlideContentProps {
-  project: Project;
-  onSelect: (project: Project) => void;
+  project: ProjectEntry;
+  onSelect: (project: ProjectEntry) => void;
 }
 
 const SlideContent = ({ project, onSelect }: SlideContentProps) => {
@@ -112,9 +112,9 @@ const SlideContent = ({ project, onSelect }: SlideContentProps) => {
 };
 
 interface FeaturedCarouselProps {
-  projects: Project[];
-  onSelect: (project: Project) => void;
-  onActiveChange?: (project: Project) => void;
+  projects: ProjectEntry[];
+  onSelect: (project: ProjectEntry) => void;
+  onActiveChange?: (project: ProjectEntry) => void;
 }
 
 const FeaturedCarousel = ({

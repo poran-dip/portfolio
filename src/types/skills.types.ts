@@ -5,7 +5,7 @@ interface Skill {
   aliases?: string[];
 }
 
-export interface SkillCategory {
+export interface SkillCategoryEntry {
   id: string;
   title: string;
   skills: Skill[];
