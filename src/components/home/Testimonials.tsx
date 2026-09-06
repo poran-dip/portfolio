@@ -1,10 +1,4 @@
 import { Star } from "lucide-react";
-import {
-  GlassAvatar,
-  GlassCard,
-  GlassHeading,
-  GlassParagraph,
-} from "@/components/ui";
 
 const Testimonials = () => {
   const testimonials = [
@@ -46,61 +40,61 @@ const Testimonials = () => {
   };
 
   return (
-    <section
-      id="testimonials"
-      className="scroll-mt-16 md:scroll-mt-12 py-4 md:py-12"
-    >
-      <div className="flex items-center gap-4">
-        <GlassHeading level={3} className="font-bold whitespace-nowrap">
-          TESTIMONIALS
-        </GlassHeading>
-        <div className="h-px flex-1 bg-black/20" />
-      </div>
+    <div className="w-full bg-deep">
+      <section
+        id="testimonials"
+        className="scroll-mt-12 md:scroll-mt-14 mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-16"
+      >
+        <h2 className="font-bold whitespace-nowrap text-2xl">
+          <span className="text-jelly">&gt; </span>
+          <span className="text-bioglow">./</span>
+          <span className="text-foam">testimonials</span>
+        </h2>
 
-      <div className="mt-6 flex flex-col gap-6">
-        <GlassParagraph>What people are saying about my work...</GlassParagraph>
+        <div className="mt-6 flex flex-col gap-6">
+          <p className="text-foam">What people are saying about my work...</p>
 
-        <div className="grid lg:grid-cols-3 gap-4">
-          {testimonials.map((testimonial) => (
-            <GlassCard
-              key={testimonial.name}
-              className="p-3 md:p-5 flex flex-col h-full from-blue-500/30! to-cyan-300/30!"
-            >
-              {/* Header with avatar and rating */}
-              <div className="flex items-center gap-3 mb-2">
-                <GlassAvatar
-                  src={testimonial.avatar}
-                  alt={`${testimonial.name} avatar`}
-                  size="md"
-                  className="mr-2"
-                />
-                <div className="flex-1">
-                  <GlassHeading level={6}>{testimonial.name}</GlassHeading>
-                  <GlassParagraph className="text-sm! opacity-75 mb-1!">
-                    {testimonial.role}
-                  </GlassParagraph>
-                  <div className="flex gap-1">
-                    {renderStars(testimonial.rating)}
+          <div className="grid lg:grid-cols-3 gap-4">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.name}
+                className="glass glass-panel glass-hover-sm p-3 md:p-5 flex flex-col h-full rounded-2xl"
+              >
+                {/* Header with avatar and rating */}
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="mr-2 w-12 h-12 shrink-0 rounded-full overflow-hidden">
+                    <img
+                      src={testimonial.avatar}
+                      alt={`${testimonial.name} avatar`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-medium text-foam">{testimonial.name}</p>
+                    <p className="text-sm text-mist mb-1">{testimonial.role}</p>
+                    <div className="flex gap-1">
+                      {renderStars(testimonial.rating)}
+                    </div>
                   </div>
                 </div>
+
+                {/* Review content */}
+                <p className="flex-1 text-base leading-relaxed italic text-foam">
+                  "{testimonial.review}"
+                </p>
               </div>
+            ))}
+          </div>
 
-              {/* Review content */}
-              <GlassParagraph className="flex-1 text-base! leading-relaxed italic">
-                "{testimonial.review}"
-              </GlassParagraph>
-            </GlassCard>
-          ))}
+          <div className="mt-2 text-center">
+            <p className="text-sm sm:text-base italic text-mist">
+              * Testimonials may be slightly fabricated for comedic effect. Will
+              be updated with real content later (or not).
+            </p>
+          </div>
         </div>
-
-        <div className="mt-2 text-center">
-          <GlassParagraph className="text-sm sm:text-base opacity-60 italic">
-            * Testimonials may be slightly fabricated for comedic effect. Will
-            be updated with real content later (or not).
-          </GlassParagraph>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

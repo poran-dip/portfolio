@@ -14,4 +14,4 @@ Deployed on **Vercel**
 
 ## Live Site
 
-[Check it out here](https://porandip.vercel.app)
+[Check it out here](https://poran.dev)

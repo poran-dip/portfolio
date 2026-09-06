@@ -10,11 +10,11 @@ import type { Route } from "./+types/home";
 
 export function meta(_: Route.MetaArgs) {
   return [
-    { title: "Poran Dip — Developer & Music Producer" },
+    { title: "Poran Dip — Full-Stack Developer" },
     {
       name: "description",
       content:
-        "Portfolio of Poran Dip — CS student, web developer, music producer, and tech enthusiast.",
+        "Portfolio of Poran Dip — full-stack developer, CS student, and tech enthusiast.",
     },
   ];
 }

@@ -1,10 +1,9 @@
-import { Rocket, Sparkles, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/not-found";
 
 export function meta(_: Route.MetaArgs) {
   return [
-    { title: "404 — Page Not Found | Poran Dip" },
+    { title: "404 · Poran Dip" },
     {
       name: "description",
       content:
@@ -13,192 +12,86 @@ export function meta(_: Route.MetaArgs) {
   ];
 }
 
+const BUBBLE_COUNT = 14;
+
+interface Bubble {
+  left: number;
+  size: number;
+  delay: number;
+  duration: number;
+  accent: "bioglow" | "jelly";
+}
+
+const createBubbles = (): Bubble[] =>
+  Array.from({ length: BUBBLE_COUNT }, (_, i) => ({
+    left: Math.random() * 100,
+    size: 4 + Math.random() * 8,
+    delay: Math.random() * 5,
+    duration: 6 + Math.random() * 5,
+    accent: i % 3 === 0 ? "jelly" : "bioglow",
+  }));
+
 const NotFound404 = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [rocketFloat, setRocketFloat] = useState(0);
+  // Bubbles are generated client-side only (empty on first render) to avoid
+  // a hydration mismatch between server and client random values.
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    // Rocket floating animation
-    const floatInterval = setInterval(() => {
-      setRocketFloat((prev) => (prev + 1) % 360);
-    }, 50);
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      clearInterval(floatInterval);
-    };
+    setBubbles(createBubbles());
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center bg-linear-to-b from-black via-gray-900 to-black text-gray-300 p-6 relative overflow-hidden">
-      {/* Grid background */}
-      <div
-        className="absolute inset-0 
-        bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),
-            linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)]
-        bg-size-[40px_40px] opacity-40"
-      />
-
-      {/* Mouse follower glow */}
-      <div
-        className="absolute w-96 h-96 rounded-full pointer-events-none transition-all duration-300 ease-out opacity-20"
-        style={{
-          left: mousePosition.x - 192,
-          top: mousePosition.y - 192,
-          background:
-            "radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 70%)",
-        }}
-      />
-
-      {/* Floating sparkles */}
-      <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+    <div className="relative min-h-screen w-full overflow-hidden bg-deep flex items-center justify-center px-6">
+      {/* Ambient rising bubbles — this layer extends below the visible
+          viewport so bubbles start out of frame and rise into view, instead
+          of popping in stuck to the bottom edge. The parent's
+          overflow-hidden clips the extra height. */}
+      <div className="absolute inset-x-0 top-0 -bottom-10 pointer-events-none">
+        {bubbles.map((b, i) => (
           <div
-            //biome-ignore lint: stable
-            key={i}
-            className="absolute animate-pulse"
+            key={`bubble-${
+              // biome-ignore lint: stable bubble count, index is a fine key here
+              i
+            }`}
+            className="bubble-drift absolute bottom-0 rounded-full"
             style={{
-              left: `${(i * 7 + 10) % 90}%`,
-              top: `${(i * 11 + 5) % 90}%`,
-              animationDelay: `${i * 0.2}s`,
-              animationDuration: `${2 + (i % 3)}s`,
+              left: `${b.left}%`,
+              width: b.size,
+              height: b.size,
+              animationDelay: `${b.delay}s`,
+              animationDuration: `${b.duration}s`,
+              background: `color-mix(in oklab, var(--color-${b.accent}) 45%, transparent)`,
+              border: `1px solid color-mix(in oklab, var(--color-${b.accent}) 70%, transparent)`,
+              boxShadow: `0 0 ${b.size}px color-mix(in oklab, var(--color-${b.accent}) 35%, transparent)`,
             }}
-          >
-            <Sparkles className="w-4 h-4 text-purple-400 opacity-60" />
-          </div>
+          />
         ))}
       </div>
 
-      {/* Twinkling stars */}
-      <div className="absolute inset-0">
-        {[...Array(25)].map((_, i) => (
-          <div
-            // biome-ignore lint: stable
-            key={i}
-            className="absolute animate-ping"
-            style={{
-              left: `${(i * 13 + 5) % 95}%`,
-              top: `${(i * 17 + 10) % 95}%`,
-              animationDelay: `${i * 0.3}s`,
-              animationDuration: `${3 + (i % 4)}s`,
-            }}
-          >
-            <Star
-              className="w-2 h-2 text-blue-300 opacity-50"
-              fill="currentColor"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Main content card */}
-      <div className="relative z-10 p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl flex flex-col items-center gap-4">
-        {/* Floating rocket with orbit effect */}
-        <div className="relative w-24 h-24 mb-4">
-          <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{
-              transform: `rotate(${rocketFloat}deg) translateY(${Math.sin(rocketFloat * 0.05) * 8}px)`,
-            }}
-          >
-            <Rocket className="w-20 h-20 text-purple-400 animate-pulse" />
-          </div>
-
-          {/* Rocket trail sparkles */}
-          <div className="absolute inset-0">
-            {[...Array(6)].map((_, i) => (
-              <div
-                // biome-ignore lint: stable
-                key={i}
-                className="absolute w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-40"
-                style={{
-                  left: `${45 + Math.cos((rocketFloat - i * 20) * 0.017) * 15}%`,
-                  top: `${45 + Math.sin((rocketFloat - i * 20) * 0.017) * 15}%`,
-                  animationDelay: `${i * 0.1}s`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Glowing 404 with enhanced effects */}
-        <h1 className="text-5xl font-extrabold bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent relative">
-          4
-          <span className="inline-block animate-bounce mx-2 relative">
-            0
-            <div className="absolute -top-2 -right-2">
-              <Sparkles className="w-4 h-4 text-yellow-400 animate-spin" />
-            </div>
-          </span>
-          4{/* Glow effect behind text */}
-          <div className="absolute inset-0 text-5xl font-extrabold text-purple-500 blur-lg opacity-30 -z-10">
-            404
-          </div>
+      {/* Content card */}
+      <div className="glass relative z-10 w-full max-w-xl rounded-3xl bg-linear-to-br from-bioglow/5 via-jelly/5 to-tide/5 flex flex-col items-center gap-6 px-8 py-14 text-center">
+        <h1 className="text-glow-bio text-6xl sm:text-7xl font-bold text-foam">
+          404
         </h1>
 
-        {/* Subtitle with space theme */}
-        <p className="text-lg text-gray-400 font-medium">
-          <span className="text-purple-400">HOUSTON, WE HAVE A PROBLEM</span>
-        </p>
+        <div className="space-y-3 max-w-md">
+          <p className="text-lg sm:text-xl font-semibold text-bioglow">
+            Lost in the deep
+          </p>
+          <p className="text-foam opacity-90 leading-relaxed">
+            The page you're looking for isn't here. It may have moved, been
+            renamed, or never existed at this address.
+          </p>
+        </div>
+
+        <a
+          href="/"
+          className="glass-hover glass-primary flex items-center justify-center rounded-xl w-full sm:w-48 h-10 lg:h-12 text-sm lg:text-base font-semibold cursor-pointer"
+        >
+          Back to Surface
+        </a>
       </div>
-
-      {/* Enhanced description */}
-      <div className="relative z-10 mt-10 space-y-4  flex flex-col items-center text-center">
-        <p className="text-xl max-w-lg leading-relaxed">
-          Looks like this page took an unexpected detour through a{" "}
-          <span className="text-purple-400 font-semibold">cosmic wormhole</span>
-          ! 🌌
-        </p>
-
-        <p className="text-lg text-gray-400 max-w-md">
-          Don't worry, our space engineers are working on adding more routes to
-          explore.
-        </p>
-      </div>
-
-      {/* Enhanced button with space effects */}
-      <button
-        type="button"
-        onClick={() => (window.location.href = "/")}
-        className="relative z-10 mt-8 px-8 py-4 rounded-full 
-                   bg-linear-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-semibold 
-                   shadow-lg hover:shadow-2xl hover:shadow-purple-500/25
-                   transform hover:-translate-y-2 hover:scale-105
-                   transition-all duration-300 group overflow-hidden"
-      >
-        <span className="relative z-10 flex items-center gap-2">
-          🚀 Launch Back Home
-          <Sparkles className="w-4 h-4 group-hover:animate-spin transition-all duration-300" />
-        </span>
-
-        {/* Button glow effect */}
-        <div className="absolute inset-0 bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
-
-        {/* Shooting star effect on hover */}
-        <div className="absolute -inset-1 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-      </button>
-
-      {/* Fun space facts footer */}
-      <div className="relative z-10 mt-8 text-sm text-gray-500 max-w-md">
-        <p>
-          🛸 Fun fact: There are over 100 billion galaxies in the observable
-          universe!
-        </p>
-      </div>
-
-      {/* Custom CSS for additional animations */}
-      <style>{`
-        @keyframes orbit {
-          from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
-          to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
-        }
-      `}</style>
-    </section>
+    </div>
   );
 };
 

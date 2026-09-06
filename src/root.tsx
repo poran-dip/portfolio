@@ -11,39 +11,40 @@ import type { Route } from "./+types/root";
 import "./index.css";
 
 export const meta: Route.MetaFunction = () => [
-  { title: "Poran Dip — Developer & Music Producer" },
+  { title: "Poran Dip — Full-Stack Developer" },
   {
     name: "description",
     content:
-      "Portfolio of Poran Dip — CS student, web developer, music producer, and tech enthusiast.",
+      "Portfolio of Poran Dip — full-stack developer, CS student, and tech enthusiast.",
   },
   {
     name: "keywords",
-    content: "Poran Dip, Portfolio, Developer, Web Developer, Music Producer",
+    content:
+      "Poran Dip, Portfolio, Developer, Full-Stack Developer, Real-Time Systems, Web Development",
   },
   { name: "author", content: "Poran Dip" },
 
-  { property: "og:title", content: "Poran Dip Portfolio" },
+  { property: "og:title", content: "Poran Dip — Full-Stack Developer" },
   {
     property: "og:description",
-    content: "Check out my projects, music, and more!",
+    content: "Explore my latest projects and what I'm building next.",
   },
   { property: "og:type", content: "website" },
-  { property: "og:url", content: "https://porandip.vercel.app/" },
+  { property: "og:url", content: "https://poran.dev/" },
   {
     property: "og:image",
-    content: "https://porandip.vercel.app/thumbnail.png",
+    content: "https://poran.dev/thumbnail.png",
   },
 
   { name: "twitter:card", content: "summary_large_image" },
-  { name: "twitter:title", content: "Poran Dip Portfolio" },
+  { name: "twitter:title", content: "Poran Dip — Full-Stack Developer" },
   {
     name: "twitter:description",
-    content: "Check out my projects, music, and more!",
+    content: "Explore my latest projects and what I'm building next.",
   },
   {
     name: "twitter:image",
-    content: "https://porandip.vercel.app/thumbnail.png",
+    content: "https://poran.dev/thumbnail.png",
   },
 
   { name: "theme-color", content: "#04060c" },
@@ -52,7 +53,7 @@ export const meta: Route.MetaFunction = () => [
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
   { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-  { rel: "manifest", href: "/site.webmanifest" },
+  { rel: "manifest", href: "/manifest.json" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
