@@ -1,55 +1,54 @@
-import { Gamepad2, Link, Music2, Star } from "lucide-react";
 import type { SocialLinkEntry } from "@/types/social-links.types";
 
 export const socialLinks: SocialLinkEntry[] = [
   {
     href: "https://linkedin.com/in/poran-dip/",
-    Icon: Link,
-    platform: "Linkedin",
-    description: "professional me",
+    icon: "/socials/linkedin.svg",
+    platform: "LinkedIn",
+    description: "big leagues",
     primary: true,
   },
   {
     href: "https://github.com/poran-dip",
-    Icon: Link,
+    icon: "/socials/github.svg",
     platform: "GitHub",
     description: "code heaven",
     primary: true,
   },
   {
-    href: "https://open.spotify.com/artist/07acxSnyhPk5oDLqfgfEgM",
-    Icon: Music2,
-    platform: "Spotify",
-    description: "my beats",
+    href: "https://npmjs.com/~poran-dip",
+    icon: "/socials/npm.svg",
+    platform: "npm",
+    description: "tools for you",
   },
   {
-    href: "https://littleradishes.itch.io/",
-    Icon: Gamepad2,
+    href: "https://codeforces.com/profile/poran_dip",
+    icon: "/socials/codeforces.svg",
+    platform: "Codeforces",
+    description: "competitive spirit",
+  },
+  {
+    href: "https://chiizuki.itch.io/",
+    icon: "/socials/itch.svg",
     platform: "Itch.io",
-    description: "game experiments",
-  },
-  {
-    href: "https://youtube.com/@poran_dip",
-    Icon: Link,
-    platform: "YouTube",
-    description: "coming soon",
-  },
-  {
-    href: "https://instagram.com/poran_dip",
-    Icon: Link,
-    platform: "Instagram",
-    description: "music vibes",
-  },
-  {
-    href: "https://hoyolab.com/accountCenter/postList?id=342955108",
-    Icon: Star,
-    platform: "HoYoLAB",
-    description: "gacha life",
+    description: "immersive worlds",
   },
   {
     href: "https://x.com/poran_dip",
-    Icon: Link,
+    icon: "/socials/x.svg",
     platform: "X",
-    description: "digital graveyard",
+    description: "dev journey",
+  },
+  {
+    href: "https://instagram.com/_pd_b_/",
+    icon: "/socials/instagram.svg",
+    platform: "Instagram",
+    description: "life beyond code",
+  },
+  {
+    href: "https://hoyolab.com/accountCenter/postList?id=342955108",
+    icon: "/socials/hoyolab.svg",
+    platform: "HoYoLAB",
+    description: "rpg vibes",
   },
 ];

@@ -1,8 +1,6 @@
-import type { LucideIcon } from "lucide-react";
-
 export interface SocialLinkEntry {
   href: string;
-  Icon: LucideIcon;
+  icon: string;
   platform: string;
   description: string;
   primary?: boolean;
