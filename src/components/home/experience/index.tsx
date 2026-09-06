@@ -25,7 +25,8 @@ const Experience = () => {
             <div className="flex flex-col">
               {experiences.map((m) => (
                 <ExperienceCard
-                  key={m.date}
+                  key={m.id}
+                  id={m.id}
                   title={m.title}
                   location={m.location}
                   date={m.date}
