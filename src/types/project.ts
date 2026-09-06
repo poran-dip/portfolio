@@ -1,4 +1,4 @@
-export type ProjectFeatured = "main" | "visible" | "hidden";
+type ProjectFeatured = "main" | "visible" | "hidden";
 
 export interface Project {
   id: number;
