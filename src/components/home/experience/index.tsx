@@ -18,7 +18,7 @@ const Experience = () => {
 
         <div className="mt-6 flex flex-col gap-6">
           <p className="text-mist">
-            A timeline of projects, roles, and everything in between.
+            A timeline of roles, internships, and everything in between.
           </p>
 
           <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[2fr_1fr] lg:gap-8">
